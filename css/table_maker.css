@@ -1,0 +1,40 @@
+/* .classes are for table cells, #ids are for divs */
+.header {
+    background:#bbb;
+    height:20%;
+    -moz-border-radius:10px;
+}
+#header {
+    padding:1em;
+}
+.left_margin {
+    background:#ccc;
+    width:2%;
+    -moz-border-radius:10px;
+}
+#left_margin {
+    padding:1em;
+}
+.body {
+    background:#888;
+    -moz-border-radius:10px;
+}
+#body {
+    padding:1em;
+}
+.right_margin {
+    background:#999;
+    width:2%;
+    -moz-border-radius:10px;
+}
+#right_margin {
+    padding:1em;
+}
+.footer {
+    background:#aaa;
+    height:50px;
+    -moz-border-radius:10px;
+}
+#footer {
+    padding:1em;
+}

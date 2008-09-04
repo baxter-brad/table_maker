@@ -71,3 +71,94 @@ function table_maker() {
     page_elem.parentNode.replaceChild( table_elem, page_elem );
 
 }
+
+/*
+
+'specs' is a JSON object:
+
+- the 'tablespecs', a two-element array:
+  0 id of the div to replace with the new table
+  1 the rows, an n-element array:
+    - the cells in each row, an n-element array
+      - the 'cellspecs', an array with 1 or more elements
+        0 id/class name*
+        - pairs of attribute names and values
+
+*The id/class name gives the id of the <div> that
+will be brought into the cell, and the value to
+set the cell's class attribute to, e.g.,
+
+<td class="header"><div id="header"> ... </div></td>
+
+E.g., specs for "table 1":
+
++---------------------------------------------+
+|                                             |
+|                   header                    |
+|                                             |
++---------------------------------------------+
+|        |                           |        |
+| left   |           body            | right  |
+| margin |                           | margin |
+|        +---------------------------+        |
+|        |                           |        |
+|        |          footer           |        |
+|        |                           |        |
++---------------------------------------------+
+
+t1 = [ "page", [
+        [ [ "header", "colSpan", 3 ] ],
+        [
+            [ "left_margin",  "rowSpan", 2 ],
+            [ "body"                       ],
+            [ "right_margin", "rowSpan", 2 ]
+        ],
+        [ [ "footer"               ] ]
+    ] ];
+*/
+
+function table_maker_specs( specs ) {
+
+    // table
+    var eTable = document.createElement( "TABLE" );
+
+    // tbody
+    var eTBody = document.createElement( "TBODY" );
+    eTable.appendChild( eTBody);
+
+    // rows & cells
+    var rows = specs[1];
+    for( var row = 0; row < rows.length; row++ ) {
+
+        var eTR = document.createElement( "TR" );
+        eTBody.appendChild( eTR );
+
+        var cells = rows[row];
+        for( var cell = 0; cell < cells.length; cell++ ) {
+
+            var eTD = document.createElement( "TD" );
+            var sID = cells[cell][0];
+            eTD.setAttribute( "className", sID ); // IE
+            eTD.setAttribute( "class", sID );     // Non-IE
+
+            // pair-wise walk through cell attributes
+            for( var attr = 1; attr < cells[cell].length; attr += 2 ) {
+                var sName  = cells[cell][attr];
+                var sValue = cells[cell][attr+1];
+                eTD.setAttribute( sName, sValue );
+            }
+
+            // move div into table
+            var eDiv = document.getElementById( sID );
+            eTD.appendChild( eDiv.parentNode.removeChild( eDiv ) );
+            eTR.appendChild( eTD );
+        }
+    }
+
+    // replace div with table
+    var table_id = specs[0];
+    var eDiv = document.getElementById( table_id );
+    eDiv.parentNode.replaceChild( eTable, eDiv );
+    eTable.setAttribute( "id", table_id );
+
+}

@@ -1,20 +1,20 @@
 /*
 specs for "table 27":
-+---------------------------------------------+
-|                                             |
-|                   header                    |
-|                                             |
 +------------------------------------+--------+
+|                                    |        |
+|                   header           |        |
+|                                    |        |
++------------------------------------+        |
 |                                    |        |
 |                                    |        |
 | left               body            | right  |
 | margin                             | margin |
 |                                    |        |
++------------------------------------+        |
+|                                    |        |
+|                   footer           |        |
+|                                    |        |
 +------------------------------------+--------+
-|                                             |
-|                   footer                    |
-|                                             |
-+---------------------------------------------+
 
 (but left margin not necessarily float left)
 
@@ -22,16 +22,16 @@ specs for "table 27":
 
 var oT27 = [ "page", [
         [
-            [ "td_header", [ "header" ], [ "colSpan", 2 ] ]
+            [ "td_header",       [ "header" ]                         ],
+            [ "td_right_margin", [ "right_margin" ], [ "rowSpan", 3 ] ]
         ],
         [
-            [ "td_body",         [ "left_margin", "body" ] ],
-            [ "td_right_margin", [ "right_margin"        ] ]
+            [ "td_body", [ "left_margin", "body" ] ]
         ],
         [
-            [ "td_footer", [ "footer" ], [ "colSpan", 2 ] ]
+            [ "td_footer", [ "footer" ] ]
         ] 
     ]
 ];
 
-var hfrmff = oT27;
+var hlrffl = oT27;

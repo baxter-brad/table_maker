@@ -10,23 +10,23 @@ specs for "table 19":
 | left   |           body            | right  |
 | margin |                           | margin |
 |        |                           |        |
-|        +---------------------------+        |
-|        |                           |        |
-|        |          footer           |        |
-|        |                           |        |
 +--------+---------------------------+--------+
+|                                             |
+|                   footer                    |
+|                                             |
++---------------------------------------------+
 */
 
 var oT19 = [ "page", [
         [
-            [ "td_left_margin",  [ "left_margin"  ],  [ "rowSpan", 2 ] ],
-            [ "td_body",         [ "header", "body" ]                  ],
-            [ "td_right_margin", [ "right_margin" ],  [ "rowSpan", 2 ] ]
+            [ "td_left_margin",  [ "left_margin"    ] ],
+            [ "td_body",         [ "header", "body" ] ],
+            [ "td_right_margin", [ "right_margin"   ] ]
         ],
         [
-            [ "td_footer", [ "footer" ] ]
+            [ "td_footer", [ "footer" ], [ "colSpan", 3 ] ]
         ] 
     ]
 ];
 
-var lfrffc = oT19;
+var ltrtff = oT19;

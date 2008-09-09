@@ -1,10 +1,10 @@
 /*
-specs for "table 4":
-+---------------------------------------------+
-|                                             |
-|                   header                    |
-|                                             |
-+--------+---------------------------+--------+
+specs for "table 5":
++--------+------------------------------------+
+|        |                                    |
+|        |          header                    |
+|        |                                    |
+|        |---------------------------+--------+
 |        |                           |        |
 |        |                           |        |
 | left   |           body            | right  |
@@ -17,12 +17,12 @@ specs for "table 4":
 +---------------------------------------------+
 */
 
-var t4_specs = [ "page", [
+var t5_specs = [ "page", [
         [
-            [ "td_header", [ "header" ], [ "colSpan", 3 ] ]
+            [ "td_left_margin", [ "left_margin" ], [ "rowSpan", 2 ] ],
+            [ "td_header",      [ "header" ],      [ "colSpan", 2 ] ]
         ],
         [
-            [ "td_left_margin",  [ "left_margin"  ] ],
             [ "td_body",         [ "body"         ] ],
             [ "td_right_margin", [ "right_margin" ] ]
         ],
@@ -32,4 +32,4 @@ var t4_specs = [ "page", [
     ]
 ];
 
-var hflmrmff = t4_specs;
+var hrltrmff = t5_specs;

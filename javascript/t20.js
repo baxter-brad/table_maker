@@ -1,10 +1,10 @@
 /*
-specs for "table 2":
-+---------------------------------------------+
-|                                             |
-|                   header                    |
-|                                             |
+specs for "table 20":
 +--------+---------------------------+--------+
+|        |                           |        |
+|        |          header           |        |
+|        |                           |        |
+|        |                           |        |
 |        |                           |        |
 |        |                           |        |
 | left   |           body            | right  |
@@ -17,19 +17,16 @@ specs for "table 2":
 +--------+------------------------------------+
 */
 
-var t2_specs = [ "page", [
+var t20_specs = [ "page", [
         [
-            [ "td_header", [ "header" ], [ "colSpan", 3 ] ]
-        ],
-        [
-            [ "td_left_margin",  [ "left_margin"  ], [ "rowSpan", 2 ] ],
-            [ "td_body",         [ "body"         ]                   ],
-            [ "td_right_margin", [ "right_margin" ]                   ]
+            [ "td_left_margin",  [ "left_margin"  ],  [ "rowSpan", 2 ] ],
+            [ "td_body",         [ "header", "body" ]                  ],
+            [ "td_right_margin", [ "right_margin" ]                    ]
         ],
         [
             [ "td_footer", [ "footer" ], [ "colSpan", 2 ] ]
-        ]
+        ] 
     ]
 ];
 
-var hflbrmfr = t2_specs;
+var lfrtfr = t20_specs;

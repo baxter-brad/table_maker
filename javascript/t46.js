@@ -1,28 +1,28 @@
 /*
-specs for "table 3":
-+---------------------------------------------+
-|                                             |
-|                   header                    |
-|                                             |
-+--------+---------------------------+--------+
+specs for "table 46": ("pinwheel")
++--------+------------------------------------+
+|        |                                    |
+|        |          header                    |
+|        |                                    |
+|        +---------------------------+--------+
 |        |                           |        |
 |        |                           |        |
 | left   |           body            | right  |
 | margin |                           | margin |
 |        |                           |        |
-+--------+---------------------------|        |
++--------+---------------------------+        |
 |                                    |        |
 |                   footer           |        |
 |                                    |        |
 +------------------------------------+--------+
 */
 
-var t3_specs = [ "page", [
+var t46_specs = [ "page", [
         [
-            [ "td_header", [ "header" ], [ "colSpan", 3 ] ]
+            [ "td_left_margin",  [ "left_margin"  ], [ "rowSpan", 2 ] ],
+            [ "td_header",       [ "header" ],       [ "colSpan", 2 ] ]
         ],
         [
-            [ "td_left_margin",  [ "left_margin"  ]                   ],
             [ "td_body",         [ "body"         ]                   ],
             [ "td_right_margin", [ "right_margin" ], [ "rowSpan", 2 ] ]
         ],
@@ -32,4 +32,4 @@ var t3_specs = [ "page", [
     ]
 ];
 
-var hflmrbfl = t3_specs;
+var hrltrbfl = t46_specs;

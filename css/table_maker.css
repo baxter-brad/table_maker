@@ -1,5 +1,7 @@
-/* .classes are for table cells, #ids are for divs */
-.header {
+#page {
+    width:100%;
+}
+#td_header {
     background:#bbb;
     height:20%;
     -moz-border-radius:10px;
@@ -7,7 +9,7 @@
 #header {
     padding:1em;
 }
-.left_margin {
+#td_left_margin {
     background:#ccc;
     width:2%;
     -moz-border-radius:10px;
@@ -15,14 +17,14 @@
 #left_margin {
     padding:1em;
 }
-.body {
+#td_body {
     background:#888;
     -moz-border-radius:10px;
 }
 #body {
     padding:1em;
 }
-.right_margin {
+#td_right_margin {
     background:#999;
     width:2%;
     -moz-border-radius:10px;
@@ -30,7 +32,7 @@
 #right_margin {
     padding:1em;
 }
-.footer {
+#td_footer {
     background:#aaa;
     height:50px;
     -moz-border-radius:10px;

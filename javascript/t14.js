@@ -1,30 +1,30 @@
 /*
-specs for "table 3":
-+---------------------------------------------+
-|                                             |
-|                   header                    |
-|                                             |
+specs for "table 14":
 +--------+---------------------------+--------+
+|        |                           |        |
+|        |          header           |        |
+|        |                           |        |
+|        +---------------------------+        |
 |        |                           |        |
 |        |                           |        |
 | left   |           body            | right  |
 | margin |                           | margin |
 |        |                           |        |
-+--------+---------------------------|        |
++--------+---------------------------+        |
 |                                    |        |
 |                   footer           |        |
 |                                    |        |
 +------------------------------------+--------+
 */
 
-var t3_specs = [ "page", [
+var t14_specs = [ "page", [
         [
-            [ "td_header", [ "header" ], [ "colSpan", 3 ] ]
+            [ "td_left_margin",  [ "left_margin"  ], [ "rowSpan", 2 ] ],
+            [ "td_header",       [ "header"       ]                   ],
+            [ "td_right_margin", [ "right_margin" ], [ "rowSpan", 3 ] ]
         ],
         [
-            [ "td_left_margin",  [ "left_margin"  ]                   ],
-            [ "td_body",         [ "body"         ]                   ],
-            [ "td_right_margin", [ "right_margin" ], [ "rowSpan", 2 ] ]
+            [ "td_body", [ "body" ] ]
         ],
         [
             [ "td_footer", [ "footer" ], [ "colSpan", 2 ] ]
@@ -32,4 +32,4 @@ var t3_specs = [ "page", [
     ]
 ];
 
-var hflmrbfl = t3_specs;
+var hcltrffl = t14_specs;

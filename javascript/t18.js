@@ -1,35 +1,32 @@
 /*
-specs for "table 1":
-+---------------------------------------------+
-|                                             |
-|                   header                    |
-|                                             |
+specs for "table 18":
 +--------+---------------------------+--------+
+|        |                           |        |
+|        |          header           |        |
+|        |                           |        |
+|        +---------------------------+        |
 |        |                           |        |
 |        |                           |        |
 | left   |           body            | right  |
 | margin |                           | margin |
 |        |                           |        |
-|        +---------------------------+        |
+|        |                           |        |
 |        |                           |        |
 |        |          footer           |        |
 |        |                           |        |
 +--------+---------------------------+--------+
 */
 
-var t1_specs = [ "page", [
-        [
-            [ "td_header", [ "header" ], [ "colSpan", 3 ] ]
-        ],
+var t18_specs = [ "page", [
         [
             [ "td_left_margin",  [ "left_margin"  ], [ "rowSpan", 2 ] ],
-            [ "td_body",         [ "body"         ]                   ],
+            [ "td_header",       [ "header"       ]                   ],
             [ "td_right_margin", [ "right_margin" ], [ "rowSpan", 2 ] ]
         ],
         [
-            [ "td_footer", [ "footer" ] ]
-        ]
+            [ "td_body", [ "body", "footer" ] ]
+        ] 
     ]
 ];
 
-var hflbrbfc = t1_specs;
+var hclfrf = t18_specs;

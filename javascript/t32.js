@@ -20,7 +20,7 @@ specs for "table 32":
 
 */
 
-var t32_specs = [ "page", [
+var oT32 = [ "page", [
         [
             [ "td_left_margin", [ "left_margin" ], [ "rowSpan", 2 ] ],
             [ "td_header",      [ "header"      ]                   ]
@@ -31,4 +31,4 @@ var t32_specs = [ "page", [
     ]
 ];
 
-var hrlf = t32_specs;
+var hrlf = oT32;

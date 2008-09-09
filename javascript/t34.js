@@ -20,7 +20,7 @@ specs for "table 34":
 
 */
 
-var t34_specs = [ "page", [
+var oT34 = [ "page", [
         [
             [ "td_header",       [ "header" ]                         ],
             [ "td_right_margin", [ "right_margin" ], [ "rowSpan", 2 ] ]
@@ -31,4 +31,4 @@ var t34_specs = [ "page", [
     ]
 ];
 
-var hlrf = t34_specs;
+var hlrf = oT34;

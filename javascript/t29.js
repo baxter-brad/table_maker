@@ -20,7 +20,7 @@ specs for "table 29":
 
 */
 
-var t29_specs = [ "page", [
+var oT29 = [ "page", [
         [
             [ "td_header", [ "header" ], [ "colSpan", 2 ] ]
         ],
@@ -34,4 +34,4 @@ var t29_specs = [ "page", [
     ]
 ];
 
-var hfrbfl = t29_specs;
+var hfrbfl = oT29;

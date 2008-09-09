@@ -20,7 +20,7 @@ specs for "table 42":
 
 */
 
-var t42_specs = [ "page", [
+var oT42 = [ "page", [
         [
             [ "td_body", [ "header", "left_margin", "body", "right_margin" ] ]
         ],
@@ -30,4 +30,4 @@ var t42_specs = [ "page", [
     ]
 ];
 
-var ff = t42_specs;
+var ff = oT42;

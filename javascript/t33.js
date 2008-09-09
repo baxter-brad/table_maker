@@ -20,7 +20,7 @@ specs for "table 33":
 
 */
 
-var t33_specs = [ "page", [
+var oT33 = [ "page", [
         [
             [ "td_header", [ "header" ], [ "colSpan", 2 ] ]
         ],
@@ -31,4 +31,4 @@ var t33_specs = [ "page", [
     ]
 ];
 
-var hfrb = t33_specs;
+var hfrb = oT33;

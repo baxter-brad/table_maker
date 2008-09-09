@@ -17,7 +17,7 @@ specs for "table 9":
 +------------------------------------+--------+
 */
 
-var t9_specs = [ "page", [
+var oT9 = [ "page", [
         [
             [ "td_left_margin",  [ "left_margin"  ], [ "rowSpan", 3 ] ],
             [ "td_header",       [ "header"       ], [ "colSpan", 2 ] ] 
@@ -32,4 +32,4 @@ var t9_specs = [ "page", [
     ]
 ];
 
-var hrlfrbfc = t9_specs;
+var hrlfrbfc = oT9;

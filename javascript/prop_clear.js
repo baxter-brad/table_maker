@@ -1,3 +1,5 @@
+/* prop_clear.js */
+/* http://www.greywyvern.com/code/min-height-hack */
 function prop_clear( elem, min_height ) {
     var node;
     if( typeof elem != 'object' )

@@ -17,7 +17,7 @@ specs for "table 6":
 +---------------------------------------------+
 */
 
-var t6_specs = [ "page", [
+var oT6 = [ "page", [
         [
             [ "td_header",       [ "header" ],       [ "colSpan", 2 ] ],
             [ "td_right_margin", [ "right_margin" ], [ "rowSpan", 2 ] ]
@@ -32,4 +32,4 @@ var t6_specs = [ "page", [
     ]
 ];
 
-var hllmrtff = t6_specs;
+var hllmrtff = oT6;

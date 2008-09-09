@@ -17,7 +17,7 @@ specs for "table 14":
 +------------------------------------+--------+
 */
 
-var t14_specs = [ "page", [
+var oT14 = [ "page", [
         [
             [ "td_left_margin",  [ "left_margin"  ], [ "rowSpan", 2 ] ],
             [ "td_header",       [ "header"       ]                   ],
@@ -32,4 +32,4 @@ var t14_specs = [ "page", [
     ]
 ];
 
-var hcltrffl = t14_specs;
+var hcltrffl = oT14;

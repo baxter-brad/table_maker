@@ -17,7 +17,7 @@ specs for "table 8":
 +---------------------------------------------+
 */
 
-var t8_specs = [ "page", [
+var oT8 = [ "page", [
         [
             [ "td_left_margin",  [ "left_margin"  ], [ "rowSpan", 3 ] ],
             [ "td_header",       [ "header"       ], [ "colSpan", 2 ] ] 
@@ -32,4 +32,4 @@ var t8_specs = [ "page", [
     ]
 ];
 
-var hrlfrmfr = t8_specs;
+var hrlfrmfr = oT8;

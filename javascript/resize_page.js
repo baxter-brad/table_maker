@@ -1,3 +1,4 @@
+/* resize_page.js */
 function resize( elem ){  
     var node;
     if( typeof elem == 'object' ) node = elem;

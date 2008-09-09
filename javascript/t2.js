@@ -17,7 +17,7 @@ specs for "table 2":
 +--------+------------------------------------+
 */
 
-var t2_specs = [ "page", [
+var oT2 = [ "page", [
         [
             [ "td_header", [ "header" ], [ "colSpan", 3 ] ]
         ],
@@ -32,4 +32,4 @@ var t2_specs = [ "page", [
     ]
 ];
 
-var hflbrmfr = t2_specs;
+var hflbrmfr = oT2;

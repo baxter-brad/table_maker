@@ -17,7 +17,7 @@ specs for "table 10":
 +---------------------------------------------+
 */
 
-var t10_specs = [ "page", [
+var oT10 = [ "page", [
         [
             [ "td_left_margin",  [ "left_margin"  ], [ "rowSpan", 3 ] ],
             [ "td_header",       [ "header"       ]                   ],
@@ -32,4 +32,4 @@ var t10_specs = [ "page", [
     ]
 ];
 
-var hclfrtfr = t10_specs;
+var hclfrtfr = oT10;

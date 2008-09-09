@@ -17,7 +17,7 @@ specs for "table 11":
 +------------------------------------+--------+
 */
 
-var t11_specs = [ "page", [
+var oT11 = [ "page", [
         [
             [ "td_left_margin",  [ "left_margin"  ], [ "rowSpan", 3 ] ],
             [ "td_header",       [ "header"       ]                   ],
@@ -32,4 +32,4 @@ var t11_specs = [ "page", [
     ]
 ];
 
-var hclfrffc = t11_specs;
+var hclfrffc = oT11;

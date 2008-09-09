@@ -17,7 +17,7 @@ specs for "table 13":
 +--------+---------------------------+--------+
 */
 
-var t13_specs = [ "page", [
+var oT13 = [ "page", [
         [
             [ "td_header",       [ "header"       ], [ "colSpan", 2 ] ],
             [ "td_right_margin", [ "right_margin" ], [ "rowSpan", 3 ] ]
@@ -32,4 +32,4 @@ var t13_specs = [ "page", [
     ]
 ];
 
-var hllbrffc = t13_specs;
+var hllbrffc = oT13;

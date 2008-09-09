@@ -17,7 +17,7 @@ specs for "table 17":
 +--------+---------------------------+--------+
 */
 
-var t17_specs = [ "page", [
+var oT17 = [ "page", [
         [
             [ "td_header",       [ "header"       ], [ "colSpan", 2 ] ],
             [ "td_right_margin", [ "right_margin" ], [ "rowSpan", 2 ] ]
@@ -29,4 +29,4 @@ var t17_specs = [ "page", [
     ]
 ];
 
-var hllbrf = t17_specs;
+var hllbrf = oT17;

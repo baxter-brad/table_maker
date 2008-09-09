@@ -20,7 +20,7 @@ specs for "table 36":
 
 */
 
-var t36_specs = [ "page", [
+var oT36 = [ "page", [
         [
             [ "td_body",         [ "header", "left_margin", "body" ]                   ],
             [ "td_right_margin", [ "right_margin"                  ], [ "rowSpan", 2 ] ]
@@ -31,4 +31,4 @@ var t36_specs = [ "page", [
     ]
 ];
 
-var rffl = t36_specs;
+var rffl = oT36;

@@ -17,7 +17,7 @@ specs for "table 21":
 +------------------------------------+--------+
 */
 
-var t21_specs = [ "page", [
+var oT21 = [ "page", [
         [
             [ "td_left_margin",  [ "left_margin"    ]                   ],
             [ "td_body",         [ "header", "body" ]                   ],
@@ -29,4 +29,4 @@ var t21_specs = [ "page", [
     ]
 ];
 
-var ltrffl = t21_specs;
+var ltrffl = oT21;

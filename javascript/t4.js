@@ -17,7 +17,7 @@ specs for "table 4":
 +---------------------------------------------+
 */
 
-var t4_specs = [ "page", [
+var oT4 = [ "page", [
         [
             [ "td_header", [ "header" ], [ "colSpan", 3 ] ]
         ],
@@ -32,4 +32,4 @@ var t4_specs = [ "page", [
     ]
 ];
 
-var hflmrmff = t4_specs;
+var hflmrmff = oT4;

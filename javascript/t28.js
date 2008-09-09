@@ -20,7 +20,7 @@ specs for "table 28":
 
 */
 
-var t28_specs = [ "page", [
+var oT28 = [ "page", [
         [
             [ "td_header",       [ "header"       ]                   ],
             [ "td_right_margin", [ "right_margin" ], [ "rowSpan", 2 ] ]
@@ -34,4 +34,4 @@ var t28_specs = [ "page", [
     ]
 ];
 
-var hlrtff = t28_specs;
+var hlrtff = oT28;

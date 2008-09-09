@@ -20,7 +20,7 @@ specs for "table 35":
 
 */
 
-var t35_specs = [ "page", [
+var oT35 = [ "page", [
         [
             [ "td_body",         [ "header", "left_margin", "body" ] ],
             [ "td_right_margin", [ "right_margin"                  ] ]
@@ -31,4 +31,4 @@ var t35_specs = [ "page", [
     ]
 ];
 
-var rtff = t35_specs;
+var rtff = oT35;

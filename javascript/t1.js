@@ -17,7 +17,7 @@ specs for "table 1":
 +--------+---------------------------+--------+
 */
 
-var t1_specs = [ "page", [
+var oT1 = [ "page", [
         [
             [ "td_header", [ "header" ], [ "colSpan", 3 ] ]
         ],
@@ -32,4 +32,4 @@ var t1_specs = [ "page", [
     ]
 ];
 
-var hflbrbfc = t1_specs;
+var hflbrbfc = oT1;

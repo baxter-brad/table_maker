@@ -20,7 +20,7 @@ specs for "table 38":
 
 */
 
-var t38_specs = [ "page", [
+var oT38 = [ "page", [
         [
             [ "td_left_margin", [ "left_margin"                    ], [ "rowSpan", 2 ] ],
             [ "td_body",        [ "header", "body", "right_margin" ]                   ]
@@ -31,4 +31,4 @@ var t38_specs = [ "page", [
     ]
 ];
 
-var lffr = t38_specs;
+var lffr = oT38;

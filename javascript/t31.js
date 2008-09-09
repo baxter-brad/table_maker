@@ -20,7 +20,7 @@ specs for "table 31":  ("gun")
 
 */
 
-var t31_specs = [ "page", [
+var oT31 = [ "page", [
         [
             [ "td_header", [ "header" ], [ "colSpan", 2 ] ]
         ],
@@ -31,4 +31,4 @@ var t31_specs = [ "page", [
     ]
 ];
 
-var hflb = t31_specs;
+var hflb = oT31;

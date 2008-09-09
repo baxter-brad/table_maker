@@ -17,7 +17,7 @@ specs for "table 46": ("pinwheel")
 +------------------------------------+--------+
 */
 
-var t46_specs = [ "page", [
+var oT46 = [ "page", [
         [
             [ "td_left_margin",  [ "left_margin"  ], [ "rowSpan", 2 ] ],
             [ "td_header",       [ "header" ],       [ "colSpan", 2 ] ]
@@ -32,4 +32,4 @@ var t46_specs = [ "page", [
     ]
 ];
 
-var hrltrbfl = t46_specs;
+var hrltrbfl = oT46;

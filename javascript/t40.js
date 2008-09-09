@@ -17,7 +17,7 @@ specs for "table 40":
 +--------+---------------------------+--------+
 */
 
-var t40_specs = [ "page", [
+var oT40 = [ "page", [
         [
             [ "td_left_margin",  [ "left_margin"  ]             ],
             [ "td_body",         [ "header", "body", "footer" ] ],
@@ -26,4 +26,4 @@ var t40_specs = [ "page", [
     ]
 ];
 
-var lfrf = t40_specs;
+var lfrf = oT40;

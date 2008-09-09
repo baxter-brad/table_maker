@@ -20,7 +20,7 @@ specs for "table 25":
 
 */
 
-var t25_specs = [ "page", [
+var oT25 = [ "page", [
         [
             [ "td_header", [ "header" ], [ "colSpan", 2 ] ]
         ],
@@ -34,4 +34,4 @@ var t25_specs = [ "page", [
     ]
 ];
 
-var hflbfr = t25_specs;
+var hflbfr = oT25;

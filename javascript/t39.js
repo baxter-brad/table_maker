@@ -20,7 +20,7 @@ specs for "table 39":
 
 */
 
-var t39_specs = [ "page", [
+var oT39 = [ "page", [
         [
             [ "td_header", [ "header" ] ]
         ],
@@ -33,4 +33,4 @@ var t39_specs = [ "page", [
     ]
 ];
 
-var hfff = t39_specs;
+var hfff = oT39;

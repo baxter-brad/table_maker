@@ -2,19 +2,14 @@
 table_maker( specs );
 
 'specs' is a JSON object (a two-element array):
-  0 id of the div to replace with the new table (table gets this id)
-  1 the rows (an n-element array):
-    - the cells in each row (an n-element array)
-      - the 'cellspecs' (a three-element array)
-        0 id to assign to the cell
-        1 div ids to move into the cell (an n-element array)
-        2 pairs of attribute names and values (an even numered n-element array)
 
-*The id/class names give the ids of the divs that
-will be brought into the cell, and the value to
-set the cell's class attribute to, e.g.,
-
-<td class="header"><div id="header"> ... </div></td>
+[0] id of the div to replace with the new table (table gets this id)
+[1] the rows (an n-element array):
+    - the cells in each row (an n-element array):
+      - the 'cellspecs' (a three-element array):
+        [0] id to assign to the cell
+        [1] div ids to move into the cell (an n-element array)
+        [2] pairs of attribute names and values (an even numered n-element array)
 
 E.g., specs for "table 1":
 
@@ -32,20 +27,25 @@ E.g., specs for "table 1":
 |        |                           |        |
 +---------------------------------------------+
 
-//    [0]     [1]
-t1 = [ "page", [
-//          [1][0][0]    [1][0][1]        [1][0][2]
-        [ [ "td_header", [ "header" ], [ "colSpan", 3 ] ] ],
+//          [0]     [1]
+var oT1 = [ "page", [
         [
-//            [1][1][0]          [1][1][1]           [1][1][2]
+//            [1][0][0][0] [1][0][0][1]  [1][0][0][2]
+            [ "td_header", [ "header" ], [ "colSpan", 3 ] ]
+        ],
+        [
+//            [1][1][0][0]       [1][1][0][1]        [1][1][0][2]
             [ "td_left_margin",  [ "left_margin"  ], [ "rowSpan", 2 ] ],
+//            [1][1][1][0]       [1][1][1][1]        [1][1][1][2]
             [ "td_body",         [ "body"         ]                   ],
+// etc.
             [ "td_right_margin", [ "right_margin" ], [ "rowSpan", 2 ] ]
         ],
-        [ [ "td_footer", [ "footer" ]                   ] ]
+        [ [ "td_footer", [ "footer" ] ] ]
     ] ];
 
-hflbrbfc = t1;
+// alternative access via "alpha specs"
+var hflbrbfc = oT1;
 
 h = header
 l = left margin
@@ -97,11 +97,11 @@ function table_maker( aSpecs ) {
 
             // create cell and ID it
             var eTD = document.createElement( "TD" );
-            var sID = aCellSpecs[ 0 ];  // required
+            var sID = aCellSpecs[ 0 ];  // cell id is required
             eTD.setAttribute( "id", sID );
 
             // move divs into cell
-            var aDivs = aCellSpecs[ 1 ];  // required
+            var aDivs = aCellSpecs[ 1 ];  // divs to include are required
             for( var iDiv = 0; iDiv < aDivs.length; iDiv++ ) {
                 var eDiv = document.getElementById( aDivs[ iDiv ] );
                 eTD.appendChild( eDiv.parentNode.removeChild( eDiv ) );
@@ -109,7 +109,7 @@ function table_maker( aSpecs ) {
 
             // pair-wise walk through cell attributes
             if( aCellSpecs.length > 2 ) {
-                var aAttrs = aCellSpecs[ 2 ];  // optional
+                var aAttrs = aCellSpecs[ 2 ];  // cell specs are optional
                 for( var iAttr = 0; iAttr < aAttrs.length; iAttr += 2 ) {
                     var sName  = aAttrs[ iAttr ];
                     var sValue = aAttrs[ iAttr + 1 ];

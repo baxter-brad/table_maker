@@ -20,7 +20,7 @@ specs for "table 27":
 
 */
 
-var t27_specs = [ "page", [
+var oT27 = [ "page", [
         [
             [ "td_header", [ "header" ], [ "colSpan", 2 ] ]
         ],
@@ -34,4 +34,4 @@ var t27_specs = [ "page", [
     ]
 ];
 
-var hfrmff = t27_specs;
+var hfrmff = oT27;

@@ -17,7 +17,7 @@ specs for "table 3":
 +------------------------------------+--------+
 */
 
-var t3_specs = [ "page", [
+var oT3 = [ "page", [
         [
             [ "td_header", [ "header" ], [ "colSpan", 3 ] ]
         ],
@@ -32,4 +32,4 @@ var t3_specs = [ "page", [
     ]
 ];
 
-var hflmrbfl = t3_specs;
+var hflmrbfl = oT3;

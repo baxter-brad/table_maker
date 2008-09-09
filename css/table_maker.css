@@ -1,3 +1,8 @@
+/* table_maker.css */
+
+@import url("/css/baseline.css");
+@import url("/css/prop_clear.css");
+
 #page {
     width:100%;
 }

@@ -20,11 +20,11 @@ specs for "table 0":
 
 */
 
-var t0_specs = [ "page", [
+var oT0 = [ "page", [
         [
             [ "td_body", [ "header", "left_margin", "body", "right_margin", "footer" ] ]
         ]
     ]
 ];
 
-var bf = t0_specs;
+var bf = oT0;

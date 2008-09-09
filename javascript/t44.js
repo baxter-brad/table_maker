@@ -20,7 +20,7 @@ specs for "table 44":
 
 */
 
-var t44_specs = [ "page", [
+var oT44 = [ "page", [
         [
             [ "td_body",         [ "header", "left_margin", "body", "footer" ] ],
             [ "td_right_margin", [ "right_margin" ]                            ]
@@ -28,4 +28,4 @@ var t44_specs = [ "page", [
     ]
 ];
 
-var rf = t44_specs;
+var rf = oT44;

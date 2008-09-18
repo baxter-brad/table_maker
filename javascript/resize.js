@@ -1,4 +1,4 @@
-/* resize_page.js */
+/* resize.js */
 function resize( elem ){  
     var node;
     if( typeof elem == 'object' ) node = elem;
@@ -20,6 +20,3 @@ function resize( elem ){
     document.body.setAttribute( "style", "height:"+myHeight+"px;" );
     node.setAttribute( "style", "height:"+myHeight+"px;" );
 }
-function resize_page() { resize( "page" ) }
-window.onresize = function () { resize( "page" ); }
-

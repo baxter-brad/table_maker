@@ -104,7 +104,8 @@ function table_maker( aSpecs ) {
             var aDivs = aCellSpecs[ 1 ];  // divs to include are required
             for( var iDiv = 0; iDiv < aDivs.length; iDiv++ ) {
                 var eDiv = document.getElementById( aDivs[ iDiv ] );
-                eTD.appendChild( eDiv.parentNode.removeChild( eDiv ) );
+                if( eDiv )
+                    eTD.appendChild( eDiv.parentNode.removeChild( eDiv ) );
             }
 
             // pair-wise walk through cell attributes

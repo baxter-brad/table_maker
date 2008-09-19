@@ -2,48 +2,88 @@
 
 @import url("/css/baseline.css");
 
-#page {
-    width:100%;
+/* need this for child percentages */
+html, body {
+    height: 100%;
 }
 
-#td_header {
-    background:#bbb;
-    -moz-border-radius:10px;
+/* container div (javascript makes this a table) */
+#page {
+    width:      100%;
+    height:     100%;
+    min-height: 100%;
 }
+
+/* javascript-created table cell containing the header div */
+#td_header {
+    height: 1%;
+    vertical-align: top;
+
+    background:#bbb;
+
+    -moz-border-radius:10px; /* firefox */
+}
+
+/* div containing header content */
 #header {
     padding:1em;
 }
 
+/* javascript-created table cell containing the left_margin div */
 #td_left_margin {
+    width: 1%;
+    vertical-align: top;
+
     background:#ccc;
-    -moz-border-radius:10px;
+
+    -moz-border-radius:10px; /* firefox */
 }
+
+/* div containing left_margin content */
 #left_margin {
     padding:1em;
 }
 
+/* javascript-created table cell containing the body div */
 #td_body {
     background:#888;
-    -moz-border-radius:10px;
+    vertical-align: top;
+
+    -moz-border-radius:10px; /* firefox */
 }
+
+/* div containing body content */
 #body {
     padding:1em;
 }
 
+/* javascript-created table cell containing the right_margin div */
 #td_right_margin {
+    width: 1%;
     background:#999;
-    -moz-border-radius:10px;
+    vertical-align: top;
+
+    -moz-border-radius:10px; /* firefox */
 }
+
+/* div containing right_margin content */
 #right_margin {
     padding:1em;
 }
 
+/* javascript-created table cell containing the footer div */
 #td_footer {
+    height: 1%;
     background:#aaa;
-    -moz-border-radius:10px;
+    vertical-align: bottom;
+
+    -moz-border-radius:10px; /* firefox */
 }
+
+/* div containing footer content */
 #footer {
     padding:1em;
 }
+
 
 #__END__

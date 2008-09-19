@@ -13,8 +13,6 @@ else {
 }
 if( specs ) {
     addOnload(        function() { table_maker( specs ) } );
-    addOnload(        function() { resize( "page" )        } );
-    window.onresize = function() { resize( "page" )        };
 }
 
 //addOnload( show );  // show_dom (debugging)

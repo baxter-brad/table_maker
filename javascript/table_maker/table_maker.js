@@ -84,48 +84,54 @@ function table_maker( aSpecs ) {
 
     // rows & cells
     var aRows = aSpecs[ 1 ];
-    for( var iRow = 0; iRow < aRows.length; iRow++ ) {
+    if( aRows ) {
+        for( var iRow = 0; iRow < aRows.length; iRow++ ) {
 
-        // create row
-        var eTR = document.createElement( "TR" );
-        eTBody.appendChild( eTR );
+            // create row
+            var eTR = document.createElement( "TR" );
+            eTBody.appendChild( eTR );
 
-        var aCells = aRows[ iRow ];
-        for( var iCell = 0; iCell < aCells.length; iCell++ ) {
+            var aCells = aRows[ iRow ];
+            if( aCells ) {
+                for( var iCell = 0; iCell < aCells.length; iCell++ ) {
 
-            aCellSpecs = aCells[ iCell ];
+                    aCellSpecs = aCells[ iCell ];
 
-            // create cell and ID it
-            var eTD = document.createElement( "TD" );
-            var sID = aCellSpecs[ 0 ];  // cell id is required
-            eTD.setAttribute( "id", sID );
+                    // create cell and ID it
+                    var eTD = document.createElement( "TD" );
+                    var sID = aCellSpecs[ 0 ];  // cell id is required
+                    eTD.setAttribute( "id", sID );
 
-            // move divs into cell
-            var aDivs = aCellSpecs[ 1 ];  // divs to include are required
-            for( var iDiv = 0; iDiv < aDivs.length; iDiv++ ) {
-                var eDiv = document.getElementById( aDivs[ iDiv ] );
-                if( eDiv )
-                    eTD.appendChild( eDiv.parentNode.removeChild( eDiv ) );
-            }
+                    // move divs into cell
+                    var aDivs = aCellSpecs[ 1 ];  // divs to include are required
+                    for( var iDiv = 0; iDiv < aDivs.length; iDiv++ ) {
+                        var eDiv = document.getElementById( aDivs[ iDiv ] );
+                        if( eDiv )
+                            eTD.appendChild( eDiv.parentNode.removeChild( eDiv ) );
+                    }
 
-            // pair-wise walk through cell attributes
-            if( aCellSpecs.length > 2 ) {
-                var aAttrs = aCellSpecs[ 2 ];  // cell specs are optional
-                for( var iAttr = 0; iAttr < aAttrs.length; iAttr += 2 ) {
-                    var sName  = aAttrs[ iAttr ];
-                    var sValue = aAttrs[ iAttr + 1 ];
-                    eTD.setAttribute( sName, sValue );
+                    // pair-wise walk through cell attributes
+                    if( aCellSpecs.length > 2 ) {
+                        var aAttrs = aCellSpecs[ 2 ];  // cell specs are optional
+                        for( var iAttr = 0; iAttr < aAttrs.length; iAttr += 2 ) {
+                            var sName  = aAttrs[ iAttr ];
+                            var sValue = aAttrs[ iAttr + 1 ];
+                            eTD.setAttribute( sName, sValue );
+                        }
+                    }
+
+                    eTR.appendChild( eTD );
                 }
             }
-
-            eTR.appendChild( eTD );
         }
     }
 
     // replace div with table and ID table
     var sID = aSpecs[ 0 ];
     var eDiv = document.getElementById( sID );
-    eDiv.parentNode.replaceChild( eTable, eDiv );
-    eTable.setAttribute( "id", sID );
+    if( eDiv ) {
+        eDiv.parentNode.replaceChild( eTable, eDiv );
+        eTable.setAttribute( "id", sID );
+    }
 
 }

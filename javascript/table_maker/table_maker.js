@@ -131,7 +131,10 @@ function table_maker( aSpecs ) {
     var eDiv = document.getElementById( sID );
     if( eDiv ) {
         eDiv.parentNode.replaceChild( eTable, eDiv );
-        eTable.setAttribute( "id", sID );
+        var aAttributes = eDiv.attributes;
+        for( var iAttr = 0; iAttr < aAttributes.length; iAttr++ ) {
+            eTable.setAttribute( aAttributes[iAttr].name, aAttributes[iAttr].value );
+        }
     }
 
 }

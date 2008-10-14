@@ -12,11 +12,11 @@ ul_table( specs );
 
 'specs' is a JSON object:
 
-[0] id of the ul tag to replace with a new table (table gets this id)
-[1] the 'grid' value: how many columns in the new table
+{id}: id of the ul tag to replace with a new table (table gets this id)
+{grid}: the 'grid' value: how many columns in the new table
     - 0, "", or null: 1 column
     - otherwise: that number of columns
-[2] the 'orientation' value: horizontal or vertical
+{orien}: the 'orientation' value: horizontal or vertical
     - "", null, 'h' or 'horizontal': orient the cells horizontally in the grid, e.g.,
       a b c
       d e f
@@ -25,10 +25,14 @@ ul_table( specs );
       a d g
       b e h
       c f i
-[3] the 'bullet' value:  how (or whether) to display "bullet cells"
+{usebull}: index of child element to use in a bullet cell
+        (in addition to the above bullet cell, if any)
+    - "", or null: no additional bullet cell
+    - otherwise: index of bullet element
+{bullet}: the 'bullet' value:  how (or whether) to display "bullet cells"
     - "", or null: no bullet cells
     - otherwise: character(s) to use for bullet (may be img tag)
-[4]: id prefix for cells and bullet cells
+{prefix}: id prefix for cells and bullet cells
         note: if an <li> tag already has an id, it will be used as-is alone
         for the cell and suffixed with '-bullet' for the bullet cells;
         if not, the id prefix suffixed with an sequence number will be used
@@ -40,19 +44,26 @@ ul_table( specs );
     - otherwise: prefix used as described above
 
 Examples:
-    var ul1 = [ "ul1" ];     // use defaults for everything else
-    var ul2 = [ "ul2", 3 ];  // 3 columns
-    var ul1 = [ "ul1", 2, "vertical", "&bull;", "id" ];
+    var ul1 = { "ul" : "ul1" };     // use defaults for everything else
+    var ul2 = { "ul" : "ul2", "grid" : 3 };  // 3 columns
+    var ul1 = {
+        "ul"     : "ul1",
+        "grid"   : 2,
+        "orien"  : "vertical",
+        "bullet" : "&bull;",
+        "id"     : "id"
+    };
 
 */
 
 function ul_table( aSpecs ) {
 
-    var sID     = aSpecs[ 0 ];
-    var iGrid   = aSpecs[ 1 ]; if( !iGrid  ) iGrid  = 1;
-    var sOrien  = aSpecs[ 2 ]; if( !sOrien ) sOrien = 'h';
-    var sBullet = aSpecs[ 3 ];
-    var sPrefix = aSpecs[ 4 ];
+    var sID      = aSpecs.id;
+    var iGrid    = aSpecs.grid;  if( !iGrid  ) iGrid  = 1;
+    var sOrien   = aSpecs.orien; if( !sOrien ) sOrien = 'h';
+    var sBullet  = aSpecs.bullet;
+    var iUseBull = aSpecs.usebull;
+    var sPrefix  = aSpecs.prefix;
 
     // table
     var eTable = document.createElement( "TABLE" );
@@ -66,28 +77,92 @@ function ul_table( aSpecs ) {
     if( eUl ) {
         var eRow = document.createElement( "TR" );
         var aLis = eUl.getElementsByTagName( "LI" );
-        for( var iChild = 0; iChild < aLis.length; ) {
-            if( sBullet ) {
-                var eBulletCell = document.createElement( "TD" );
-                eBulletCell.innerHTML = sBullet;
-                eRow.appendChild( eBulletCell );
+
+        if( sOrien == 'h' ) {
+            for( var iChild = 0; iChild < aLis.length; ) {
+                // -- start --
+                var eCell = document.createElement( "TD" );
+                var aAttributes = aLis[ iChild ].attributes;
+                var sCellID = "";
+                for( var iAttr = 0; iAttr < aAttributes.length; iAttr++ ) {
+                    eCell.setAttribute( aAttributes[iAttr].name, aAttributes[iAttr].value );
+                    if( aAttributes[iAttr].name == "id" ) sCellID = aAttributes[iAttr].value;
+                }
+                if( !sCellID && sPrefix ) {
+                    sCellID = sPrefix+(iChild+1);
+                    eCell.setAttribute( "id", sCellID );
+                }
+                if( typeof( iUseBull ) == 'number' ) {
+                    var eUseBulletCell = document.createElement( "TD" );
+                    eUseBulletCell.appendChild( aLis[ iChild ].childNodes[ iUseBull ] );
+                    if( sCellID ) eUseBulletCell.setAttribute( "id", sCellID+"-usebull" );
+                    eRow.appendChild( eUseBulletCell );
+                }
+                if( sBullet ) {
+                    var eBulletCell = document.createElement( "TD" );
+                    eBulletCell.innerHTML = sBullet;
+                    if( sCellID ) eBulletCell.setAttribute( "id", sCellID+"-bullet" );
+                    eRow.appendChild( eBulletCell );
+                }
+                var iLen = aLis[ iChild ].childNodes.length;
+                for( var iLiChild = 0; iLiChild < iLen; iLiChild++ ) {
+                    eCell.appendChild( aLis[ iChild ].childNodes[ 0 ] ); // nodes are shifted off
+                }
+                eRow.appendChild( eCell );
+                // -- end --
+                if( ++iChild % iGrid == 0 ) {
+                    eTBody.appendChild( eRow );
+                    eRow = document.createElement( "TR" );
+                }
+            } 
+            if( iChild % iGrid > 0 ) {
+                eTBody.appendChild( eRow );
             }
-            var eCell = document.createElement( "TD" );
-            var aAttributes = aLis[ iChild ].attributes;
-            for( var iAttr = 0; iAttr < aAttributes.length; iAttr++ ) {
-                eCell.setAttribute( aAttributes[iAttr].name, aAttributes[iAttr].value );
-            }
-            for( var iLiChild = 0; iLiChild < aLis[ iChild ].childNodes.length; iLiChild++ ) {
-                eCell.appendChild( aLis[ iChild ].childNodes[ iLiChild ] );
-            }
-            eRow.appendChild( eCell );
-            if( ++iChild % iGrid == 0 ) {
+        }
+        else {
+            var iRows = Math.ceil( aLis.length / iGrid );
+            for( var iFact1 = 0; iFact1 < iRows; iFact1++ ) {
+                for( var iFact2 = 0; iFact2 < iGrid; iFact2++ ) {
+                    var iChild = iFact1 + ( iRows * iFact2 );
+                    if( iChild < aLis.length ) {
+                        // -- start --
+                        var eCell = document.createElement( "TD" );
+                        var aAttributes = aLis[ iChild ].attributes;
+                        var sCellID = "";
+                        for( var iAttr = 0; iAttr < aAttributes.length; iAttr++ ) {
+                            eCell.setAttribute( aAttributes[iAttr].name, aAttributes[iAttr].value );
+                            if( aAttributes[iAttr].name == "id" ) sCellID = aAttributes[iAttr].value;
+                        }
+                        if( !sCellID && sPrefix ) {
+                            sCellID = sPrefix+(iChild+1);
+                            eCell.setAttribute( "id", sCellID );
+                        }
+                        if( typeof( iUseBull ) == 'number' ) {
+                            var eUseBulletCell = document.createElement( "TD" );
+                            eUseBulletCell.appendChild( aLis[ iChild ].childNodes[ iUseBull ] );
+                            if( sCellID ) eUseBulletCell.setAttribute( "id", sCellID+"-usebull" );
+                            eRow.appendChild( eUseBulletCell );
+                        }
+                        if( sBullet ) {
+                            var eBulletCell = document.createElement( "TD" );
+                            eBulletCell.innerHTML = sBullet;
+                            if( sCellID ) eBulletCell.setAttribute( "id", sCellID+"-bullet" );
+                            eRow.appendChild( eBulletCell );
+                        }
+                        var iLen = aLis[ iChild ].childNodes.length;
+                        for( var iLiChild = 0; iLiChild < iLen; iLiChild++ ) {
+                            eCell.appendChild( aLis[ iChild ].childNodes[ 0 ] ); // nodes are shifted off
+                        }
+                        eRow.appendChild( eCell );
+                        // -- end --
+                    }
+                }
                 eTBody.appendChild( eRow );
                 eRow = document.createElement( "TR" );
+            } 
+            if( eRow.childNodes ) {
+                eTBody.appendChild( eRow );
             }
-        } 
-        if( iChild % iGrid > 0 ) {
-            eTBody.appendChild( eRow );
         }
 
         // replace ul with table and ID the table

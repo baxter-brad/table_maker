@@ -20,7 +20,9 @@ specs for "table 25":
 
 */
 
-var oT25 = [ "page", [
+var t25 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_header", [ "header" ], [ "colSpan", 2 ] ]
         ],
@@ -32,6 +34,6 @@ var oT25 = [ "page", [
             [ "td_footer", [ "footer" ] ]
         ] 
     ]
-];
+};
 
-var hflbfr = oT25;
+var hflbfr = t25;

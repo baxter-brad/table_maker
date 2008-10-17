@@ -17,7 +17,9 @@ specs for "table 10":
 +---------------------------------------------+
 */
 
-var oT10 = [ "page", [
+var t10 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_left_margin",  [ "left_margin"  ], [ "rowSpan", 3 ] ],
             [ "td_header",       [ "header"       ]                   ],
@@ -30,6 +32,6 @@ var oT10 = [ "page", [
             [ "td_footer", [ "footer" ], [ "colSpan", 2 ] ]
         ]
     ]
-];
+};
 
-var hclfrtfr = oT10;
+var hclfrtfr = t10;

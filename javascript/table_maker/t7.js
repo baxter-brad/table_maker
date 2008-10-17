@@ -17,7 +17,9 @@ specs for "table 7":
 +---------------------------------------------+
 */
 
-var oT7 = [ "page", [
+var t7 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_left_margin",  [ "left_margin"  ], [ "rowSpan", 2 ] ],
             [ "td_header",       [ "header"       ]                   ],
@@ -30,6 +32,6 @@ var oT7 = [ "page", [
             [ "td_footer", [ "footer" ], [ "colSpan", 3 ] ]
         ]
     ]
-];
+};
 
-var hcltrtff = oT7;
+var hcltrtff = t7;

@@ -20,11 +20,13 @@ specs for "table 0":
 
 */
 
-var oT0 = [ "page", [
+var t0 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_body", [ "header", "left_margin", "body", "right_margin", "footer" ] ]
         ]
     ]
-];
+};
 
-var bf = oT0;
+var bf = t0;

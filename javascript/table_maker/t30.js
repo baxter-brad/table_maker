@@ -20,7 +20,9 @@ specs for "table 30":
 
 */
 
-var oT30 = [ "page", [
+var t30 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_header", [ "header" ], [ "colSpan", 2 ] ]
         ],
@@ -32,6 +34,6 @@ var oT30 = [ "page", [
             [ "td_footer", [ "footer" ], [ "colSpan", 2 ] ]
         ] 
     ]
-];
+};
 
-var hfrmff = oT30;
+var hfrmff = t30;

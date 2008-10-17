@@ -39,9 +39,9 @@ function show_dom( elem ) {
     return( show );
 }
 
-function show () {
+function show ( id ) {
     var elem = document.createElement( "PRE" );
-    var text = document.createTextNode( show_dom('bodyNode') );
+    var text = document.createTextNode( show_dom( id ) );
     elem.appendChild( text );
     document.body.appendChild( elem );
 }

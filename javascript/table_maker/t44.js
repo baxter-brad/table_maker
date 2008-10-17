@@ -20,12 +20,14 @@ specs for "table 44":
 
 */
 
-var oT44 = [ "page", [
+var t44 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_body",         [ "header", "left_margin", "body", "footer" ] ],
             [ "td_right_margin", [ "right_margin" ]                            ]
         ]
     ]
-];
+};
 
-var rf = oT44;
+var rf = t44;

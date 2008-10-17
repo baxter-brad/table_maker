@@ -20,7 +20,9 @@ specs for "table 26":
 
 */
 
-var oT26 = [ "page", [
+var t26 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_header", [ "header" ], [ "colSpan", 2 ] ]
         ],
@@ -32,6 +34,6 @@ var oT26 = [ "page", [
             [ "td_footer", [ "footer" ], [ "colSpan", 2 ] ]
         ] 
     ]
-];
+};
 
-var hflmff = oT26;
+var hflmff = t26;

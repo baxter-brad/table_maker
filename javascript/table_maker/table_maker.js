@@ -89,6 +89,7 @@ function table_maker( aSpecs ) {
 
             // create row
             var eTR = document.createElement( "TR" );
+            eTR.setAttribute( "valign", "top" );  // for everybody
             eTBody.appendChild( eTR );
 
             var aCells = aRows[ iRow ];
@@ -130,11 +131,11 @@ function table_maker( aSpecs ) {
     var sID = aSpecs[ 0 ];
     var eDiv = document.getElementById( sID );
     if( eDiv ) {
-        eDiv.parentNode.replaceChild( eTable, eDiv );
         var aAttributes = eDiv.attributes;
         for( var iAttr = 0; iAttr < aAttributes.length; iAttr++ ) {
             eTable.setAttribute( aAttributes[iAttr].name, aAttributes[iAttr].value );
         }
+        eDiv.parentNode.replaceChild( eTable, eDiv );
     }
 
 }

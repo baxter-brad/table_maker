@@ -20,7 +20,9 @@ specs for "table 27":
 
 */
 
-var oT27 = [ "page", [
+var t27 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_header",       [ "header" ]                         ],
             [ "td_right_margin", [ "right_margin" ], [ "rowSpan", 3 ] ]
@@ -32,6 +34,6 @@ var oT27 = [ "page", [
             [ "td_footer", [ "footer" ] ]
         ] 
     ]
-];
+};
 
-var hlrffl = oT27;
+var hlrffl = t27;

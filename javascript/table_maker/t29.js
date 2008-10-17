@@ -20,7 +20,9 @@ specs for "table 29":
 
 */
 
-var oT29 = [ "page", [
+var t29 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_header", [ "header" ], [ "colSpan", 2 ] ]
         ],
@@ -32,6 +34,6 @@ var oT29 = [ "page", [
             [ "td_footer", [ "footer" ] ]
         ] 
     ]
-];
+};
 
-var hfrbfl = oT29;
+var hfrbfl = t29;

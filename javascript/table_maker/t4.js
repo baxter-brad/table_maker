@@ -17,7 +17,9 @@ specs for "table 4":
 +---------------------------------------------+
 */
 
-var oT4 = [ "page", [
+var t4 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_header", [ "header" ], [ "colSpan", 3 ] ]
         ],
@@ -30,6 +32,6 @@ var oT4 = [ "page", [
             [ "td_footer", [ "footer" ], [ "colSpan", 3 ] ]
         ]
     ]
-];
+};
 
-var hflmrmff = oT4;
+var hflmrmff = t4;

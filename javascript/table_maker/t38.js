@@ -20,7 +20,9 @@ specs for "table 38":
 
 */
 
-var oT38 = [ "page", [
+var t38 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_left_margin", [ "left_margin"                    ], [ "rowSpan", 2 ] ],
             [ "td_body",        [ "header", "body", "right_margin" ]                   ]
@@ -29,6 +31,6 @@ var oT38 = [ "page", [
             [ "td_footer", [ "footer" ] ]
         ]
     ]
-];
+};
 
-var lffr = oT38;
+var lffr = t38;

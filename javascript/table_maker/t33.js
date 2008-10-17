@@ -20,7 +20,9 @@ specs for "table 33":
 
 */
 
-var oT33 = [ "page", [
+var t33 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_header", [ "header" ], [ "colSpan", 2 ] ]
         ],
@@ -29,6 +31,6 @@ var oT33 = [ "page", [
             [ "td_right_margin", [ "right_margin"                  ] ]
         ]
     ]
-];
+};
 
-var hfrb = oT33;
+var hfrb = t33;

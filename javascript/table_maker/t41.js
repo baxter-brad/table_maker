@@ -20,7 +20,9 @@ specs for "table 41":
 
 */
 
-var oT41 = [ "page", [
+var t41 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_header", [ "header" ] ]
         ],
@@ -28,6 +30,6 @@ var oT41 = [ "page", [
             [ "td_body", [ "left_margin", "body", "right_margin", "footer" ] ]
         ]
     ]
-];
+};
 
-var hf = oT41;
+var hf = t41;

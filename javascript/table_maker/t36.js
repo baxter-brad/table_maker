@@ -20,7 +20,9 @@ specs for "table 36":
 
 */
 
-var oT36 = [ "page", [
+var t36 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_body",         [ "header", "left_margin", "body" ]                   ],
             [ "td_right_margin", [ "right_margin"                  ], [ "rowSpan", 2 ] ]
@@ -29,6 +31,6 @@ var oT36 = [ "page", [
             [ "td_footer", [ "footer" ] ]
         ]
     ]
-];
+};
 
-var rffl = oT36;
+var rffl = t36;

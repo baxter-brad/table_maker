@@ -17,7 +17,9 @@ specs for "table 15":
 +--------+---------------------------+--------+
 */
 
-var oT15 = [ "page", [
+var t15 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_header", [ "header" ], [ "colSpan", 3 ] ],
         ],
@@ -27,6 +29,6 @@ var oT15 = [ "page", [
             [ "td_right_margin", [ "right_margin" ]   ]
         ] 
     ]
-];
+};
 
-var hflbrb = oT15;
+var hflbrb = t15;

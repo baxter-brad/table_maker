@@ -20,7 +20,9 @@ specs for "table 34":
 
 */
 
-var oT34 = [ "page", [
+var t34 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_header",       [ "header" ]                         ],
             [ "td_right_margin", [ "right_margin" ], [ "rowSpan", 2 ] ]
@@ -29,6 +31,6 @@ var oT34 = [ "page", [
             [ "td_body", [ "left_margin", "body", "footer" ] ]
         ]
     ]
-];
+};
 
-var hlrf = oT34;
+var hlrf = t34;

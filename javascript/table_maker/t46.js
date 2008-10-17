@@ -17,7 +17,9 @@ specs for "table 46": ("pinwheel")
 +------------------------------------+--------+
 */
 
-var oT46 = [ "page", [
+var t46 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_left_margin",  [ "left_margin"  ], [ "rowSpan", 2 ] ],
             [ "td_header",       [ "header" ],       [ "colSpan", 2 ] ]
@@ -30,6 +32,6 @@ var oT46 = [ "page", [
             [ "td_footer", [ "footer" ], [ "colSpan", 2 ] ]
         ]
     ]
-];
+};
 
-var hrltrbfl = oT46;
+var hrltrbfl = t46;

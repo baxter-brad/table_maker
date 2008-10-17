@@ -20,7 +20,9 @@ specs for "table 28":
 
 */
 
-var oT28 = [ "page", [
+var t28 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_header",       [ "header"       ]                   ],
             [ "td_right_margin", [ "right_margin" ], [ "rowSpan", 2 ] ]
@@ -32,6 +34,6 @@ var oT28 = [ "page", [
             [ "td_footer", [ "footer" ], [ "colSpan", 2 ] ]
         ] 
     ]
-];
+};
 
-var hlrtff = oT28;
+var hlrtff = t28;

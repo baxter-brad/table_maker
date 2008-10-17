@@ -17,7 +17,9 @@ specs for "table 1":
 +--------+---------------------------+--------+
 */
 
-var oT1 = [ "page", [
+var t1 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_header", [ "header" ], [ "colSpan", 3 ] ]
         ],
@@ -30,6 +32,6 @@ var oT1 = [ "page", [
             [ "td_footer", [ "footer" ] ]
         ]
     ]
-];
+};
 
-var hflbrbfc = oT1;
+var hflbrbfc = t1;

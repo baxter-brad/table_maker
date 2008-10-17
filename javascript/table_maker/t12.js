@@ -17,7 +17,9 @@ specs for "table 12":
 +------------------------------------+--------+
 */
 
-var oT12 = [ "page", [
+var t12 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_header",       [ "header"       ], [ "colSpan", 2 ] ],
             [ "td_right_margin", [ "right_margin" ], [ "rowSpan", 3 ] ]
@@ -30,6 +32,6 @@ var oT12 = [ "page", [
             [ "td_footer", [ "footer" ], [ "colSpan", 2 ] ]
         ]
     ]
-];
+};
 
-var hllmrffl = oT12;
+var hllmrffl = t12;

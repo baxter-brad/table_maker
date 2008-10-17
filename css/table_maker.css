@@ -1,6 +1,13 @@
 /* table_maker.css */
 
-@import url("/css/baseline.css");
+/* --- Styles reset - disable default browser styles -------------- */
+/* others: dl,dt,dd,ul,ol,li */
+body,div,h1,h2,h3,h4,h5,h6,p,pre,form,fieldset,input,textarea,blockquote,table,th,td { margin:0; padding:0; }
+table { /*border-collapse:collapse;*/ /*border-spacing:0;*/ }
+tr { vertical-align: top; }
+td { /*border:1px solid black;*/ }
+fieldset,img { border:0; }
+address,caption,cite,code,dfn,th,var { font-style:normal; font-weight:normal; }
 
 /* need this for child percentages */
 html, body {
@@ -83,6 +90,106 @@ html, body {
 /* div containing footer content */
 #footer {
     padding:1em;
+}
+
+/* --- columns ---------------------------------------------------- */
+
+#columns {
+    width: 100%;
+    border: 1px solid #eee;
+    -moz-border-radius:10px; /* firefox */
+}
+
+#col1,#col2,#col3 {
+    width: 33%;
+    padding: .5em;
+    border: 1px dotted #eee;
+    -moz-border-radius:8px; /* firefox */
+}
+
+/* --- ul_table test ---------------------------------------------- */
+
+.ul-table {
+    width: 100%;
+    border: 1px solid red;
+    -moz-border-radius:8px; /* firefox */
+}
+
+.ul-li {
+    border: 1px solid blue;
+    -moz-border-radius:6px; /* firefox */
+}
+
+.ul-li-bullet {
+    border: 1px solid green;
+    -moz-border-radius:6px; /* firefox */
+}
+
+.ul-li-usebull {
+    border: 1px solid white;
+    -moz-border-radius:6px; /* firefox */
+}
+
+/* --- ol_table test ---------------------------------------------- */
+
+.ol-table {
+    width: 100%;
+    border: 1px solid red;
+    -moz-border-radius:8px; /* firefox */
+}
+
+.ol-li {
+    border: 1px solid blue;
+    -moz-border-radius:6px; /* firefox */
+}
+
+.ol-li-bullet {
+    border: 1px solid green;
+    -moz-border-radius:6px; /* firefox */
+}
+
+.ol-li-usebull {
+    border: 1px solid white;
+    -moz-border-radius:6px; /* firefox */
+}
+
+.ol-li-number {
+    border: 1px solid yellow;
+    -moz-border-radius:6px; /* firefox */
+}
+
+
+/* --- dl_table test ---------------------------------------------- */
+
+.dl-table {
+    width: 100%;
+    border: 1px solid red;
+    -moz-border-radius:8px; /* firefox */
+}
+
+.dl-dt {
+    border: 1px solid blue;
+    -moz-border-radius:6px; /* firefox */
+}
+
+.dl-dt-bullet {
+    border: 1px solid green;
+    -moz-border-radius:6px; /* firefox */
+}
+
+.dl-dt-usebull {
+    border: 1px solid white;
+    -moz-border-radius:6px; /* firefox */
+}
+
+.dl-dt-number {
+    border: 1px solid yellow;
+    -moz-border-radius:6px; /* firefox */
+}
+
+.dl-dd {
+    border: 1px solid fuchsia;
+    -moz-border-radius:6px; /* firefox */
 }
 
 

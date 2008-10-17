@@ -17,7 +17,9 @@ specs for "table 14":
 +------------------------------------+--------+
 */
 
-var oT14 = [ "page", [
+var t14 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_left_margin",  [ "left_margin"  ], [ "rowSpan", 2 ] ],
             [ "td_header",       [ "header"       ]                   ],
@@ -30,6 +32,6 @@ var oT14 = [ "page", [
             [ "td_footer", [ "footer" ], [ "colSpan", 2 ] ]
         ]
     ]
-];
+};
 
-var hcltrffl = oT14;
+var hcltrffl = t14;

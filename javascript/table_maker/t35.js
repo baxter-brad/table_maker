@@ -20,7 +20,9 @@ specs for "table 35":
 
 */
 
-var oT35 = [ "page", [
+var t35 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_body",         [ "header", "left_margin", "body" ] ],
             [ "td_right_margin", [ "right_margin"                  ] ]
@@ -29,6 +31,6 @@ var oT35 = [ "page", [
             [ "td_footer", [ "footer" ], [ "colSpan", 2 ] ]
         ]
     ]
-];
+};
 
-var rtff = oT35;
+var rtff = t35;

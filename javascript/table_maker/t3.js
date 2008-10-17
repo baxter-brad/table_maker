@@ -17,7 +17,9 @@ specs for "table 3":
 +------------------------------------+--------+
 */
 
-var oT3 = [ "page", [
+var t3 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_header", [ "header" ], [ "colSpan", 3 ] ]
         ],
@@ -30,6 +32,6 @@ var oT3 = [ "page", [
             [ "td_footer", [ "footer" ], [ "colSpan", 2 ] ]
         ]
     ]
-];
+};
 
-var hflmrbfl = oT3;
+var hflmrbfl = t3;

@@ -21,7 +21,9 @@ specs for "three columns":
 +--------------+--------------+--------------+
 */
 
-var oC3 = [ "page", [
+var c3 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_header", [ "header" ], [ "colSpan", 3 ] ]
         ],
@@ -31,6 +33,6 @@ var oC3 = [ "page", [
             [ "td_column3", [ "column3" ] ]
         ]
     ]
-];
+};
 
-var hfcfcfcf = oC3;
+var hfcbcbcb = c3;

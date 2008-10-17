@@ -17,7 +17,9 @@ specs for "table 16":
 +--------+---------------------------+--------+
 */
 
-var oT16 = [ "page", [
+var t16 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_left_margin", [ "left_margin"  ], [ "rowSpan", 2 ] ],
             [ "td_header",      [ "header"       ], [ "colSpan", 2 ] ]
@@ -27,6 +29,6 @@ var oT16 = [ "page", [
             [ "td_right_margin", [ "right_margin"   ] ]
         ] 
     ]
-];
+};
 
-var hrlfrb = oT16;
+var hrlfrb = t16;

@@ -17,7 +17,9 @@ specs for "table 45": ("pinwheel")
 +--------+------------------------------------+
 */
 
-var oT45 = [ "page", [
+var t45 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_header",       [ "header" ],       [ "colSpan", 2 ] ],
             [ "td_right_margin", [ "right_margin" ], [ "rowSpan", 2 ] ]
@@ -30,6 +32,6 @@ var oT45 = [ "page", [
             [ "td_footer", [ "footer" ], [ "colSpan", 2 ] ]
         ]
     ]
-];
+};
 
-var hllbrtfr = oT45;
+var hllbrtfr = t45;

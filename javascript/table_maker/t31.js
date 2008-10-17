@@ -20,7 +20,9 @@ specs for "table 31":  ("gun")
 
 */
 
-var oT31 = [ "page", [
+var t31 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_header", [ "header" ], [ "colSpan", 2 ] ]
         ],
@@ -29,6 +31,6 @@ var oT31 = [ "page", [
             [ "td_body",        [ "body", "right_margin", "footer" ] ]
         ]
     ]
-];
+};
 
-var hflb = oT31;
+var hflb = t31;

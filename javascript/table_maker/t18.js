@@ -17,7 +17,9 @@ specs for "table 18":
 +--------+---------------------------+--------+
 */
 
-var oT18 = [ "page", [
+var t18 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_left_margin",  [ "left_margin"  ], [ "rowSpan", 2 ] ],
             [ "td_header",       [ "header"       ]                   ],
@@ -27,6 +29,6 @@ var oT18 = [ "page", [
             [ "td_body", [ "body", "footer" ] ]
         ] 
     ]
-];
+};
 
-var hclfrf = oT18;
+var hclfrf = t18;

@@ -20,7 +20,9 @@ specs for "table 39":
 
 */
 
-var oT39 = [ "page", [
+var t39 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_header", [ "header" ] ]
         ],
@@ -31,6 +33,6 @@ var oT39 = [ "page", [
             [ "td_footer", [ "footer" ] ]
         ]
     ]
-];
+};
 
-var hfff = oT39;
+var hfff = t39;

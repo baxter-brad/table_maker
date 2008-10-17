@@ -17,7 +17,9 @@ specs for "table 20":
 +--------+------------------------------------+
 */
 
-var oT20 = [ "page", [
+var t20 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_left_margin",  [ "left_margin"  ],  [ "rowSpan", 2 ] ],
             [ "td_body",         [ "header", "body" ]                  ],
@@ -27,6 +29,6 @@ var oT20 = [ "page", [
             [ "td_footer", [ "footer" ], [ "colSpan", 2 ] ]
         ] 
     ]
-];
+};
 
-var lfrtfr = oT20;
+var lfrtfr = t20;

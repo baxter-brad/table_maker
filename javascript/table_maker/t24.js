@@ -20,7 +20,9 @@ specs for "table 24":
 
 */
 
-var oT24 = [ "page", [
+var t24 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_left_margin", [ "left_margin" ], [ "rowSpan", 2 ] ],
             [ "td_header",      [ "header"      ]                   ]
@@ -32,6 +34,6 @@ var oT24 = [ "page", [
             [ "td_footer", [ "footer" ], [ "colSpan", 2 ] ]
         ] 
     ]
-];
+};
 
-var hrltff = oT24;
+var hrltff = t24;

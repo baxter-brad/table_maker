@@ -20,7 +20,9 @@ specs for "table 37":
 
 */
 
-var oT37 = [ "page", [
+var t37 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_left_margin", [ "left_margin"                    ] ],
             [ "td_body",        [ "header", "body", "right_margin" ] ]
@@ -29,6 +31,6 @@ var oT37 = [ "page", [
             [ "td_footer", [ "footer" ], [ "colSpan", 2 ] ]
         ]
     ]
-];
+};
 
-var ltff = oT37;
+var ltff = t37;

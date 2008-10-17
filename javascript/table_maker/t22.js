@@ -17,7 +17,9 @@ specs for "table 22":
 +--------+---------------------------+--------+
 */
 
-var oT22 = [ "page", [
+var t22 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_left_margin",  [ "left_margin"    ], [ "rowSpan", 2 ] ],
             [ "td_body",         [ "header", "body" ]                   ],
@@ -27,6 +29,6 @@ var oT22 = [ "page", [
             [ "td_footer", [ "footer" ] ]
         ] 
     ]
-];
+};
 
-var lfrffc = oT22;
+var lfrffc = t22;

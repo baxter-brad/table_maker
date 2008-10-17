@@ -17,13 +17,15 @@ specs for "table 40":
 +--------+---------------------------+--------+
 */
 
-var oT40 = [ "page", [
+var t40 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_left_margin",  [ "left_margin"  ]             ],
             [ "td_body",         [ "header", "body", "footer" ] ],
             [ "td_right_margin", [ "right_margin" ]             ]
         ]
     ]
-];
+};
 
-var lfrf = oT40;
+var lfrf = t40;

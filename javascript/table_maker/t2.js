@@ -17,7 +17,9 @@ specs for "table 2":
 +--------+------------------------------------+
 */
 
-var oT2 = [ "page", [
+var t2 = {
+    "divid" : "page",
+    "rows"  : [
         [
             [ "td_header", [ "header" ], [ "colSpan", 3 ] ]
         ],
@@ -30,6 +32,6 @@ var oT2 = [ "page", [
             [ "td_footer", [ "footer" ], [ "colSpan", 2 ] ]
         ]
     ]
-];
+};
 
-var hflbrmfr = oT2;
+var hflbrmfr = t2;

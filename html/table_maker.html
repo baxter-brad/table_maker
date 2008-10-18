@@ -5,19 +5,224 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="/css/table_maker.css" />
-<script type="text/javascript" src="/javascript/table_maker/table_maker_load.js"></script>
-<script type="text/javascript" src="/javascript/table_maker/table_maker_init.js"></script>
+
+<!-- utilities -->
+<script type="text/javascript" src="/javascript/show_dom.js"></script>
+<script type="text/javascript" src="/javascript/page_query.js"></script>
+<script type="text/javascript" src="/javascript/add_onload.js"></script>
+
+<!-- predefined table specs -->
+<script type="text/javascript" src="/javascript/table_maker/table_numbers.js"></script>
+
+<!-- table_maker functions -->
+<script type="text/javascript" src="/javascript/table_maker/table_maker.js"></script>
+
+<!-- testing div_table (page) -->
+<script type="text/javascript">
+    var page      = new page_query( window.location.search );
+    var sTableVal = page.getValue( "t" );
+    var sAlphaVal = page.getValue( "a" );
+    var specs     = hflmrmff;  // t4
+    if(      sTableVal ) specs = eval( sTableVal );
+    else if( sAlphaVal ) specs = eval( sAlphaVal );
+    if(      specs     ) addOnload( function() { div_table( specs ) } );
+</script>
+
+<!-- testing div_table (columns) -->
+<script type="text/javascript">
+    var cols = {
+        "divid" : "columns",
+        "rows"  : [
+            [
+                 [ "col1", ["column1"] ], [ "col2", ["column2"] ], [ "col3", ["column3"] ]
+            ]
+        ]
+    };
+    addOnload( function() { div_table( cols ) } );
+</script>
+
+<!-- testing ul_table -->
+<script type="text/javascript">
+    var ul1 = {
+        "ulid"    : "ul1"    ,
+        "grid"    : 2        ,
+        "orien"   : "h"      ,
+        "bullet"  : "&bull;" ,
+        "usebull" : 0        ,
+        "prefix"  : "brad"
+    };
+    addOnload( function() { ul_table( ul1 ) } );
+</script>
+
+<!-- testing ol_table -->
+<script type="text/javascript">
+    // featuring vertical grid and bullets
+    var ol1 = {
+        "olid"    : "ol1"    ,
+        "grid"    : 2        ,
+        "orien"   : "v"      ,
+        "bullet"  : "&bull;" ,
+        "usebull" : 0        ,
+        "prefix"  : "brad"
+    };
+    addOnload( function() { ol_table( ol1 ) } );
+
+    // featuring nested and numbered
+    var ol2 = {
+        "olid"   : "ol2",
+        "number" : "upper-roman"
+    };
+    addOnload( function() { ol_table( ol2 ) } );
+    var ol3 = {
+        "olid"   : "ol3",
+        "number" : "upper-alpha"
+    };
+    addOnload( function() { ol_table( ol3 ) } );
+    var ol4 = {
+        "olid"   : "ol4",
+        "number" : "upper-alpha"
+    };
+    addOnload( function() { ol_table( ol4 ) } );
+    var ol5 = {
+        "olid"   : "ol5",
+        "number" : "upper-alpha"
+    };
+    addOnload( function() { ol_table( ol5 ) } );
+</script>
+
+<!-- testing dl_table -->
+<script type="text/javascript">
+    var dl1 = {
+        "dlid"    : "dl1"    ,
+        "bullet"  : "&bull;" ,
+        "usebull" : 0        ,
+        "number"  : "arabic" ,
+        "prefix"  : "brad"
+    };
+    addOnload( function() { dl_table( dl1 ) } );
+</script>
+
+<!-- show_dom -->
+<script type="text/javascript">
+    addOnload( function(){ show("testing") } );
+</script>
+
 <title>Table Maker Test Page</title>
+
 </head>
 
-<body id="bodyNode">
-<div id="page">
-    <div id="header"      >This is the header.       </div>
-    <div id="left_margin" >This is the left_margin.  </div>
-    <div id="body"        >This is the body.         </div>
-    <div id="right_margin">This is the right_margin. </div>
-    <div id="footer"      >This is the footer.       </div>
-</div>
+<body id="testing">
+<div id="page" class="page_class">
+    <div id="header" class="header_class">
+    
+        <h1>Table Maker</h1>
+
+        <p>
+        (This is the header.)
+        </p>
+
+    </div>
+    <div id="left_margin" class="lm_class">
+    
+        <p>
+        (This is the left_margin.)
+        </p>
+    
+    </div>
+    <div id="body" class="body_class">
+
+        <h2>Testing 3-column div_table</h2>
+
+        <p>
+        (This is the body).
+        </p>
+
+        <div id="columns">
+            <div id="column1">
+
+            <h3>Testing ul_table:</h3>
+
+            <ul id="ul1"     class="ul-table" >
+            <li id=""        class="ul-li"    ><img src="/images/1star.jpg" /> LI 1</li>
+            <li id=""        class="ul-li"    ><img src="/images/1star.jpg" /> LI 2</li>
+            <li id="ul1-li3" class="ul-li"    ><img src="/images/1star.jpg" /> LI 3</li>
+            <li id="ul1-li4" class="ul-li"    ><img src="/images/1star.jpg" /> LI 4</li>
+            <li id="ul1-li5" class="ul-li"    ><img src="/images/1star.jpg" /> LI 5</li>
+            </ul>
+
+            </div>
+            <div id="column2">
+
+            <h3>Testing ol_table:</h3>
+
+            <ol id="ol1"     class="ol-table" >
+            <li id=""        class="ol-li"    ><img src="/images/1star.jpg" /> LI 1</li>
+            <li id=""        class="ol-li"    ><img src="/images/1star.jpg" /> LI 2</li>
+            <li id="ol1-li3" class="ol-li"    ><img src="/images/1star.jpg" /> LI 3</li>
+            <li id="ol1-li4" class="ol-li"    ><img src="/images/1star.jpg" /> LI 4</li>
+            <li id="ol1-li5" class="ol-li"    ><img src="/images/1star.jpg" /> LI 5</li>
+            </ol>
+
+            <ol id="ol2" class="ol-table" >
+            <li class="ol-li" >LI 1
+                <ol id="ol3" class="ol-table" >
+                <li class="ol-li" >LI 1</li>
+                <li class="ol-li" >LI 2</li>
+                <li class="ol-li" >LI 3</li>
+                </ol>
+            </li>
+            <li class="ol-li" >LI 2
+                <ol id="ol4" class="ol-table" >
+                <li value="4" class="ol-li" >LI 1</li>
+                <li class="ol-li" >LI 2</li>
+                <li class="ol-li" >LI 3</li>
+                </ol>
+            </li>
+            <li class="ol-li" >LI 3
+                <ol id="ol5" class="ol-table" >
+                <li value="7" class="ol-li" >LI 1</li>
+                <li class="ol-li" >LI 2</li>
+                <li class="ol-li" >LI 3</li>
+                </ol>
+            </li>
+            </ol>
+
+            </div>
+            <div id="column3">
+
+            <h3>Testing dl_table:</h3>
+
+            <dl id="dl1"     class="dl-table" >
+            <dt id=""        class="dl-dt"    ><img src="/images/1star.jpg" /> DT 1</dt>
+            <dd id=""        class="dl-dd"    >DD 1.1</dd>
+            <dt id=""        class="dl-dt"    ><img src="/images/1star.jpg" /> DT 2</dt>
+            <dd id=""        class="dl-dd"    >DD 2.1</dd>
+            <dd id=""        class="dl-dd"    >DD 2.2</dd>
+            <dt id="dl1-dt3" class="dl-dt"    ><img src="/images/1star.jpg" /> DT 3</dt>
+            <dd id="dl1-dd3" class="dl-dd"    >DD 3.1</dd>
+            <dt id="dl1-dt4" class="dl-dt"    ><img src="/images/1star.jpg" /> DT 4</dt>
+            <dt id="dl1-dt5" class="dl-dt"    ><img src="/images/1star.jpg" /> DT 5</dt>
+            <dd id="dl1-dd5" class="dl-dd"    >DD 5.1</dd>
+            </dl>
+
+            </div>
+        </div> <!-- columns -->
+    </div> <!-- body -->
+    <div id="right_margin" class="rm_class">
+    
+        <p>
+        (This is the right_margin.)
+        </p>
+
+    </div>
+    <div id="footer"       class="footer_class">
+
+        <p>
+        (This is the footer.)
+        </p>
+
+    </div>
+</div> <!-- page -->
 </body>
 
 </html>

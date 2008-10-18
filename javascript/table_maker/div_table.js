@@ -27,7 +27,7 @@ E.g., specs for "table 1":
 |        |                           |        |
 +---------------------------------------------+
 
-var oT1 = {
+var t1 = {
     "divid" : "page",
     "rows" : [
         [
@@ -47,7 +47,8 @@ var oT1 = {
 };
 
 // alternative access via "alpha specs"
-var hflbrbfc = oT1;
+// (when you use the predefined t*.js files)
+var hflbrbfc = t1;
 
 h = header
 l = left margin

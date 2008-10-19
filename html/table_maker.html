@@ -102,9 +102,22 @@
     addOnload( function() { dl_table( dl1 ) } );
 </script>
 
+<!-- testing dl_table -->
+<script type="text/javascript">
+    var tm = [
+        { "divid" : "tmdiv",
+          "rows"  : [[["tdtmc1",["tmc1"]],["tdtmc2",["tmc2"]],["tdtmc3",["tmc3"]]]]
+        },
+        { "ulid" : "tmul" },
+        { "olid" : "tmol" },
+        { "dlid" : "tmdl" }
+    ];
+    addOnload( function() { table_maker( tm ) } );
+</script>
+
 <!-- show_dom -->
 <script type="text/javascript">
-    addOnload( function(){ show("testing") } );
+    //addOnload( function(){ show("testing") } );
 </script>
 
 <title>Table Maker Test Page</title>
@@ -134,7 +147,7 @@
         <h2>Testing 3-column div_table</h2>
 
         <p>
-        (This is the body).
+        (This is the body.)
         </p>
 
         <div id="columns">
@@ -168,21 +181,18 @@
                 <ol id="ol3" class="ol-table" >
                 <li class="ol-li" >LI 1</li>
                 <li class="ol-li" >LI 2</li>
-                <li class="ol-li" >LI 3</li>
                 </ol>
             </li>
             <li class="ol-li" >LI 2
                 <ol id="ol4" class="ol-table" >
-                <li value="4" class="ol-li" >LI 1</li>
+                <li value="3" class="ol-li" >LI 1</li>
                 <li class="ol-li" >LI 2</li>
-                <li class="ol-li" >LI 3</li>
                 </ol>
             </li>
             <li class="ol-li" >LI 3
                 <ol id="ol5" class="ol-table" >
-                <li value="7" class="ol-li" >LI 1</li>
+                <li value="5" class="ol-li" >LI 1</li>
                 <li class="ol-li" >LI 2</li>
-                <li class="ol-li" >LI 3</li>
                 </ol>
             </li>
             </ol>
@@ -207,6 +217,28 @@
 
             </div>
         </div> <!-- columns -->
+        <div id="tmdiv">
+            <div id="tmc1">
+                <ul id="tmul" class="ul-table">
+                <li class="ul-li">LI 1</li>
+                <li class="ul-li">LI 2</li>
+                </ul>
+            </div>
+            <div id="tmc2">
+                <ol id="tmol" class="ol-table">
+                <li class="ol-li">LI 1</li>
+                <li class="ol-li">LI 2</li>
+                </ol>
+            </div>
+            <div id="tmc3">
+                <dl id="tmdl" class="dl-table">
+                <dt class="dl-dt">DT 1</dt>
+                <dd class="dl-dd">DD 1.1</dd>
+                <dt class="dl-dt">DT 2</dt>
+                <dd class="dl-dd">DD 2.1</dd>
+                </dl>
+            </div>
+        </div>
     </div> <!-- body -->
     <div id="right_margin" class="rm_class">
     

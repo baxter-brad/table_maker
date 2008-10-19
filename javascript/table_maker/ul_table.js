@@ -1,69 +1,31 @@
-/*
-ul_table( specs );
+//--------------------------------------------------------------------
+// from ul_table.js
 
-    - change a <ul><li><li>...</ul> tag into a table tag where each
-      <li> becomes a table cell
-    - the grid spec lets you arrange the cells into columns.
-    - the attributes of the <ul> tag become those of the <table> tag
-    - the attributes of each <li> tag become those of the <td> tag
-    - if bullets, the id and class attributes are given to the bullet
-      cells with the suffix '-bullet'
-    - rows are not given any attributes
+//--------------------------------------------------------------------
+// ul_table( oSpecs );
+//
+// expects a table specs object with required attribute:
+//     ulid: id of the <ul> (or even <ol>) tag to make into a table
+// and with optional attibutes:
+//     grid ... number of columns in the new table
+//         value: integer > 1
+//     orien ... whether the cells in the grid go horizontally or vertically
+//         value: 'h' or 'v' (or anything not 'h')
+//     bullet ... character(s) to use as a bullet (creates a bullet cell)
+//         value: any displayable characters, including entities, e.g., '&bull;'
+//     usebull ... index of <li>'s child element to use as a bullet (creates a cell)
+//         value: integer >= 0
+//     prefix ... id prefix to assign to cells; ignored if <li> has an id already
+//         value: any characters acceptable as an html id attribute
 
-'specs' is a JSON object:
+function ul_table( oSpecs ) {
 
-{ulid}: id of the ul tag to replace with a new table (table gets this id)
-{grid}: the 'grid' value: how many columns in the new table
-    - 0, "", or null: 1 column
-    - otherwise: that number of columns
-{orien}: the 'orientation' value: horizontal or vertical
-    - "", null, 'h' or 'horizontal': orient the cells horizontally in the grid, e.g.,
-      a b c
-      d e f
-      g h i
-    - 'v' or 'vertical': orient the cells vertically in the grid, e.g.,
-      a d g
-      b e h
-      c f i
-{usebull}: index of child element to use in a bullet cell
-        (in addition to the above bullet cell, if any)
-    - "", or null: no additional bullet cell
-    - otherwise: index of bullet element
-{bullet}: the 'bullet' value:  how (or whether) to display "bullet cells"
-    - "", or null: no bullet cells
-    - otherwise: character(s) to use for bullet (may be img tag)
-{prefix}: id prefix for cells and bullet cells
-        note: if an <li> tag already has an id, it will be used as-is alone
-        for the cell and suffixed with '-bullet' for the bullet cells;
-        if not, the id prefix suffixed with an sequence number will be used
-        for the cell, and that will be suffexed with '-bullet' for bullet cells;
-        e.g.,
-            <li id="abc"> => <td id="abc-bullet">&bull;</td><td id="abc">...
-            <li>          => <td id="id1-bullet">&bull;</td><td id="id1">...
-    - "", or null: no additional ids added to cells
-    - otherwise: prefix used as described above
-
-Examples:
-    var ul1 = { "ulid" : "ul1" };     // use defaults for everything else
-    var ul2 = { "ulid" : "ul2", "grid" : 3 };  // 3 columns
-    var ul1 = {
-        "ulid"   : "ul1",
-        "grid"   : 2,
-        "orien"  : "vertical",
-        "bullet" : "&bull;",
-        "previx" : "id"
-    };
-
-*/
-
-function ul_table( aSpecs ) {
-
-    var sID      = aSpecs.ulid;
-    var iGrid    = aSpecs.grid;  if( !iGrid  ) iGrid  = 1;
-    var sOrien   = aSpecs.orien; if( !sOrien ) sOrien = 'h';
-    var sBullet  = aSpecs.bullet;
-    var iUseBull = aSpecs.usebull;
-    var sPrefix  = aSpecs.prefix;
+    var sID      = oSpecs.ulid;
+    var iGrid    = oSpecs.grid;  if( !iGrid  ) iGrid  = 1;
+    var sOrien   = oSpecs.orien; if( !sOrien ) sOrien = 'h';
+    var sBullet  = oSpecs.bullet;
+    var iUseBull = oSpecs.usebull;
+    var sPrefix  = oSpecs.prefix;
     var makeCells = function ( eRow, aLis ) {
         // -- start --
         var eCell = document.createElement( "TD" );

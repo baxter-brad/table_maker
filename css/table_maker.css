@@ -94,13 +94,13 @@ html, body {
 
 /* --- columns ---------------------------------------------------- */
 
-#columns {
+#columns,#tmdiv {
     width: 100%;
     border: 1px solid #eee;
     -moz-border-radius:10px; /* firefox */
 }
 
-#col1,#col2,#col3 {
+#col1,#col2,#col3,#tdtmc1,#tdtmc2,#tdtmc3 {
     width: 33%;
     padding: .5em;
     border: 1px dotted #eee;

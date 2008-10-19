@@ -1,85 +1,22 @@
-/*
-div_table( specs );
+//--------------------------------------------------------------------
+// from div_table.js
 
-'specs' is a JSON object
+//--------------------------------------------------------------------
+// div_table( oSpecs );
+//
+// expects a table specs object with required attributes:
+//     divid ... id of the <ol> (or even <ul>) tag to make into a table
+//     rows ... n-element array of specs for the table rows, as follows:
+//        - the cells in each row (an n-element array):
+//          - the 'cellspecs' (a three-element array):
+//            [0] id to assign to the cell
+//            [1] div ids to move into the cell (an n-element array)
+//            [2] pairs of attribute names and values (an even numered n-element array)
 
-{divid}: id of the div to replace with the new table (table gets this id)
-{rows}:  the rows (an n-element array):
-    - the cells in each row (an n-element array):
-      - the 'cellspecs' (a three-element array):
-        [0] id to assign to the cell
-        [1] div ids to move into the cell (an n-element array)
-        [2] pairs of attribute names and values (an even numered n-element array)
+function div_table( oSpecs ) {
 
-E.g., specs for "table 1":
-
-+---------------------------------------------+
-|                                             |
-|                   header                    |
-|                                             |
-+---------------------------------------------+
-|        |                           |        |
-| left   |           body            | right  |
-| margin |                           | margin |
-|        +---------------------------+        |
-|        |                           |        |
-|        |          footer           |        |
-|        |                           |        |
-+---------------------------------------------+
-
-var t1 = {
-    "divid" : "page",
-    "rows" : [
-        [
-//            [0][0][0]    [0][0][1]     [0][0][2]
-            [ "td_header", [ "header" ], [ "colSpan", 3 ] ]
-        ],
-        [
-//            [1][0][0]          [1][0][1]           [1][0][2]
-            [ "td_left_margin",  [ "left_margin"  ], [ "rowSpan", 2 ] ],
-//            [1][1][0]          [1][1][1]           [1][1][2]
-            [ "td_body",         [ "body"         ]                   ],
-// etc.
-            [ "td_right_margin", [ "right_margin" ], [ "rowSpan", 2 ] ]
-        ],
-        [ [ "td_footer", [ "footer" ] ] ]
-    ]
-};
-
-// alternative access via "alpha specs"
-// (when you use the predefined t*.js files)
-var hflbrbfc = t1;
-
-h = header
-l = left margin
-r = right margin
-f = footer
-b = body (only when all others missing)
-
-h/f:
-f = full
-l = left
-r = right
-c = center
-
-l/r:
-f = full
-t = top
-b = bottom
-m = middle
-
-b: (only when all others missing)
-f = full
-
-So: hflbrbfc is
-header full, left margin bottom, right margin bottom, footer center
-
-*/
-
-function div_table( aSpecs ) {
-
-    var sID   = aSpecs.divid; // divid is required
-    var aRows = aSpecs.rows;  // rows are required
+    var sID   = oSpecs.divid; // divid is required
+    var aRows = oSpecs.rows;  // rows are required
 
     var eTableDiv = document.getElementById( sID );
     if( !eTableDiv ) return;  // the div must exist

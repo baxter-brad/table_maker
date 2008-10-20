@@ -5,7 +5,7 @@
 // div_table( oSpecs );
 //
 // expects a table specs object with required attributes:
-//     divid ... id of the <ol> (or even <ul>) tag to make into a table
+//     divid ... id of the <div> tag to make into a table
 //     rows ... n-element array of specs for the table rows, as follows:
 //        - the cells in each row (an n-element array):
 //          - the 'cellspecs' (a three-element array):

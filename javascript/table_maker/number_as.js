@@ -1,18 +1,23 @@
-
+//--------------------------------------------------------------------
 // numbering functions
+
 var numberAs = {
     "arabic"      : function ( iNumber ) { return iNumber },
     "lower-alpha" : function ( iNumber ) {
-        var sLcAlpha = ".abcdefghijklmnopqrstuvwxyz";
-        var sChar = sLcAlpha.charAt( iNumber );
-        var iRepeat = iNumber > 26? 1 + iNumber % 26: 1;
-        return sChar.repeat( iRepeat );
+        var sAlpha  = "abcdefghijklmnopqrstuvwxyz";
+        var iLen    = sAlpha.length;
+        var iChar   = ( iNumber - 1 ) % iLen;
+        var sChar   = sAlpha.charAt( iChar );
+        var iRepeat = Math.ceil( iNumber / iLen );
+        return sChar.repeat( iRepeat ); // 27 is 'aa', 53 is 'aaa' ...
     },
     "upper-alpha" : function ( iNumber ) {
-        var sUcAlpha = ".ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        var sChar = sUcAlpha.charAt( iNumber );
-        var iRepeat = iNumber > 26? 1 + iNumber % 26: 1;
-        return sChar.repeat( iRepeat );
+        var sAlpha  = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        var iLen    = sAlpha.length;
+        var iChar   = ( iNumber - 1 ) % iLen;
+        var sChar   = sAlpha.charAt( iChar );
+        var iRepeat = Math.ceil( iNumber / iLen );
+        return sChar.repeat( iRepeat ); // 27 is 'AA', 53 is 'AAA' ...
     },
     // http://blog.stevenlevithan.com/archives/javascript-roman-numeral-converter
     "lower-roman" : function (N,s,b,a,o,t) {
@@ -30,4 +35,3 @@ var numberAs = {
         return Array(t+1).join('M')+s;
     }
 };
-

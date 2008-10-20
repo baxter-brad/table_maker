@@ -29,6 +29,8 @@ HTML like the following:
 
 ... should format into a table like the following:
 
+=begin text
+
  +---------------------------------------------+
  |                                             |
  |                   Header                    |
@@ -44,6 +46,45 @@ HTML like the following:
  |                   Footer                    |
  |                                             |
  +---------------------------------------------+
+
+=end text
+
+=begin html
+
+<style type="text/css">
+table { margin: 2em; width: 50%; height: 200px; border: 1px solid grey; background: #eee }
+tr    { vertical-align: middle; }
+td    { border: 1px solid grey; text-align: center; }
+#td_left_margin,#td_right_margin { width: 2%; }
+</style>
+
+<TABLE id="page">
+<TBODY>
+<TR valign="top">
+    <TD id="td_header" colspan="3">
+        <DIV id="header"> Header       </DIV>
+    </TD>
+</TR>
+<TR valign="top">
+    <TD id="td_left_margin">
+        <DIV id="left_margin"> Left Margin  </DIV>
+    </TD>
+    <TD id="td_body">
+        <DIV id="body"> Body         </DIV>
+    </TD>
+    <TD id="td_right_margin">
+        <DIV id="right_margin"> Right Margin </DIV>
+    </TD>
+</TR>
+<TR valign="top">
+    <TD id="td_footer" colspan="3">
+        <DIV id="footer"> Footer       </DIV>
+    </TD>
+</TR>
+</TBODY>
+</TABLE>
+
+=end html
 
 =head1 DESCRIPTION
 
@@ -196,7 +237,7 @@ cells whose corresponding <li> tag did not already have an id value.
 
 For example:
 
- <ul id="ul1" class="ul-table" >
+ <ul id="ul11" class="ul-table" >
  <li class="ul-li"><b>*</b> LI 1</li>
  <li class="ul-li"><b>*</b> LI 2</li>
  <li class="ul-li"><b>*</b> LI 3</li>
@@ -206,7 +247,7 @@ For example:
 
  <script type="text/javascript">
     ul_table( {
-        "ulid"    : "ul1"  ,  // id's the <ul> tag
+        "ulid"    : "ul11" ,  // id's the <ul> tag
         "grid"    : 2      ,  // two columns
         "orien"   : "h"    ,  // horizontal orientation
         "bullet"  : "o"    ,  // simple one-character bullet
@@ -215,6 +256,8 @@ For example:
  </script>
 
 The above should result in a layout like the following:
+
+=begin text
 
  +-------------------------------------------+
  | +---+ +---+ +------+ +---+ +---+ +------+ |
@@ -227,6 +270,44 @@ The above should result in a layout like the following:
  | | * | | o | | LI 5 |                      |
  | +---+ +---+ +------+                      |
  +-------------------------------------------+
+
+=end text
+
+=begin html
+<style type="text/css">
+table { margin: 2em; width: 50%; height: 200px; border: 1px solid grey; background: #eee }
+tr    { vertical-align: middle; }
+td    { border: 1px solid grey; text-align: center; }
+</style>
+
+<TABLE class="ul-table" id="ul11">
+<TBODY>
+<TR valign="top">
+    <TD class="ul-li-usebull"><B>*</B></TD>
+    <TD class="ul-li-bullet">o</TD>
+    <TD class="ul-li"> LI 1</TD>
+    <TD class="ul-li-usebull"><B>*</B></TD>
+    <TD class="ul-li-bullet">o</TD>
+    <TD class="ul-li"> LI 2</TD>
+</TR>
+<TR valign="top">
+    <TD class="ul-li-usebull"><B>*</B></TD>
+    <TD class="ul-li-bullet">o</TD>
+    <TD class="ul-li"> LI 3</TD>
+    <TD class="ul-li-usebull"><B>*</B></TD>
+    <TD class="ul-li-bullet">o</TD>
+    <TD class="ul-li"> LI 4</TD>
+</TR>
+<TR valign="top">
+    <TD class="ul-li-usebull"><B>*</B></TD>
+    <TD class="ul-li-bullet">o</TD>
+    <TD class="ul-li"> LI 5</TD>
+</TR>
+</TBODY>
+</TABLE>
+
+
+=end html
 
 Note that the I<usebull> cells come first, followed by the I<bullet>
 cells and then a cell with the rest of the original <li> contents.
@@ -314,7 +395,7 @@ Numbering is on by default.
 
 For example:
 
- <ol id="ol1" class="ol-table" >
+ <ol id="ol11" class="ol-table" >
  <li class="ol-li"><b>*</b> LI 1</li>
  <li class="ol-li"><b>*</b> LI 2</li>
  <li class="ol-li"><b>*</b> LI 3</li>
@@ -324,9 +405,9 @@ For example:
 
  <script type="text/javascript">
     ol_table( {
-        "olid"    : "ol1"    ,  // id's the <ol> tag
+        "olid"    : "ol11"   ,  // id's the <ol> tag
         "grid"    : 2        ,  // two columns
-        "orien"   : "b"      ,  // vertical orientation
+        "orien"   : "v"      ,  // vertical orientation
         "bullet"  : "o"      ,  // simple one-character bullet
         "number"  : "arabic" ,  // (this default may be left off)
         "usebull" : 0           // use the "<b>*</b>" element (child[0])
@@ -334,6 +415,8 @@ For example:
  </script>
 
 The above should result in a layout like the following:
+
+=begin text
 
  +-------------------------------------------------------+
  | +---+ +---+ +---+ +------+ +---+ +---+ +---+ +------+ |
@@ -346,6 +429,49 @@ The above should result in a layout like the following:
  | | * | | o | | 3.| | LI 3 |                            |
  | +---+ +---+ +---+ +------+                            |
  +-------------------------------------------------------+
+
+=end text
+
+=begin html
+
+<style type="text/css">
+table { margin: 2em; width: 50%; height: 200px; border: 1px solid grey; background: #eee }
+tr    { vertical-align: middle; }
+td    { border: 1px solid grey; text-align: center; }
+</style>
+
+<TABLE class="ol-table" id="ol11">
+<TBODY>
+<TR valign="top">
+    <TD class="ol-li-usebull"><B>*</B></TD>
+    <TD class="ol-li-bullet">o</TD>
+    <TD class="ol-li-number">1.</TD>
+    <TD class="ol-li"> LI 1</TD>
+    <TD class="ol-li-usebull"><B>*</B></TD>
+    <TD class="ol-li-bullet">o</TD>
+    <TD class="ol-li-number">4.</TD>
+    <TD class="ol-li"> LI 4</TD>
+</TR>
+    <TR valign="top">
+    <TD class="ol-li-usebull"><B>*</B></TD>
+    <TD class="ol-li-bullet">o</TD>
+    <TD class="ol-li-number">2.</TD>
+    <TD class="ol-li"> LI 2</TD>
+    <TD class="ol-li-usebull"><B>*</B></TD>
+    <TD class="ol-li-bullet">o</TD>
+    <TD class="ol-li-number">5.</TD>
+    <TD class="ol-li"> LI 5</TD>
+</TR>
+    <TR valign="top">
+    <TD class="ol-li-usebull"><B>*</B></TD>
+    <TD class="ol-li-bullet">o</TD>
+    <TD class="ol-li-number">3.</TD>
+    <TD class="ol-li"> LI 3</TD>
+</TR>
+</TBODY>
+</TABLE>
+
+=end html
 
 Note that the I<usebull> cells come first, followed by the I<bullet>
 cells, followed in turn by the I<number> cells, and then a cell with
@@ -430,7 +556,7 @@ Numbering is off by default.
 
 For example:
 
- <dl id="dl1" class="dl-table" >
+ <dl id="dl11" class="dl-table" >
  <dt class="dl-dt"><b>*</b> DT 1</dt>
      <dd class="dl-dd">DD 1.1</dd>
  <dt class="dl-dt"><b>*</b> DT 2</dt>
@@ -445,7 +571,7 @@ For example:
 
  <script type="text/javascript">
      dl_table( {
-        "dlid"    : "dl1"    ,  // id of <dl> tag
+        "dlid"    : "dl11"   ,  // id of <dl> tag
         "bullet"  : "o"      ,  // simple character bullet
         "usebull" : 0        ,  // use <b>*</b>
         "number"  : "arabic"    // needed for numbering (off by default)
@@ -453,6 +579,8 @@ For example:
  </script>
 
 The above should result in a layout like the following:
+
+=begin text
 
  +---------------------------------------+
  | +---+ +---+ +---+ +------+ +--------+ |
@@ -474,6 +602,61 @@ The above should result in a layout like the following:
  | | * | | o | | 5.| | DT 5 | | DD 5.1 | |
  | +---+ +---+ +---+ +------+ +--------+ |
  +---------------------------------------+
+
+=end text
+
+=begin html
+
+<style type="text/css">
+table { margin: 2em; width: 50%; height: 200px; border: 1px solid grey; background: #eee }
+tr    { vertical-align: middle; }
+td    { border: 1px solid grey; text-align: center; }
+#td_left_margin,#td_right_margin { width: 2%; }
+</style>
+
+<TABLE class="dl-table" id="dl11">
+<TBODY>
+<TR valign="top">
+    <TD class="dl-dt-usebull"><B>*</B></TD>
+    <TD class="dl-dt-bullet">o</TD>
+    <TD class="dl-dt-number">1.</TD>
+    <TD class="dl-dt"> DT 1</TD>
+    <TD class="dl-dd">DD 1.1</TD>
+</TR>
+<TR valign="top">
+    <TD rowspan="2" class="dl-dt-usebull"><B>*</B></TD>
+    <TD rowspan="2" class="dl-dt-bullet">o</TD>
+    <TD rowspan="2" class="dl-dt-number">2.</TD>
+    <TD rowspan="2" class="dl-dt"> DT 2</TD>
+    <TD class="dl-dd">DD 2.1</TD>
+</TR>
+<TR valign="top">
+    <TD class="dl-dd">DD 2.2</TD>
+</TR>
+<TR valign="top">
+    <TD class="dl-dt-usebull"><B>*</B></TD>
+    <TD class="dl-dt-bullet">o</TD>
+    <TD class="dl-dt-number">3.</TD>
+    <TD class="dl-dt"> DT 3</TD>
+    <TD class="dl-dd">DD 3.1</TD>
+</TR>
+<TR valign="top">
+    <TD class="dl-dt-usebull"><B>*</B></TD>
+    <TD class="dl-dt-bullet">o</TD>
+    <TD class="dl-dt-number">4.</TD>
+    <TD class="dl-dt"> DT 4</TD>
+</TR>
+<TR valign="top">
+    <TD class="dl-dt-usebull"><B>*</B></TD>
+    <TD class="dl-dt-bullet">o</TD>
+    <TD class="dl-dt-number">5.</TD>
+    <TD class="dl-dt"> DT 5</TD>
+    <TD class="dl-dd">DD 5.1</TD>
+</TR>
+</TBODY>
+</TABLE>
+
+=end html
 
 Note that the I<usebull> cells come first, followed by the I<bullet>
 cells, followed in turn by the I<number> cells, and then a cell with
@@ -611,11 +794,31 @@ that don't have C<value> attributes will be numbered from there, e.g.,
  <li           >Item</li> <!-- 12 -->
  </ol>
 
+=begin text
+
   1. Item
   2. Item
  10. Item
  11. Item
  12. Item
+
+=end text
+
+=begin html
+
+<style type="text/css">
+ol { width: 9%; padding: 1em 1em 1em 4em; margin: 2em; border: 1px solid grey; background: #eee }
+</style>
+
+<ol>
+<li           >Item</li> <!-- 1 -->
+<li           >Item</li> <!-- 2 -->
+<li value="10">Item</li> <!-- 10 -->
+<li           >Item</li> <!-- 11 -->
+<li           >Item</li> <!-- 12 -->
+</ol>
+
+=end html
 
 The B<Table Maker> functions that offer a numbering option
 (C<ol_table()> and C<dl_table()>) will respond to a C<value> attribute
@@ -624,7 +827,7 @@ true also for <ul> tags that are converted using C<ol_table()>.)
 
 For example:
 
- <ol id="ol1">
+ <ol id="ol12">
  <li           >LI 1</li>
  <li           >LI 2</li>
  <li value="10">LI 3</li>
@@ -634,13 +837,15 @@ For example:
 
  <script type="text/javascript">
     ol_table( {
-        "olid"    : "ol1"  ,
+        "olid"    : "ol12" ,
         "grid"    : 2      ,
         "bullet"  : "*"
     } );
  </script>
 
 The above should result in a layout like the following:
+
+=begin text
 
  +-----------------------------------------------+
  | +---+ +-----+ +------+ +---+ +-----+ +------+ |
@@ -653,6 +858,45 @@ The above should result in a layout like the following:
  | | * | | 12. | | LI 5 |                        |
  | +---+ +-----+ +------+                        |
  +-----------------------------------------------+
+
+=end text
+
+=begin html
+
+<style type="text/css">
+table { margin: 2em; width: 50%; height: 200px; border: 1px solid grey; background: #eee }
+tr    { vertical-align: middle; }
+td    { border: 1px solid grey; text-align: center; }
+</style>
+
+<TABLE id="ol12">
+<TBODY>
+<TR valign="top">
+    <TD>*</TD>
+    <TD>1.</TD>
+    <TD>LI 1</TD>
+    <TD>*</TD>
+    <TD>2.</TD>
+    <TD>LI 2</TD>
+</TR>
+<TR valign="top">
+    <TD>*</TD>
+    <TD>10.</TD>
+    <TD value="10">LI 3</TD>
+    <TD>*</TD>
+    <TD>11.</TD>
+    <TD>LI 4</TD>
+</TR>
+<TR valign="top">
+    <TD>*</TD>
+    <TD>12.</TD>
+    <TD>LI 5</TD>
+</TR>
+</TBODY>
+</TABLE>
+
+
+=end html
 
 =cut
 

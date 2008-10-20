@@ -3,9 +3,9 @@
 
 =head1 NAME
 
-Table Maker, a collection of javascript functions that modify html dom
-to make div's, ul's, ol's, and dl's into tables for special
-formatting.
+B<Table Maker>, a collection of javascript functions that modify the
+HTML DOM to make <div>'s, <ul>'s, <ol>'s, and <dl>'s into tables for
+special formatting.
 
 =head1 SYNOPSIS
 
@@ -57,14 +57,14 @@ The Table Maker collection of functions includes the following:
 
 =head1 FUNCTIONS
 
-=head2 table_maker( aSpecs );
+=head2 table_maker(aSpecs)
 
-This function is a dispatch table for the other functions, div_table(),
-ul_table(), ol_table(), and dl_table().  You can call table_maker()
-with an array of table specs objects to create multiple tables with
-one function call.
+This function is a dispatch table for the other functions,
+C<div_table()>, C<ul_table()>, C<ol_table()>, and C<dl_table()>.  You
+can call C<table_maker()> with an array of table specs objects to
+create multiple tables with one function call.
 
-Example:
+For example:
 
  table_maker( [
     { "divid" : "tmdiv",
@@ -77,14 +77,16 @@ Example:
     { "dlid" : "tmdl" }
  ] );
 
-The above example will call div_table(), ul_table(), ol_table(), and
-dl_table(), passing each object it finds in the array.
+The above example will call C<div_table()>, C<ul_table()>,
+C<ol_table()>, and C<dl_table()>, passing each object it finds in the
+array.
 
 The function knows which of these other functions to call based on the
-existence in each object of either "divid" (for div_table()), "ulid"
-(for ul_table()), "olid" (for ol_table()), or "dlid" (for dl_table()).
+existence in each object of either C<divid> (for C<div_table()>),
+C<ulid> (for C<ul_table()>), C<olid> (for C<ol_table()>), or C<dlid>
+(for C<dl_table()>).
 
-=head2 div_table( oSpecs );
+=head2 div_table(oSpecs)
 
 This function turns a <div> tag into a <table> tag.  Specify the id of
 the <div> tag using the C<divid> attribute.  Use the C<rows> attribute
@@ -96,21 +98,24 @@ Note that only the <div> tag whose id matches the C<divid> value is
 changed from a <div> tag to something else (a <table> tag), and as a
 result, the original <div> tag will not exist in the DOM.  All of the
 other <div> tags identified in the table specs are I<moved> into table
-cells.  So those <div> tags do still exist in the DOM.
+cells.  So those <div> tags do still exist in the DOM.  (Note also that
+any children of the C<divid> <div> tag that are not I<moved> into the
+table will be lost when the <div> tag is removed in favor of the new
+<table> tag.)
 
-Contrast this with how ul_table(), ol_table(), and dl_table() work.
-The ul_table() function turns the <ul> tag into a <table> tag and the
-<li> tags into <td> tags.  As a result, neither the <ul> or any of its
-child <li> tags will exist in the DOM.  The same is true for the <ol>
-and <li> tags after running ol_table(), and for the <dl>, <dt>, and
-<dd> tags after running dl_table.  In the DOM all of these tags are
-changed to <table> and <td> tags (with <tbody> and <tr> tags inserted
-as needed).
+Contrast this with how C<ul_table()>, C<ol_table()>, and C<dl_table()>
+work.  The C<ul_table()> function turns the <ul> tag into a <table> tag
+and the <li> tags into <td> tags.  As a result, neither the <ul> or any
+of its child <li> tags will exist in the DOM.  The same is true for the
+<ol> and <li> tags after running C<ol_table()>, and for the <dl>, <dt>,
+and <dd> tags after running C<dl_table()>.  In the DOM all of these
+tags are changed to <table> and <td> tags (with <tbody> and <tr> tags
+inserted as needed).
 
 All of this is pertinent when you author the CSS properties for the
 page.
 
-The div_table() function expects a table specs object with these
+The C<div_table()> function expects a table specs object with these
 required attributes:
 
 =over 4
@@ -131,8 +136,8 @@ an array with the following elements:
 
 =back
 
-For example, following are the specs for "table 1" (formatted like this
-diagram):
+For example, following are the specs for B<table 1> (formatted like
+this diagram):
 
  +---------------------------------------------+
  |                                             |
@@ -163,7 +168,7 @@ diagram):
      ]
  };
 
-=head2 ul_table( oSpecs );
+=head2 ul_table(oSpecs)
 
 This function turns a <ul> tag (or an <ol> tag) into a table.  Each
 <li> child tag becomes a table cell.  The attributes of the <ul> tag
@@ -172,21 +177,21 @@ become those of each <td> tag.
 
 Depending on the value of the C<grid> attribute, there may be one or
 more cells per row.  If C<grid> specifies multiple columns, the
-C<orien> (orientation) attribute may be 'v' to orient the cells
+C<orien> (orientation) attribute may be C<"v"> to orient the cells
 vertically.  That is, instead of the following horizontal layout (the
 default):
 
  1 2 3 4
  5 6 7 8
 
-if C<orien> is 'v' (rather than 'h'), the layout would be:
+if C<orien> is C<"v"> (rather than C<"h">), the layout would be:
 
  1 3 5 7
  2 4 6 8
 
-The C<bullet> attribute will cause a "bullet cell" to be added.  The
-C<usebull> attribute will cause a "usebull cell" to be added.  The
-C<prefix> attribute gives an "id prefix" which will add id values to
+The C<bullet> attribute will cause a I<bullet cell> to be added.  The
+C<usebull> attribute will cause a I<usebull cell> to be added.  The
+C<prefix> attribute gives an id prefix which will add id values to
 cells whose corresponding <li> tag did not already have an id value.
 
 For example:
@@ -223,61 +228,62 @@ The above should result in a layout like the following:
  | +---+ +---+ +------+                      |
  +-------------------------------------------+
 
-Note that the "usebull" cells come first, followed by the "bullet"
+Note that the I<usebull> cells come first, followed by the I<bullet>
 cells and then a cell with the rest of the original <li> contents.
 
 A note about the class attribute: When an <li> tag has a class
 assigned, that value will be used to assign a class to each of the
-"usebull" and "bullet" cells, suffixed with "-usebull" and "-bullet",
+usebull and bullet cells, suffixed with C<"-usebull"> and C<"-bullet">,
 respectively.  So in the above example, the usebull cells will all have
-class="ul-li-usebull" and the bullet cells will all have
-class="ul-li-bullet".
+C<class="ul-li-usebull"> and the bullet cells will all have
+C<class="ul-li-bullet">.
 
 =over 4
 
-=item ulid attribute
+=item ulid
 
 The id value of the <ul> tag (or <ol> tag) to make into a table.  If
 the id is for an <ol> tag, the resulting table will not have number
 cells.  Also see C<ol_table> below.
 
-=item grid attribute
+=item grid
 
 The number of columns to put in the new table (default is one column).
 The C<grid> value should be an integer greater than 1.
 
-=item orien attribute
+=item orien
 
-The orientation of the grid layout (default is 'h' for horizontal).
-The C<orien> value should be 'h' (the default) or 'v' for vertical.
+The orientation of the grid layout (default is C<"h"> for horizontal).
+The C<orien> value should be C<"h"> (the default) or C<"v"> for
+vertical.
 
-=item bullet attribute
+=item bullet
 
 Character or characters to use as a bullet for each item.  These
-characters will be placed in a separate cell, a "bullet cell".  The
+characters will be placed in a separate cell, a I<bullet cell>.  The
 C<bullet> value can be any displayable characters or html tags,
-including entities like "&bull;".
+including entities like C<"&bull;">.
 
-=item usebull attribute
+=item usebull
 
 Index of the <li> tag's child element to use as a bullet.  This element
 will be moved from the <li> tag cell to it's own separate cell, a
-"usebull cell".  The C<usebull> value should be an integer equal to or
+I<usebull cell>.  The C<usebull> value should be an integer equal to or
 greater than 0.
 
-=item prefix attribute
+=item prefix
 
 A prefix to use to assign id values to cells.  The C<prefix> value will
 be ignored if the <li> has an id already.  If used, a sequence number
 will be added to C<prefix> to form the id of the cell.  In addition,
-"bullet cells" will be given this id suffixed with "-bullet", and
-"usebull cells" will be given this id suffixed with "-usebull".  If the
-<li> tag has an id already, this id--suffixed with "-bullet" or
-"-usebull"--will be used for bullet and usebull cells.
+I<bullet cells> will be given this id suffixed with C<"-bullet">, and
+I<usebull cells> will be given this id suffixed with C<"-usebull">.  If
+the <li> tag has an id already, this id--suffixed with C<"-bullet"> or
+C<"-usebull">--will be used for bullet and usebull cells.
 
 =back
 
-=head2 ol_table( oSpecs );
+=head2 ol_table(oSpecs)
 
 This function turns a <ol> tag (or an <ul> tag) into a table.  Each
 <li> child tag becomes a table cell.  The attributes of the <ol> tag
@@ -286,24 +292,24 @@ become those of each <td> tag.
 
 Depending on the value of the C<grid> attribute, there may be one or
 more cells per row.  If C<grid> specifies multiple columns, the
-C<orien> (orientation) attribute may be 'v' to orient the cells
+C<orien> (orientation) attribute may be C<"v"> to orient the cells
 vertically.  That is, instead of the following horizontal layout (the
 default):
 
  1 2 3 4
  5 6 7 8
 
-if C<orien> is 'v' (rather than 'h'), the layout would be:
+if C<orien> is C<"v"> (rather than C<"h">), the layout would be:
 
  1 3 5 7
  2 4 6 8
 
-The C<bullet> attribute will cause a "bullet cell" to be added.  The
-C<usebull> attribute will cause a "usebull cell" to be added.  The
-C<prefix> attribute gives an "id prefix" which will add id values to
+The C<bullet> attribute will cause a I<bullet cell> to be added.  The
+C<usebull> attribute will cause a I<usebull cell> to be added.  The
+C<prefix> attribute gives an id prefix which will add id values to
 cells whose corresponding <li> tag did not already have an id value.
 
-The C<number> attribute will cause a "number cell" to be added.
+The C<number> attribute will cause a I<number cell> to be added.
 Numbering is on by default.
 
 For example:
@@ -341,92 +347,86 @@ The above should result in a layout like the following:
  | +---+ +---+ +---+ +------+                            |
  +-------------------------------------------------------+
 
-Note that the "usebull" cells come first, followed by the "bullet"
-cells, followed in turn by the "number" cells, and then a cell with the
-rest of the original <li> contents.
+Note that the I<usebull> cells come first, followed by the I<bullet>
+cells, followed in turn by the I<number> cells, and then a cell with
+the rest of the original <li> contents.
 
 A note about the class attribute: When an <li> tag has a class
 assigned, that value will be used to assign a class to each of the
-"usebull", "bullet", and "number" cells, suffixed with "-usebull",
-"-bullet", and "-number" respectively.  So in the above example, the
-usebull cells will all have class="ol-li-usebull", the bullet cells
-will all have class="ol-li-bullet", and the number cells will all have
-class="ol-li-number".
+usebull, bullet, and number cells, suffixed with C<"-usebull">,
+C<"-bullet">, and C<"-number"> respectively.  So in the above example,
+the usebull cells will all have C<class="ol-li-usebull">, the bullet
+cells will all have C<class="ol-li-bullet">, and the number cells will
+all have C<class="ol-li-number">.
 
 =over 4
 
-=item olid attribute
+=item olid
 
 The id value of the <ol> tag (or <ul> tag) to make into a table.  If
 the id is for an <ul> tag, the resulting table will have number cells
-by default.  Also see C<ul_table> above.
+by default.  Also see C<ul_table()> above.
 
-=item grid attribute
+=item grid
 
 The number of columns to put in the new table (default is one column).
 The C<grid> value should be an integer greater than 1.
 
-=item orien attribute
+=item orien
 
-The orientation of the grid layout (default is 'h' for horizontal).
-The C<orien> value should be 'h' (the default) or 'v' for vertical.
+The orientation of the grid layout (default is C<"h"> for horizontal).
+The C<orien> value should be C<"h"> (the default) or C<"v"> for
+vertical.
 
-=item bullet attribute
+=item bullet
 
 Character or characters to use as a bullet for each item.  These
-characters will be placed in a separate cell, a "bullet cell".  The
+characters will be placed in a separate cell, a I<bullet cell>.  The
 C<bullet> value can be any displayable characters or html tags,
-including entities like "&bull;".
+including entities like C<"&bull;">.
 
-=item usebull attribute
+=item usebull
 
 Index of the <li> tag's child element to use as a bullet.  This element
 will be moved from the <li> tag cell to it's own separate cell, a
-"usebull cell".  The C<usebull> value should be an integer equal to or
+I<usebull cell>.  The C<usebull> value should be an integer equal to or
 greater than 0.
 
-=item prefix attribute
+=item prefix
 
 A prefix to use to assign id values to cells.  The C<prefix> value will
 be ignored if the <li> has an id already.  If used, a sequence number
 will be added to C<prefix> to form the id of the cell.  In addition,
-"bullet cells" will be given this id suffixed with "-bullet", "usebull
-cells" will be given this id suffixed with "-usebull", and "number
-cells" will be given this id suffixed with "-number".  If the <li> tag
-has an id already, this id--suffixed with "-bullet", "-usebull", or
-"-number"--will be used for bullet and usebull cells.
+I<bullet cells> will be given this id suffixed with C<"-bullet">,
+I<usebull cells> will be given this id suffixed with C<"-usebull">, and
+I<number cells> will be given this id suffixed with C<"-number">.  If
+the <li> tag has an id already, this id--suffixed with C<"-bullet">,
+C<"-usebull">, or C<"-number">--will be used for bullet and usebull
+cells.
 
-=item number attribute
+=item number
 
-Type of numbering to use (default is 'arabic').  The C<number> value
-should be one of the following 'arabic', 'upper-roman', 'upper-alpha',
-'lower-roman', 'lower-alpha', or 'none' (to disable numbering).
+Type of numbering to use (default is C<'arabic'>).  The C<number> value
+should be one of the following C<'arabic'>, C<'upper-roman'>,
+C<'upper-alpha'>, C<'lower-roman'>, C<'lower-alpha'>, or C<'none'> (to
+disable numbering).
 
 =back
 
-=head2 dl_table( oSpecs );
+=head2 dl_table(oSpecs)
 
 This function turns a <dl> tag into a table.  Each <dt> and <dd> child
 tag becomes a table cell.  The attributes of the <dl> tag become those
 of the <table> tag.  The attributes of each <dt> and <dd> tag become
 those of each <td> tag.
 
-The C<bullet> attribute will cause a "bullet cell" to be added.  The
-C<usebull> attribute will cause a "usebull cell" to be added.  The
-C<prefix> attribute gives an "id prefix" which will add id values to
+The C<bullet> attribute will cause a I<bullet cell> to be added.  The
+C<usebull> attribute will cause a I<usebull cell> to be added.  The
+C<prefix> attribute gives an id prefix which will add id values to
 cells whose corresponding <li> tag did not already have an id value.
 
-The C<number> attribute will cause a "number cell" to be added.
+The C<number> attribute will cause a I<number cell> to be added.
 Numbering is off by default.
-
-Examples:
- var dl1 = { "dlid" : "dl1" };     // use defaults for everything else
- var dl1 = {
-     "dlid"   : "dl1",
-     "bullet" : "&bull;",
-     "number" : "upper-alpha",
-     "prefix" : "id"
- };
 
 For example:
 
@@ -475,101 +475,184 @@ The above should result in a layout like the following:
  | +---+ +---+ +---+ +------+ +--------+ |
  +---------------------------------------+
 
-Note that the "usebull" cells come first, followed by the "bullet"
-cells, followed in turn by the "number" cells, and then a cell with the
-rest of the original <dt> contents.  Finally, if there are any <dd>
+Note that the I<usebull> cells come first, followed by the I<bullet>
+cells, followed in turn by the I<number> cells, and then a cell with
+the rest of the original <dt> contents.  Finally, if there are any <dd>
 tags, they are associated with the immediately preceding <dt> tag.
 
 A note about the class attribute: When an <dt> tag has a class
 assigned, that value will be used to assign a class to each of the
-"usebull", "bullet", and "number" cells, suffixed with "-usebull",
-"-bullet", and "-number" respectively.  So in the above example, the
-usebull cells will all have class="dl-dt-usebull", the bullet cells
-will all have class="dl-dt-bullet", and the number cells will all have
-class="dl-dt-number".
+usebull, bullet, and number cells, suffixed with C<"-usebull">,
+C<"-bullet">, and C<"-number"> respectively.  So in the above example,
+the usebull cells will all have C<class="dl-dt-usebull">, the bullet
+cells will all have C<class="dl-dt-bullet">, and the number cells will
+all have C<class="dl-dt-number">.
 
 Note finally that bullets and numbers are always associated with <dt>
 tags, never with <dd> tags.  If a <dd> tag does not have a <dt> tag
-above it, it is an error, and dl_table() will fail.
+above it, it is an error, and C<dl_table()> will fail.
 
 =over 4
 
-=item dlid attribute
+=item dlid
 
 The id value of the <dl> tag to make into a table.
 
-=item bullet attribute
+=item bullet
 
 Character or characters to use as a bullet for each item.  These
-characters will be placed in a separate cell, a "bullet cell".  The
+characters will be placed in a separate cell, a I<bullet cell>.  The
 C<bullet> value can be any displayable characters or html tags,
-including entities like "&bull;".
+including entities like C<"&bull;">.
 
-=item usebull attribute
+=item usebull
 
 Index of the <dt> (not <dd>) tag's child element to use as a bullet.
 This element will be moved from the <dt> tag cell to it's own separate
-cell, a "usebull cell".  The C<usebull> value should be an integer
+cell, a I<usebull cell>.  The C<usebull> value should be an integer
 equal to or greater than 0.
 
-=item prefix attribute
+=item prefix
 
 A prefix to use to assign id values to cells.  The C<prefix> value will
 be ignored if the <dt> or <dd> has an id already.  If used, a sequence
 number will be added to C<prefix> to form the id of the cell.  In
-addition, "bullet cells" will be given this id suffixed with "-bullet",
-"usebull cells" will be given this id suffixed with "-usebull", and
-"number cells" will be given this id suffixed with "-number".  If the
-<li> tag has an id already, this id--suffixed with "-bullet",
-"-usebull", or "-number"--will be used for bullet and usebull cells.
+addition, I<bullet cells> will be given this id suffixed with
+C<"-bullet">, I<usebull cells> will be given this id suffixed with
+C<"-usebull">, and I<number cells> will be given this id suffixed with
+C<"-number">.  If the <li> tag has an id already, this id--suffixed
+with C<"-bullet">, C<"-usebull">, or C<"-number">--will be used for
+bullet and usebull cells.
 
-=item number attribute
+=item number
 
 Type of numbering to use (default is no numbering).  The C<number>
-value should be one of the following 'arabic', 'upper-roman',
-'upper-alpha', 'lower-roman', 'lower-alpha', or 'none' (for no numbering,
-the default).
+value should be one of the following C<'arabic'>, C<'upper-roman'>,
+C<'upper-alpha'>, C<'lower-roman'>, C<'lower-alpha'>, or C<'none'> (for
+no numbering, the default).
 
 =back
 
 =head1 NUMBERING
 
-As described above, ol_table() and dl_table() provide a numbering option.
-In ol_table(), this option is on by default, using the 'arabic' type of numbering.
-In dl_table(), numbering is off by default.
+As described above, C<ol_table()> and C<dl_table()> provide a numbering
+option.  In C<ol_table()>, this option is on by default, using the
+C<'arabic'> type of numbering.  In C<dl_table()>, numbering is off by
+default.
 
-The types of numbering are as follows (note that all numbers are suffixed with
-a period "."):
+The types of numbering are as follows (note that all numbers are
+suffixed with a period C<".">):
 
 =over 4
 
 =item arabic
 
-Numbers use arabic digits, 1., 2., 3., 4., 5., etc.
+Numbering uses arabic digits:
+
+ 1. 2. 3. 4. 5. ...
 
 =item upper-roman
 
-Numbers use upper-case Roman numerals, I., II., III., IV., V., etc.
+Numbering uses upper-case Roman numerals:
+
+ I. II. III. IV. V. ...
 
 =item lower-roman
 
-Numbers use lower-case Roman numerals, i., ii., iii., iv., v., etc.
+Numbering uses lower-case Roman numerals:
+
+ i. ii. iii. iv. v. ...
 
 =item upper-alpha
 
-Number use upper-case alphabet characters (A-Z), A., B., C., D., E.,
-etc.  For numbers above 26, the characters are doubled, AA., BB., CC.,
-DD., EE., etc.  For numbers above 52, the characters are tripled, AAA.,
-BBB., CCC., DDD., EEE., etc.  And so forth.
+Numbering uses upper-case alphabetic characters (A-Z):
+
+ A. B. C. D. E. ...
+
+For numbers above 26, the characters are doubled:
+
+ AA. BB. CC. DD. EE. ...
+ 
+For numbers above 52, the characters are tripled:
+
+ AAA. BBB. CCC. DDD. EEE.> ...
+ 
+And so forth.
 
 =item lower-alpha
 
-Number use upper-case alphabet characters (A-Z), a., b., c., d., e.,
-etc.  For numbers above 26, the characters are doubled, aa., bb., cc.,
-dd., ee., etc.  For numbers above 52, the characters are tripled, aaa.,
-bbb., ccc., ddd., eee., etc.  And so forth.
+Numbering uses upper-case alphabetic characters (a-z):
+
+ a. b. c. d. e. ...
+
+For numbers above 26, the characters are doubled:
+
+ aa. bb. cc. dd. ee. ...
+
+For numbers above 52, the characters are tripled:
+
+ aaa. bbb. ccc. ddd. eee. ...
+
+And so forth.
 
 =back
+
+=head2 The C<value> attribute
+
+Normally, <li> tags in <ol> lists may set a C<value> attribute
+that is the number to use to number that item.  Subsequent items
+that don't have C<value> attributes will be numbered from there, e.g.,
+
+ <ol>
+ <li           >Item</li> <!-- 1 -->
+ <li           >Item</li> <!-- 2 -->
+ <li value="10">Item</li> <!-- 10 -->
+ <li           >Item</li> <!-- 11 -->
+ <li           >Item</li> <!-- 12 -->
+ </ol>
+
+  1. Item
+  2. Item
+ 10. Item
+ 11. Item
+ 12. Item
+
+The B<Table Maker> functions that offer a numbering option
+(C<ol_table()> and C<dl_table()>) will respond to a C<value> attribute
+in an <li> or <dt> tag, and alter the numbering accordingly.  (This is
+true also for <ul> tags that are converted using C<ol_table()>.)
+
+For example:
+
+ <ol id="ol1">
+ <li           >LI 1</li>
+ <li           >LI 2</li>
+ <li value="10">LI 3</li>
+ <li           >LI 4</li>
+ <li           >LI 5</li>
+ </ol>
+
+ <script type="text/javascript">
+    ol_table( {
+        "olid"    : "ol1"  ,
+        "grid"    : 2      ,
+        "bullet"  : "*"
+    } );
+ </script>
+
+The above should result in a layout like the following:
+
+ +-----------------------------------------------+
+ | +---+ +-----+ +------+ +---+ +-----+ +------+ |
+ | | * | | 1.  | | LI 1 | | * | | 2.  | | LI 2 | |
+ | +---+ +-----+ +------+ +---+ +-----+ +------+ |
+ | +---+ +-----+ +------+ +---+ +-----+ +------+ |
+ | | * | | 10. | | LI 3 | | * | | 11. | | LI 4 | |
+ | +---+ +-----+ +------+ +---+ +-----+ +------+ |
+ | +---+ +-----+ +------+                        |
+ | | * | | 12. | | LI 5 |                        |
+ | +---+ +-----+ +------+                        |
+ +-----------------------------------------------+
 
 =cut
 

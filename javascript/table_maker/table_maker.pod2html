@@ -1,0 +1,5 @@
+pod2html \
+--htmlroot=/galileo/dev/htdocs \
+--infile=table_maker.pod \
+--outfile=/galileo/dev/htdocs/table_maker_docs.html
+

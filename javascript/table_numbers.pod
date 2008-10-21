@@ -73,7 +73,7 @@ aliases have been included that follow this naming scheme:
   r right margin
   f footer
  (b body) (body is implicit, except in the 'bf' alias)
-
+ 
   f  full   (all)                       (hf lf rf ff bf)
   l  left   (header, footer)            (hl fl)
   r  right  (header, footer)            (hr fr)
@@ -100,7 +100,7 @@ in the assignment.  So since table 31 does not include table cells for
 right margin and footer, the right margin and footer divs are moved
 into the body cell (C<id="td_body">) along with the body div.
 
-=head1 ASSIGNMENTS
+=head1 VARIABLE ASSIGNMENTS
 
 =head2 C<c3>
 
@@ -146,6 +146,11 @@ into the body cell (C<id="td_body">) along with the body div.
 <script type="text/javascript" src="/javascript/table_maker/table_maker.js"></script>
 
 <style type="text/css">
+@import "http://dbs.galileo.usg.edu/sitegen/css/sitegen.css";
+</style>
+
+<style type="text/css">
+body {margin: 3em; }
 table { margin: 1em 1em 2em 1em; width: 25em; height: 18em; border: 1px solid grey; background: #eee }
 tr    { vertical-align: middle; }
 td    { border: 1px solid grey; text-align: center; }

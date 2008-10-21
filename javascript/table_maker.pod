@@ -57,6 +57,11 @@ HTML like the following:
 =begin html
 
 <style type="text/css">
+@import "http://dbs.galileo.usg.edu/sitegen/css/sitegen.css";
+</style>
+
+<style type="text/css">
+body {margin: 3em; }
 table { margin: 2em; width: 50%; height: 200px; border: 1px solid grey; background: #eee }
 tr    { vertical-align: middle; }
 td    { border: 1px solid grey; text-align: center; }
@@ -67,7 +72,7 @@ td    { border: 1px solid grey; text-align: center; }
 <TBODY>
 <TR valign="top">
     <TD id="td_header" colspan="3">
-        <DIV id="header"> Header       </DIV>
+        <DIV id="header-x"> Header       </DIV>
     </TD>
 </TR>
 <TR valign="top">
@@ -83,7 +88,7 @@ td    { border: 1px solid grey; text-align: center; }
 </TR>
 <TR valign="top">
     <TD id="td_footer" colspan="3">
-        <DIV id="footer"> Footer       </DIV>
+        <DIV id="footer-x"> Footer       </DIV>
     </TD>
 </TR>
 </TBODY>
@@ -100,6 +105,9 @@ The Table Maker collection of functions includes the following:
  ul_table()      make a <ul> tag (and its <li>'s) into a table
  ol_table()      make a <ol> tag (and its <li>'s) into a table
  dl_table()      make a <dl> tag (and its <dt>'s and <dd>'s) into a table
+
+See L<http://dev.galileo.usg.edu/table_maker.html> for demonstrations
+of the various functions.
 
 =head1 FUNCTIONS
 
@@ -131,6 +139,22 @@ The function knows which of these other functions to call based on the
 existence in each object of either C<divid> (for C<div_table()>),
 C<ulid> (for C<ul_table()>), C<olid> (for C<ol_table()>), or C<dlid>
 (for C<dl_table()>).
+
+In addition to accepting arrays of table specs objects, C<table_maker()>
+will also accept a single object and will dispatch the appropriate function
+to process it.
+
+For example:
+
+ table_maker( {
+      "divid" : "tmdiv",
+      "rows"  : [
+          [["tdtmc1",["tmc1"]],["tdtmc2",["tmc2"]],["tdtmc3",["tmc3"]]]
+      ]
+    } ); // calls div_table()
+ table_maker( { "ulid" : "tmul" } );  // calls ul_table()
+ table_maker( { "olid" : "tmol" } );  // calls ol_table()
+ table_maker( { "dlid" : "tmdl" } );  // calls dl_table()
 
 =head2 div_table(oSpecs)
 
@@ -178,7 +202,7 @@ an array with the following elements:
 
  [0] id value to assign to the cell
  [1] ids of <div>'s to move into the cell (an n-element array)
- [2] pairs of attribute names and values (an even numered n-element array)
+ [2] pairs of attribute names and values (an even numbered n-element array)
 
 =back
 
@@ -213,6 +237,10 @@ this diagram):
          [ [ "td_footer", [ "footer" ] ] ]
      ]
  };
+
+See L<http://dev.galileo.usg.edu/table_numbers_docs.html> for a complete
+description of all the available predefined table layout variables (like C<t1> above).
+
 
 =head2 ul_table(oSpecs)
 
@@ -249,7 +277,7 @@ For example:
  <li class="ul-li"><b>*</b> LI 4</li>
  <li class="ul-li"><b>*</b> LI 5</li>
  </ul>
-
+ 
  <script type="text/javascript">
     ul_table( {
         "ulid"    : "ul11" ,  // id's the <ul> tag
@@ -260,7 +288,10 @@ For example:
     } );
  </script>
 
-The above should result in a layout like the following:
+The above should result in a layout like the following (note
+that diagrams in this document include borders around table cells for
+clarity; in practice, tables made from lists typically wouldn't have
+these borders):
 
 =begin text
 
@@ -330,7 +361,7 @@ C<class="ul-li-bullet">.
 
 The id value of the <ul> tag (or <ol> tag) to make into a table.  If
 the id is for an <ol> tag, the resulting table will not have number
-cells.  Also see C<ol_table> below.
+cells.  Also see C<ol_table()> below.
 
 =item grid
 
@@ -360,7 +391,7 @@ greater than 0.
 =item prefix
 
 A prefix to use to assign id values to cells.  The C<prefix> value will
-be ignored if the <li> has an id already.  If used, a sequence number
+be ignored if the <li> tag has an id already.  If used, a sequence number
 will be added to C<prefix> to form the id of the cell.  In addition,
 I<bullet cells> will be given this id suffixed with C<"-bullet">, and
 I<usebull cells> will be given this id suffixed with C<"-usebull">.  If
@@ -371,7 +402,7 @@ C<"-usebull">--will be used for bullet and usebull cells.
 
 =head2 ol_table(oSpecs)
 
-This function turns a <ol> tag (or an <ul> tag) into a table.  Each
+This function turns an <ol> tag (or a <ul> tag) into a table.  Each
 <li> child tag becomes a table cell.  The attributes of the <ol> tag
 become those of the <table> tag.  The attributes of each <li> tag
 become those of each <td> tag.
@@ -407,7 +438,7 @@ For example:
  <li class="ol-li"><b>*</b> LI 4</li>
  <li class="ol-li"><b>*</b> LI 5</li>
  </ol>
-
+ 
  <script type="text/javascript">
     ol_table( {
         "olid"    : "ol11"   ,  // id's the <ol> tag
@@ -573,7 +604,7 @@ For example:
  <dt class="dl-dt"><b>*</b> DT 5</dt>
      <dd class="dl-dd">DD 5.1</dd>
  </dl>
-
+ 
  <script type="text/javascript">
      dl_table( {
         "dlid"    : "dl11"   ,  // id of <dl> tag
@@ -760,12 +791,12 @@ Numbering uses upper-case alphabetic characters (A-Z):
 For numbers above 26, the characters are doubled:
 
  AA. BB. CC. DD. EE. ...
- 
+
 For numbers above 52, the characters are tripled:
 
- AAA. BBB. CCC. DDD. EEE.> ...
- 
-And so forth.
+ AAA. BBB. CCC. DDD. EEE. ...
+
+And so forth for each multiple of 26.
 
 =item lower-alpha
 
@@ -781,14 +812,14 @@ For numbers above 52, the characters are tripled:
 
  aaa. bbb. ccc. ddd. eee. ...
 
-And so forth.
+And so forth for each multiple of 26.
 
 =back
 
 =head2 The C<value> attribute
 
 Normally, <li> tags in <ol> lists may set a C<value> attribute
-that is the number to use to number that item.  Subsequent items
+that assigns a to number that item.  Subsequent items
 that don't have C<value> attributes will be numbered from there, e.g.,
 
  <ol>
@@ -839,7 +870,7 @@ For example:
  <li           >LI 4</li>
  <li           >LI 5</li>
  </ol>
-
+ 
  <script type="text/javascript">
     ol_table( {
         "olid"    : "ol12" ,

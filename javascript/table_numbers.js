@@ -1664,7 +1664,7 @@ specs for "table 43":
 |        |                                    |
 +--------+------------------------------------+
 
-(but right margin not necessarily flow right)
+(but right margin not necessarily float right)
 
 */
 

@@ -1,6 +1,11 @@
 #---------------------------------------------------------------------
 # table_maker.pod
 
+# Note: we added =begin text and =begin html blocks for the pod2html
+# script to see.  Unfortunately, you must (apparently) call perldoc
+# with the -t flag in order to see the =begin text blocks.
+# (I would have expected that not to be necessary.)
+
 =head1 NAME
 
 B<Table Maker>, a collection of javascript functions that modify the

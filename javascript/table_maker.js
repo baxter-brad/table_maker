@@ -14,7 +14,7 @@
 //     dlid, calls the appropriate '..._table()' function
 
 function table_maker( aSpecs ) {
-    if( typeof aSpecs == "object" && aSpecs.length ) {
+    if( aSpecs instanceof Array ) {
         for( var iSpec = 0; iSpec < aSpecs.length; iSpec++ ) {
             var oSpec = aSpecs[ iSpec ];
             if(      oSpec.divid ) div_table( oSpec );
@@ -22,6 +22,13 @@ function table_maker( aSpecs ) {
             else if( oSpec.olid  ) ol_table(  oSpec );
             else if( oSpec.dlid  ) dl_table(  oSpec );
         }
+    }
+    else if( aSpecs instanceof Object ) {
+        var oSpec = aSpecs;
+        if(      oSpec.divid ) div_table( oSpec );
+        else if( oSpec.ulid  ) ul_table(  oSpec );
+        else if( oSpec.olid  ) ol_table(  oSpec );
+        else if( oSpec.dlid  ) dl_table(  oSpec );
     }
 }
 

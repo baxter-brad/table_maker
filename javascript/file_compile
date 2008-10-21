@@ -21,19 +21,20 @@ sub message;
 # -warn=0 to turn off edit warnings at the top of compiled files
 # -v=0    to turn off running messages;
 
-our ( $bak, $nl, $warn, $v );
+our ( $bak, $nl, $warn, $v, $f );
 
 my $Warning = defined $warn ? $warn : 1; # on by default
 my $Newline = defined $nl   ? $nl   : 1; # on by default
 my $Makebak = defined $bak  ? $bak  : 1; # on by default
 my $Verbose = defined $v    ? $v    : 1; # on by default
+my @Files   = $f? split /[, ]/, $f: ();
 
 #---------------------------------------------------------------------
 # main
 
 message "\tFile Compile ...\n";
 my $ini = Config::Ini::Expanded->new("$0.ini");
-my @files = $ini->get_sections;
+my @files = @Files? @Files: $ini->get_sections;
 for my $file ( @files ) {
     message "\nFile: $file\n";
     my @includes = $ini->get( $file => "include" );

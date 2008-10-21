@@ -1,0 +1,5 @@
+pod2html \
+--htmlroot=/galileo/dev/htdocs \
+--infile=table_numbers.pod \
+--outfile=/galileo/dev/htdocs/table_numbers_docs.html
+

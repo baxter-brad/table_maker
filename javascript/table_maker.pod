@@ -106,7 +106,7 @@ The Table Maker collection of functions includes the following:
  ol_table()      make a <ol> tag (and its <li>'s) into a table
  dl_table()      make a <dl> tag (and its <dt>'s and <dd>'s) into a table
 
-See L<http://dev.galileo.usg.edu/table_maker.html> for demonstrations
+See L<http://dev.galileo.usg.edu/table_maker.html> for a demonstration
 of the various functions.
 
 =head1 FUNCTIONS
@@ -819,7 +819,7 @@ And so forth for each multiple of 26.
 =head2 The C<value> attribute
 
 Normally, <li> tags in <ol> lists may set a C<value> attribute
-that assigns a to number that item.  Subsequent items
+that assigns a number to that item.  Subsequent items
 that don't have C<value> attributes will be numbered from there, e.g.,
 
  <ol>

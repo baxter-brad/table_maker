@@ -192,5 +192,16 @@ html, body {
     -moz-border-radius:6px; /* firefox */
 }
 
+/* http://www.ibloomstudios.com/articles/css_media_targeted_javascript/ */
+#mediaInspector   { display:none }
+@media aural      { #mediaInspector { width: 1px; } }
+@media braille    { #mediaInspector { width: 2px; } }
+@media embossed   { #mediaInspector { width: 3px; } }
+@media handheld   { #mediaInspector { width: 4px; } }
+@media print      { #mediaInspector { width: 5px; } }
+@media projection { #mediaInspector { width: 6px; } }
+@media screen     { #mediaInspector { width: 7px; } }
+@media tty        { #mediaInspector { width: 8px; } }
+@media tv         { #mediaInspector { width: 9px; } }
 
 #__END__

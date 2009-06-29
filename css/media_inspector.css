@@ -1,0 +1,14 @@
+/* media_inspector.css */
+/* http://www.ibloomstudios.com/articles/css_media_targeted_javascript/ */
+
+#mediaInspector   { display:none }
+@media screen     { #mediaInspector { width: 1px; } }
+@media print      { #mediaInspector { width: 2px; } }
+@media handheld   { #mediaInspector { width: 3px; } }
+@media projection { #mediaInspector { width: 4px; } }
+@media tty        { #mediaInspector { width: 5px; } }
+@media tv         { #mediaInspector { width: 6px; } }
+@media aural      { #mediaInspector { width: 7px; } }
+@media braille    { #mediaInspector { width: 8px; } }
+@media embossed   { #mediaInspector { width: 9px; } }
+

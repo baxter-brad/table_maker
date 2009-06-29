@@ -14,15 +14,15 @@ function getMediaType() {
     }
     var mediaType;
     switch ( mediaNum ) {
-        case '1px': mediaType = 'aural';      break;
-        case '2px': mediaType = 'braille';    break; 
-        case '3px': mediaType = 'embossed';   break;
-        case '4px': mediaType = 'handheld';   break;
-        case '5px': mediaType = 'print';      break;
-        case '6px': mediaType = 'projection'; break;
-        case '7px': mediaType = 'screen';     break;
-        case '8px': mediaType = 'tty';        break;
-        case '9px': mediaType = 'tv';         break;
+        case '1px': mediaType = 'screen';     break;
+        case '2px': mediaType = 'print';      break;
+        case '3px': mediaType = 'handheld';   break;
+        case '4px': mediaType = 'projection'; break;
+        case '5px': mediaType = 'tty';        break;
+        case '6px': mediaType = 'tv';         break;
+        case '7px': mediaType = 'aural';      break;
+        case '8px': mediaType = 'braille';    break; 
+        case '9px': mediaType = 'embossed';   break;
     }
     return mediaType;
 }

@@ -1,0 +1,3247 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>NAME</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:sysadmin@mail.libs.uga.edu" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<ul>
+
+		<li><a href="#a_note_about_aliases">A note about aliases</a></li>
+	</ul>
+
+	<li><a href="#variable_assignments">VARIABLE ASSIGNMENTS</a></li>
+	<ul>
+
+		<li><a href="#c3"><code>c3</code></a></li>
+		<li><a href="#t0__alias__bf_"><code>t0</code> (alias: <code>bf</code>)</a></li>
+		<li><a href="#t1__alias__hflbrbfc_"><code>t1</code> (alias: <code>hflbrbfc</code>)</a></li>
+		<li><a href="#t2__alias__hflbrmfr_"><code>t2</code> (alias: <code>hflbrmfr</code>)</a></li>
+		<li><a href="#t3__alias__hflmrbfl_"><code>t3</code> (alias: <code>hflmrbfl</code>)</a></li>
+		<li><a href="#t4__alias__hflmrmff_"><code>t4</code> (alias: <code>hflmrmff</code>)</a></li>
+		<li><a href="#t5__alias__hrltrmff_"><code>t5</code> (alias: <code>hrltrmff</code>)</a></li>
+		<li><a href="#t6__alias__hllmrtff_"><code>t6</code> (alias: <code>hllmrtff</code>)</a></li>
+		<li><a href="#t7__alias__hcltrtff_"><code>t7</code> (alias: <code>hcltrtff</code>)</a></li>
+		<li><a href="#t8__alias__hrlfrmfr_"><code>t8</code> (alias: <code>hrlfrmfr</code>)</a></li>
+		<li><a href="#t9__alias__hrlfrbfc_"><code>t9</code> (alias: <code>hrlfrbfc</code>)</a></li>
+		<li><a href="#t10__alias__hclfrtfr_"><code>t10</code> (alias: <code>hclfrtfr</code>)</a></li>
+		<li><a href="#t11__alias__hclfrffc_"><code>t11</code> (alias: <code>hclfrffc</code>)</a></li>
+		<li><a href="#t12__alias__hllmrffl_"><code>t12</code> (alias: <code>hllmrffl</code>)</a></li>
+		<li><a href="#t13__alias__hllbrffc_"><code>t13</code> (alias: <code>hllbrffc</code>)</a></li>
+		<li><a href="#t14__alias__hcltrffl_"><code>t14</code> (alias: <code>hcltrffl</code>)</a></li>
+		<li><a href="#t15__alias__hflbrb_"><code>t15</code> (alias: <code>hflbrb</code>)</a></li>
+		<li><a href="#t16__alias__hrlfrb_"><code>t16</code> (alias: <code>hrlfrb</code>)</a></li>
+		<li><a href="#t17__alias__hllbrf_"><code>t17</code> (alias: <code>hllbrf</code>)</a></li>
+		<li><a href="#t18__alias__hclfrf_"><code>t18</code> (alias: <code>hclfrf</code>)</a></li>
+		<li><a href="#t19__alias__ltrtff_"><code>t19</code> (alias: <code>ltrtff</code>)</a></li>
+		<li><a href="#t20__alias__lfrtfr_"><code>t20</code> (alias: <code>lfrtfr</code>)</a></li>
+		<li><a href="#t21__alias__ltrffl_"><code>t21</code> (alias: <code>ltrffl</code>)</a></li>
+		<li><a href="#t22__alias__lfrffc_"><code>t22</code> (alias: <code>lfrffc</code>)</a></li>
+		<li><a href="#t23__alias__hrlffr_"><code>t23</code> (alias: <code>hrlffr</code>)</a></li>
+		<li><a href="#t24__alias__hrltff_"><code>t24</code> (alias: <code>hrltff</code>)</a></li>
+		<li><a href="#t25__alias__hflbfr_"><code>t25</code> (alias: <code>hflbfr</code>)</a></li>
+		<li><a href="#t26__alias__hflmff_"><code>t26</code> (alias: <code>hflmff</code>)</a></li>
+		<li><a href="#t27__alias__hlrffl_"><code>t27</code> (alias: <code>hlrffl</code>)</a></li>
+		<li><a href="#t28__alias__hlrtff_"><code>t28</code> (alias: <code>hlrtff</code>)</a></li>
+		<li><a href="#t29__alias__hfrbfl_"><code>t29</code> (alias: <code>hfrbfl</code>)</a></li>
+		<li><a href="#t30__alias__hfrmff_"><code>t30</code> (alias: <code>hfrmff</code>)</a></li>
+		<li><a href="#t31__alias__hflb_"><code>t31</code> (alias: <code>hflb</code>)</a></li>
+		<li><a href="#t32__alias__hrlf_"><code>t32</code> (alias: <code>hrlf</code>)</a></li>
+		<li><a href="#t33__alias__hfrb_"><code>t33</code> (alias: <code>hfrb</code>)</a></li>
+		<li><a href="#t34__alias__hlrf_"><code>t34</code> (alias: <code>hlrf</code>)</a></li>
+		<li><a href="#t35__alias__rtff_"><code>t35</code> (alias: <code>rtff</code>)</a></li>
+		<li><a href="#t36__alias__rffl_"><code>t36</code> (alias: <code>rffl</code>)</a></li>
+		<li><a href="#t37__alias__ltff_"><code>t37</code> (alias: <code>ltff</code>)</a></li>
+		<li><a href="#t38__alias__lffr_"><code>t38</code> (alias: <code>lffr</code>)</a></li>
+		<li><a href="#t39__alias__hfff_"><code>t39</code> (alias: <code>hfff</code>)</a></li>
+		<li><a href="#t40__alias__lfrf_"><code>t40</code> (alias: <code>lfrf</code>)</a></li>
+		<li><a href="#t41__alias__hf_"><code>t41</code> (alias: <code>hf</code>)</a></li>
+		<li><a href="#t42__alias__ff_"><code>t42</code> (alias: <code>ff</code>)</a></li>
+		<li><a href="#t43__alias__lf_"><code>t43</code> (alias: <code>lf</code>)</a></li>
+		<li><a href="#t44__alias__rf_"><code>t44</code> (alias: <code>rf</code>)</a></li>
+		<li><a href="#t45__alias__hllbrtfr_"><code>t45</code> (alias: <code>hllbrtfr</code>)</a></li>
+		<li><a href="#t46__alias__hrltrbfl_"><code>t46</code> (alias: <code>hrltrbfl</code>)</a></li>
+	</ul>
+
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p><strong>Table Numbers</strong>, a collection of javascript assignments for use with
+the <strong>Table Maker</strong> <code>div_table()</code> (or <code>table_maker()</code>) function (see
+<a href="http://dev.galileo.usg.edu/table_maker_docs.html">http://dev.galileo.usg.edu/table_maker_docs.html</a>).</p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">SYNOPSIS</a></h1>
+<pre>
+ &lt;html&gt;
+ &lt;head&gt;
+ &lt;script type=&quot;text/javascript&quot; src=&quot;/javascript/table_maker/table_numbers.js&quot;&gt;&lt;/script&gt;
+ &lt;script type=&quot;text/javascript&quot; src=&quot;/javascript/table_maker/table_maker.js&quot;&gt;&lt;/script&gt;
+ &lt;/head&gt;
+ &lt;body onload=&quot;table_maker(hflmrmff)&quot;&gt; &lt;!-- HeaderFull LeftMiddle RightMiddle FooterFull --&gt;
+ &lt;div id=&quot;page&quot;&gt;
+     &lt;div id=&quot;header&quot;       &gt; Header       &lt;/div&gt;
+     &lt;div id=&quot;left_margin&quot;  &gt; Left Margin  &lt;/div&gt;
+     &lt;div id=&quot;body&quot;         &gt; Body         &lt;/div&gt;
+     &lt;div id=&quot;right_margin&quot; &gt; Right Margin &lt;/div&gt;
+     &lt;div id=&quot;footer&quot;       &gt; Footer       &lt;/div&gt;
+ &lt;/div&gt;
+ &lt;/body&gt;
+ &lt;/html&gt;</pre>
+<p>The above example illustrates including the files <code>table_numbers.js</code>
+and <code>table_makers.js</code>, and it illustrates calling the <code>table_maker()</code>
+function with the predefined variable <code>hflmrmff</code> (defined in
+table_numbers.js).</p>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p><strong>Table Numbers</strong> is collection of predefined javascript assignments.
+These assign table specs objects to the variables named <code>t0</code> - <code>t46</code>
+(and <code>c3</code>), as well as to these variables' aliases, e.g., <code>bf</code>
+(<strong><code>b</code></strong>ody <strong><code>f</code></strong>ull), <code>hflbrbfc</code> (<strong><code>h</code></strong>eader <strong><code>f</code></strong>ull, <strong><code>l</code></strong>eft <strong><code>b</code></strong>ottom,
+<strong><code>r</code></strong>ight <strong><code>b</code></strong>ottom, <strong><code>f</code></strong>ooter <strong><code>c</code></strong>enter), etc.  The variables names and
+their alias are itemized below.</p>
+<p>The intention behind this is to give the programmer clear examples of
+the most common Web page layout schemes, i.e., layouts that have a
+header, a left margin, possibly a right margin, the main content of the
+page (here referred to as the <code>body</code>, and a footer.  The assignments
+<code>t0</code> - <code>t46</code> offer 47 permutations of how those five elements of the
+layout might be arranged.  In addition, the variable <code>c3</code> is included
+as an example of how one might lay out a page with a header and three
+columns.</p>
+<p>There are intentional assumptions made in these assignments, e.g., the
+header div has the id <code>&quot;header&quot;</code>, the div that will become the page
+layout table has the id <code>&quot;page&quot;</code>, etc.  As a page designer, you may
+choose to follow those assumptions (as illustrated above) or not.  If
+you do, you can call <code>div_table()</code> or <code>table_maker()</code> with the
+variable names defined in <code>table_numbers.js</code>, e.g. <code>div_table(t10)</code>.
+If instead, you want to name your divs differently, then you can use
+the assignments in <code>table_numbers.js</code> as examples for creating your
+own table specs assignments.</p>
+<p>
+</p>
+<h2><a name="a_note_about_aliases">A note about aliases</a></h2>
+<p>Since the variable names <code>&quot;t0&quot;</code> - <code>&quot;t46&quot;</code> are not very descriptive,
+aliases have been included that follow this naming scheme:</p>
+<pre>
+  h header
+  l left margin
+  r right margin
+  f footer
+ (b body) (body is implicit, except in the 'bf' alias)
+ 
+  f  full   (all)                       (hf lf rf ff bf)
+  l  left   (header, footer)            (hl fl)
+  r  right  (header, footer)            (hr fr)
+  c  center (header, footer)            (hc fc)
+  t  top    (left margin, right margin) (lt rt)
+  b  bottom (left margin, right margin) (lb rb)
+  m  middle (left margin, right margin) (lm rm)</pre>
+<p>For example, table 13 (<code>t13</code>) has the alias <code>hllbrffc</code>, which stands
+for <strong><code>h</code></strong>eader <strong><code>l</code></strong>eft, <strong><code>l</code></strong>eft margin <strong><code>b</code></strong>ottom, <strong><code>r</code></strong>ight margin
+<strong><code>f</code></strong>ull, <strong><code>f</code></strong>ooter <strong><code>c</code></strong>enter Note that <strong><code>b</code></strong>ody is assumed to be present
+in all tables, so it is not included in any aliases except for
+table 0 (<code>t0</code>) that has <em>only</em> a body: <code>bf</code>.</p>
+<p>Another example, table 31 (<code>t31</code>) (aka the ``gun''), has the alias
+<code>hflb</code>, <strong><code>h</code></strong>eader <strong><code>f</code></strong>ull, <strong><code>l</code></strong>eft margin <strong><code>b</code></strong>ottom.  This illustrates
+that a table layout might not include all of the elements: header, left
+margin, right margin, and footer.</p>
+<p>However, the assignments assume that the page has all of those divs.
+The divs that do not have a corresponding table layout element are
+moved into the same table cell as the body div in the order indicated
+in the assignment.  So since table 31 does not include table cells for
+right margin and footer, the right margin and footer divs are moved
+into the body cell (<code>id=&quot;td_body&quot;</code>) along with the body div.</p>
+<p>
+</p>
+<hr />
+<h1><a name="variable_assignments">VARIABLE ASSIGNMENTS</a></h1>
+<p>
+</p>
+<h2><a name="c3"><code>c3</code></a></h2>
+<pre>
+ /*
+ specs for &quot;three columns&quot;:
+ +--------------------------------------------+
+ |                                            |
+ |                   header                   |
+ |                                            |
+ +--------------+--------------+--------------+
+ |              |              |              |
+ |              |              |              |
+ |              |              |              |
+ |              |              |              |
+ |              |              |              |
+ |              |              |              |
+ |   column 1   |   column 2   |   column 3   |
+ |              |              |              |
+ |              |              |              |
+ |              |              |              |
+ |              |              |              |
+ |              |              |              |
+ |              |              |              |
+ +--------------+--------------+--------------+
+ */
+ 
+ var c3 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;, [ &quot;header&quot; ], [ &quot;colSpan&quot;, 3 ] ]
+         ],
+         [
+             [ &quot;td_column1&quot;, [ &quot;column1&quot; ] ],
+             [ &quot;td_column2&quot;, [ &quot;column2&quot; ] ],
+             [ &quot;td_column3&quot;, [ &quot;column3&quot; ] ]
+         ]
+     ]
+ };</pre>
+<script type="text/javascript" src="/javascript/table_maker/table_maker.js"></script><style type="text/css">
+@import "http://dbs.galileo.usg.edu/sitegen/css/sitegen.css";
+</style><style type="text/css">
+body {margin: 3em; }
+table { margin: 1em 1em 2em 1em; width: 25em; height: 18em; border: 1px solid grey; background: #eee }
+tr    { vertical-align: middle; }
+td    { border: 1px solid grey; text-align: center; }
+#td_column1,#td_column2,#td_column3 { width: 33% }
+#td_left_margin,#td_right_margin    { width: 4em; }
+#td_header,#td_footer               { height: 3em; }
+</style><div id="page-c3">
+    <div id="header-c3"   > Header   </div>
+    <div id="column1"  > Column 1 </div>
+    <div id="column2"  > Column 2 </div>
+    <div id="column3"  > Column 3 </div>
+</div><script type="text/javascript">
+    div_table( {
+     "divid" : "page-c3",
+     "rows"  : [
+         [
+             [ "td_header", [ "header-c3" ], [ "colSpan", 3 ] ]
+         ],
+         [
+             [ "td_column1", [ "column1" ] ],
+             [ "td_column2", [ "column2" ] ],
+             [ "td_column3", [ "column3" ] ]
+         ]
+     ]
+    } );
+</script><p>
+</p>
+<h2><a name="t0__alias__bf_"><code>t0</code> (alias: <code>bf</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 0&quot;:
+ +---------------------------------------------+
+ |                                             |
+ |                   header                    |
+ |                                             |
+ |                                             |
+ |                                             |
+ |                                             |
+ | left               body              right  |
+ | margin                               margin |
+ |                                             |
+ |                                             |
+ |                                             |
+ |                   footer                    |
+ |                                             |
+ +---------------------------------------------+
+ 
+ (but left/right margins don't necessarily float)
+ 
+ */
+ 
+ var t0 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_body&quot;, [ &quot;header&quot;, &quot;left_margin&quot;, &quot;body&quot;, &quot;right_margin&quot;, &quot;footer&quot; ] ]
+         ]
+     ]
+ };
+ 
+ var bf = t0;</pre>
+
+<div id="page-t0">
+     <div id="header-t0"       > Header       </div>
+     <div id="left_margin-t0"  > Left Margin  </div>
+     <div id="body-t0"         > Body         </div>
+     <div id="right_margin-t0" > Right Margin </div>
+     <div id="footer-t0"       > Footer       </div>
+</div><script type="text/javascript">
+ var t0 = {
+     "divid" : "page-t0",
+     "rows"  : [
+         [
+             [ "td_body", [ "header-t0", "left_margin-t0", "body-t0", "right_margin-t0", "footer-t0" ] ]
+         ]
+     ]
+ };
+ div_table(t0);
+</script><p>
+</p>
+<h2><a name="t1__alias__hflbrbfc_"><code>t1</code> (alias: <code>hflbrbfc</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 1&quot;:
+ +---------------------------------------------+
+ |                                             |
+ |                   header                    |
+ |                                             |
+ +--------+---------------------------+--------+
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ |        +---------------------------+        |
+ |        |                           |        |
+ |        |          footer           |        |
+ |        |                           |        |
+ +--------+---------------------------+--------+
+ */
+ 
+ var t1 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;, [ &quot;header&quot; ], [ &quot;colSpan&quot;, 3 ] ]
+         ],
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;  ], [ &quot;rowSpan&quot;, 2 ] ],
+             [ &quot;td_body&quot;,         [ &quot;body&quot;         ]                   ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ], [ &quot;rowSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ] ]
+         ]
+     ]
+ };
+ 
+ var hflbrbfc = t1;</pre>
+
+<div id="page-t1">
+     <div id="header-t1"       > Header       </div>
+     <div id="left_margin-t1"  > Left Margin  </div>
+     <div id="body-t1"         > Body         </div>
+     <div id="right_margin-t1" > Right Margin </div>
+     <div id="footer-t1"       > Footer       </div>
+</div><script type="text/javascript">
+ var t1 = {
+     "divid" : "page-t1",
+     "rows"  : [
+         [
+             [ "td_header", [ "header-t1" ], [ "colSpan", 3 ] ]
+         ],
+         [
+             [ "td_left_margin",  [ "left_margin-t1"  ], [ "rowSpan", 2 ] ],
+             [ "td_body",         [ "body-t1"         ]                   ],
+             [ "td_right_margin", [ "right_margin-t1" ], [ "rowSpan", 2 ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t1" ] ]
+         ]
+     ]
+ };
+ div_table(t1);
+</script><p>
+</p>
+<h2><a name="t2__alias__hflbrmfr_"><code>t2</code> (alias: <code>hflbrmfr</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 2&quot;:
+ +---------------------------------------------+
+ |                                             |
+ |                   header                    |
+ |                                             |
+ +--------+---------------------------+--------+
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ |        +---------------------------+--------+
+ |        |                                    |
+ |        |          footer                    |
+ |        |                                    |
+ +--------+------------------------------------+
+ */
+ 
+ var t2 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;, [ &quot;header&quot; ], [ &quot;colSpan&quot;, 3 ] ]
+         ],
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;  ], [ &quot;rowSpan&quot;, 2 ] ],
+             [ &quot;td_body&quot;,         [ &quot;body&quot;         ]                   ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ]                   ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ]
+     ]
+ };
+ 
+ var hflbrmfr = t2;</pre>
+
+<div id="page-t2">
+     <div id="header-t2"       > Header       </div>
+     <div id="left_margin-t2"  > Left Margin  </div>
+     <div id="body-t2"         > Body         </div>
+     <div id="right_margin-t2" > Right Margin </div>
+     <div id="footer-t2"       > Footer       </div>
+</div><script type="text/javascript">
+ var t2 = {
+     "divid" : "page-t2",
+     "rows"  : [
+         [
+             [ "td_header", [ "header-t2" ], [ "colSpan", 3 ] ]
+         ],
+         [
+             [ "td_left_margin",  [ "left_margin-t2"  ], [ "rowSpan", 2 ] ],
+             [ "td_body",         [ "body-t2"         ]                   ],
+             [ "td_right_margin", [ "right_margin-t2" ]                   ]
+         ],
+         [
+             [ "td_footer", [ "footer-t2" ], [ "colSpan", 2 ] ]
+         ]
+     ]
+ };
+ div_table(t2);
+</script><p>
+</p>
+<h2><a name="t3__alias__hflmrbfl_"><code>t3</code> (alias: <code>hflmrbfl</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 3&quot;:
+ +---------------------------------------------+
+ |                                             |
+ |                   header                    |
+ |                                             |
+ +--------+---------------------------+--------+
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ +--------+---------------------------|        |
+ |                                    |        |
+ |                   footer           |        |
+ |                                    |        |
+ +------------------------------------+--------+
+ */
+ 
+ var t3 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;, [ &quot;header&quot; ], [ &quot;colSpan&quot;, 3 ] ]
+         ],
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;  ]                   ],
+             [ &quot;td_body&quot;,         [ &quot;body&quot;         ]                   ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ], [ &quot;rowSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ]
+     ]
+ };
+ 
+ var hflmrbfl = t3;</pre>
+
+<div id="page-t3">
+     <div id="header-t3"       > Header       </div>
+     <div id="left_margin-t3"  > Left Margin  </div>
+     <div id="body-t3"         > Body         </div>
+     <div id="right_margin-t3" > Right Margin </div>
+     <div id="footer-t3"       > Footer       </div>
+</div><script type="text/javascript">
+ var t3 = {
+     "divid" : "page-t3",
+     "rows"  : [
+         [
+             [ "td_header", [ "header-t3" ], [ "colSpan", 3 ] ]
+         ],
+         [
+             [ "td_left_margin",  [ "left_margin-t3"  ]                   ],
+             [ "td_body",         [ "body-t3"         ]                   ],
+             [ "td_right_margin", [ "right_margin-t3" ], [ "rowSpan", 2 ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t3" ], [ "colSpan", 2 ] ]
+         ]
+     ]
+ };
+ div_table(t3);
+</script><p>
+</p>
+<h2><a name="t4__alias__hflmrmff_"><code>t4</code> (alias: <code>hflmrmff</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 4&quot;:
+ +---------------------------------------------+
+ |                                             |
+ |                   header                    |
+ |                                             |
+ +--------+---------------------------+--------+
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ +--------+---------------------------+--------+
+ |                                             |
+ |                   footer                    |
+ |                                             |
+ +---------------------------------------------+
+ */
+ 
+ var t4 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;, [ &quot;header&quot; ], [ &quot;colSpan&quot;, 3 ] ]
+         ],
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;  ] ],
+             [ &quot;td_body&quot;,         [ &quot;body&quot;         ] ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 3 ] ]
+         ]
+     ]
+ };
+ 
+ var hflmrmff = t4;</pre>
+
+<div id="page-t4">
+     <div id="header-t4"       > Header       </div>
+     <div id="left_margin-t4"  > Left Margin  </div>
+     <div id="body-t4"         > Body         </div>
+     <div id="right_margin-t4" > Right Margin </div>
+     <div id="footer-t4"       > Footer       </div>
+</div><script type="text/javascript">
+ var t4 = {
+     "divid" : "page-t4",
+     "rows"  : [
+         [
+             [ "td_header", [ "header-t4" ], [ "colSpan", 3 ] ]
+         ],
+         [
+             [ "td_left_margin",  [ "left_margin-t4"  ] ],
+             [ "td_body",         [ "body-t4"         ] ],
+             [ "td_right_margin", [ "right_margin-t4" ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t4" ], [ "colSpan", 3 ] ]
+         ]
+     ]
+ };
+ div_table(t4);
+</script><p>
+</p>
+<h2><a name="t5__alias__hrltrmff_"><code>t5</code> (alias: <code>hrltrmff</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 5&quot;:
+ +--------+------------------------------------+
+ |        |                                    |
+ |        |          header                    |
+ |        |                                    |
+ |        |---------------------------+--------+
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ +--------+---------------------------+--------+
+ |                                             |
+ |                   footer                    |
+ |                                             |
+ +---------------------------------------------+
+ */
+ 
+ var t5 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;, [ &quot;left_margin&quot; ], [ &quot;rowSpan&quot;, 2 ] ],
+             [ &quot;td_header&quot;,      [ &quot;header&quot; ],      [ &quot;colSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_body&quot;,         [ &quot;body&quot;         ] ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 3 ] ]
+         ]
+     ]
+ };
+ 
+ var hrltrmff = t5;</pre>
+
+<div id="page-t5">
+     <div id="header-t5"       > Header       </div>
+     <div id="left_margin-t5"  > Left Margin  </div>
+     <div id="body-t5"         > Body         </div>
+     <div id="right_margin-t5" > Right Margin </div>
+     <div id="footer-t5"       > Footer       </div>
+</div><script type="text/javascript">
+ var t5 = {
+     "divid" : "page-t5",
+     "rows"  : [
+         [
+             [ "td_left_margin", [ "left_margin-t5" ], [ "rowSpan", 2 ] ],
+             [ "td_header",      [ "header-t5" ],      [ "colSpan", 2 ] ]
+         ],
+         [
+             [ "td_body",         [ "body-t5"         ] ],
+             [ "td_right_margin", [ "right_margin-t5" ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t5" ], [ "colSpan", 3 ] ]
+         ]
+     ]
+ };
+ div_table(t5);
+</script><p>
+</p>
+<h2><a name="t6__alias__hllmrtff_"><code>t6</code> (alias: <code>hllmrtff</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 6&quot;:
+ +------------------------------------+--------+
+ |                                    |        |
+ |                   header           |        |
+ |                                    |        |
+ +--------+---------------------------+        +
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ +--------+---------------------------+--------+
+ |                                             |
+ |                   footer                    |
+ |                                             |
+ +---------------------------------------------+
+ */
+ 
+ var t6 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;,       [ &quot;header&quot; ],       [ &quot;colSpan&quot;, 2 ] ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ], [ &quot;rowSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;  ] ],
+             [ &quot;td_body&quot;,         [ &quot;body&quot;         ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 3 ] ]
+         ]
+     ]
+ };
+ 
+ var hllmrtff = t6;</pre>
+
+<div id="page-t6">
+     <div id="header-t6"       > Header       </div>
+     <div id="left_margin-t6"  > Left Margin  </div>
+     <div id="body-t6"         > Body         </div>
+     <div id="right_margin-t6" > Right Margin </div>
+     <div id="footer-t6"       > Footer       </div>
+</div><script type="text/javascript">
+ var t6 = {
+     "divid" : "page-t6",
+     "rows"  : [
+         [
+             [ "td_header",       [ "header-t6" ],       [ "colSpan", 2 ] ],
+             [ "td_right_margin", [ "right_margin-t6" ], [ "rowSpan", 2 ] ]
+         ],
+         [
+             [ "td_left_margin",  [ "left_margin-t6"  ] ],
+             [ "td_body",         [ "body-t6"         ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t6" ], [ "colSpan", 3 ] ]
+         ]
+     ]
+ };
+ div_table(t6);
+</script><p>
+</p>
+<h2><a name="t7__alias__hcltrtff_"><code>t7</code> (alias: <code>hcltrtff</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 7&quot;:
+ +--------+---------------------------+--------+
+ |        |                           |        |
+ |        |          header           |        |
+ |        |                           |        |
+ |        +---------------------------+        |
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ +--------+---------------------------+--------+
+ |                                             |
+ |                   footer                    |
+ |                                             |
+ +---------------------------------------------+
+ */
+ 
+ var t7 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;  ], [ &quot;rowSpan&quot;, 2 ] ],
+             [ &quot;td_header&quot;,       [ &quot;header&quot;       ]                   ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ], [ &quot;rowSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_body&quot;, [ &quot;body&quot; ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 3 ] ]
+         ]
+     ]
+ };
+ 
+ var hcltrtff = t7;</pre>
+
+<div id="page-t7">
+     <div id="header-t7"       > Header       </div>
+     <div id="left_margin-t7"  > Left Margin  </div>
+     <div id="body-t7"         > Body         </div>
+     <div id="right_margin-t7" > Right Margin </div>
+     <div id="footer-t7"       > Footer       </div>
+</div><script type="text/javascript">
+ var t7 = {
+     "divid" : "page-t7",
+     "rows"  : [
+         [
+             [ "td_left_margin",  [ "left_margin-t7"  ], [ "rowSpan", 2 ] ],
+             [ "td_header",       [ "header-t7"       ]                   ],
+             [ "td_right_margin", [ "right_margin-t7" ], [ "rowSpan", 2 ] ]
+         ],
+         [
+             [ "td_body", [ "body-t7" ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t7" ], [ "colSpan", 3 ] ]
+         ]
+     ]
+ };
+ div_table(t7);
+</script><p>
+</p>
+<h2><a name="t8__alias__hrlfrmfr_"><code>t8</code> (alias: <code>hrlfrmfr</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 8&quot;:
+ +--------+------------------------------------+
+ |        |                                    |
+ |        |          header                    |
+ |        |                                    |
+ |        +---------------------------+--------+
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ |        |---------------------------+--------+
+ |        |                                    |
+ |        |          footer                    |
+ |        |                                    |
+ +---------------------------------------------+
+ */
+ 
+ var t8 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;  ], [ &quot;rowSpan&quot;, 3 ] ],
+             [ &quot;td_header&quot;,       [ &quot;header&quot;       ], [ &quot;colSpan&quot;, 2 ] ] 
+         ],
+         [
+             [ &quot;td_body&quot;,         [ &quot;body&quot;         ] ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ]
+     ]
+ };
+ 
+ var hrlfrmfr = t8;</pre>
+
+<div id="page-t8">
+     <div id="header-t8"       > Header       </div>
+     <div id="left_margin-t8"  > Left Margin  </div>
+     <div id="body-t8"         > Body         </div>
+     <div id="right_margin-t8" > Right Margin </div>
+     <div id="footer-t8"       > Footer       </div>
+</div><script type="text/javascript">
+ var t8 = {
+     "divid" : "page-t8",
+     "rows"  : [
+         [
+             [ "td_left_margin",  [ "left_margin-t8"  ], [ "rowSpan", 3 ] ],
+             [ "td_header",       [ "header-t8"       ], [ "colSpan", 2 ] ] 
+         ],
+         [
+             [ "td_body",         [ "body-t8"         ] ],
+             [ "td_right_margin", [ "right_margin-t8" ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t8" ], [ "colSpan", 2 ] ]
+         ]
+     ]
+ };
+ div_table(t8);
+</script><p>
+</p>
+<h2><a name="t9__alias__hrlfrbfc_"><code>t9</code> (alias: <code>hrlfrbfc</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 9&quot;:
+ +--------+------------------------------------+
+ |        |                                    |
+ |        |          header                    |
+ |        |                                    |
+ |        +---------------------------+--------+
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ |        |---------------------------+        |
+ |        |                           |        |
+ |        |          footer           |        |
+ |        |                           |        |
+ +------------------------------------+--------+
+ */
+ 
+ var t9 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;  ], [ &quot;rowSpan&quot;, 3 ] ],
+             [ &quot;td_header&quot;,       [ &quot;header&quot;       ], [ &quot;colSpan&quot;, 2 ] ] 
+         ],
+         [
+             [ &quot;td_body&quot;,         [ &quot;body&quot;         ]                   ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ], [ &quot;rowSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ] ]
+         ]
+     ]
+ };
+ 
+ var hrlfrbfc = t9;</pre>
+
+<div id="page-t9">
+     <div id="header-t9"       > Header       </div>
+     <div id="left_margin-t9"  > Left Margin  </div>
+     <div id="body-t9"         > Body         </div>
+     <div id="right_margin-t9" > Right Margin </div>
+     <div id="footer-t9"       > Footer       </div>
+</div><script type="text/javascript">
+ var t9 = {
+     "divid" : "page-t9",
+     "rows"  : [
+         [
+             [ "td_left_margin",  [ "left_margin-t9"  ], [ "rowSpan", 3 ] ],
+             [ "td_header",       [ "header-t9"       ], [ "colSpan", 2 ] ] 
+         ],
+         [
+             [ "td_body",         [ "body-t9"         ]                   ],
+             [ "td_right_margin", [ "right_margin-t9" ], [ "rowSpan", 2 ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t9" ] ]
+         ]
+     ]
+ };
+ div_table(t9);
+</script><p>
+</p>
+<h2><a name="t10__alias__hclfrtfr_"><code>t10</code> (alias: <code>hclfrtfr</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 10&quot;:
+ +--------+---------------------------+--------+
+ |        |                           |        |
+ |        |          header           |        |
+ |        |                           |        |
+ |        +---------------------------+        |
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ |        |---------------------------+--------+
+ |        |                                    |
+ |        |          footer                    |
+ |        |                                    |
+ +---------------------------------------------+
+ */
+ 
+ var t10 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;  ], [ &quot;rowSpan&quot;, 3 ] ],
+             [ &quot;td_header&quot;,       [ &quot;header&quot;       ]                   ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ], [ &quot;rowSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_body&quot;, [ &quot;body&quot; ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ]
+     ]
+ };
+ 
+ var hclfrtfr = t10;</pre>
+
+<div id="page-t10">
+     <div id="header-t10"       > Header       </div>
+     <div id="left_margin-t10"  > Left Margin  </div>
+     <div id="body-t10"         > Body         </div>
+     <div id="right_margin-t10" > Right Margin </div>
+     <div id="footer-t10"       > Footer       </div>
+</div><script type="text/javascript">
+ var t10 = {
+     "divid" : "page-t10",
+     "rows"  : [
+         [
+             [ "td_left_margin",  [ "left_margin-t10"  ], [ "rowSpan", 3 ] ],
+             [ "td_header",       [ "header-t10"       ]                   ],
+             [ "td_right_margin", [ "right_margin-t10" ], [ "rowSpan", 2 ] ]
+         ],
+         [
+             [ "td_body", [ "body-t10" ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t10" ], [ "colSpan", 2 ] ]
+         ]
+     ]
+ };
+ div_table(t10);
+</script><p>
+</p>
+<h2><a name="t11__alias__hclfrffc_"><code>t11</code> (alias: <code>hclfrffc</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 11&quot;:
+ +--------+---------------------------+--------+
+ |        |                           |        |
+ |        |          header           |        |
+ |        |                           |        |
+ |        +---------------------------+        |
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ |        |---------------------------+        |
+ |        |                           |        |
+ |        |          footer           |        |
+ |        |                           |        |
+ +------------------------------------+--------+
+ */
+ 
+ var t11 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;  ], [ &quot;rowSpan&quot;, 3 ] ],
+             [ &quot;td_header&quot;,       [ &quot;header&quot;       ]                   ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ], [ &quot;rowSpan&quot;, 3 ] ]
+         ],
+         [
+             [ &quot;td_body&quot;, [ &quot;body&quot; ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ] ]
+         ]
+     ]
+ };
+ 
+ var hclfrffc = t11;</pre>
+
+<div id="page-t11">
+     <div id="header-t11"       > Header       </div>
+     <div id="left_margin-t11"  > Left Margin  </div>
+     <div id="body-t11"         > Body         </div>
+     <div id="right_margin-t11" > Right Margin </div>
+     <div id="footer-t11"       > Footer       </div>
+</div><script type="text/javascript">
+ var t11 = {
+     "divid" : "page-t11",
+     "rows"  : [
+         [
+             [ "td_left_margin",  [ "left_margin-t11"  ], [ "rowSpan", 3 ] ],
+             [ "td_header",       [ "header-t11"       ]                   ],
+             [ "td_right_margin", [ "right_margin-t11" ], [ "rowSpan", 3 ] ]
+         ],
+         [
+             [ "td_body", [ "body-t11" ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t11" ] ]
+         ]
+     ]
+ };
+ div_table(t11);
+</script><p>
+</p>
+<h2><a name="t12__alias__hllmrffl_"><code>t12</code> (alias: <code>hllmrffl</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 12&quot;:
+ +------------------------------------+--------+
+ |                                    |        |
+ |                   header           |        |
+ |                                    |        |
+ +--------+---------------------------+        |
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ +--------+---------------------------+        |
+ |                                    |        |
+ |                   footer           |        |
+ |                                    |        |
+ +------------------------------------+--------+
+ */
+ 
+ var t12 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;,       [ &quot;header&quot;       ], [ &quot;colSpan&quot;, 2 ] ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ], [ &quot;rowSpan&quot;, 3 ] ]
+         ],
+         [
+             [ &quot;td_left_margin&quot;, [ &quot;left_margin&quot;  ] ],
+             [ &quot;td_body&quot;,        [ &quot;body&quot; ]         ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ]
+     ]
+ };
+ 
+ var hllmrffl = t12;</pre>
+
+<div id="page-t12">
+     <div id="header-t12"       > Header       </div>
+     <div id="left_margin-t12"  > Left Margin  </div>
+     <div id="body-t12"         > Body         </div>
+     <div id="right_margin-t12" > Right Margin </div>
+     <div id="footer-t12"       > Footer       </div>
+</div><script type="text/javascript">
+ var t12 = {
+     "divid" : "page-t12",
+     "rows"  : [
+         [
+             [ "td_header",       [ "header-t12"       ], [ "colSpan", 2 ] ],
+             [ "td_right_margin", [ "right_margin-t12" ], [ "rowSpan", 3 ] ]
+         ],
+         [
+             [ "td_left_margin", [ "left_margin-t12"  ] ],
+             [ "td_body",        [ "body-t12" ]         ]
+         ],
+         [
+             [ "td_footer", [ "footer-t12" ], [ "colSpan", 2 ] ]
+         ]
+     ]
+ };
+ div_table(t12);
+</script><p>
+</p>
+<h2><a name="t13__alias__hllbrffc_"><code>t13</code> (alias: <code>hllbrffc</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 13&quot;:
+ +------------------------------------+--------+
+ |                                    |        |
+ |                   header           |        |
+ |                                    |        |
+ +--------+---------------------------+        |
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ |        +---------------------------+        |
+ |        |                           |        |
+ |        |          footer           |        |
+ |        |                           |        |
+ +--------+---------------------------+--------+
+ */
+ 
+ var t13 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;,       [ &quot;header&quot;       ], [ &quot;colSpan&quot;, 2 ] ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ], [ &quot;rowSpan&quot;, 3 ] ]
+         ],
+         [
+             [ &quot;td_left_margin&quot;, [ &quot;left_margin&quot;  ], [ &quot;rowSpan&quot;, 2 ] ],
+             [ &quot;td_body&quot;,        [ &quot;body&quot; ]                           ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ] ]
+         ]
+     ]
+ };
+ 
+ var hllbrffc = t13;</pre>
+
+<div id="page-t13">
+     <div id="header-t13"       > Header       </div>
+     <div id="left_margin-t13"  > Left Margin  </div>
+     <div id="body-t13"         > Body         </div>
+     <div id="right_margin-t13" > Right Margin </div>
+     <div id="footer-t13"       > Footer       </div>
+</div><script type="text/javascript">
+ var t13 = {
+     "divid" : "page-t13",
+     "rows"  : [
+         [
+             [ "td_header",       [ "header-t13"       ], [ "colSpan", 2 ] ],
+             [ "td_right_margin", [ "right_margin-t13" ], [ "rowSpan", 3 ] ]
+         ],
+         [
+             [ "td_left_margin", [ "left_margin-t13"  ], [ "rowSpan", 2 ] ],
+             [ "td_body",        [ "body-t13" ]                           ]
+         ],
+         [
+             [ "td_footer", [ "footer-t13" ] ]
+         ]
+     ]
+ };
+ div_table(t13);
+</script><p>
+</p>
+<h2><a name="t14__alias__hcltrffl_"><code>t14</code> (alias: <code>hcltrffl</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 14&quot;:
+ +--------+---------------------------+--------+
+ |        |                           |        |
+ |        |          header           |        |
+ |        |                           |        |
+ |        +---------------------------+        |
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ +--------+---------------------------+        |
+ |                                    |        |
+ |                   footer           |        |
+ |                                    |        |
+ +------------------------------------+--------+
+ */
+ 
+ var t14 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;  ], [ &quot;rowSpan&quot;, 2 ] ],
+             [ &quot;td_header&quot;,       [ &quot;header&quot;       ]                   ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ], [ &quot;rowSpan&quot;, 3 ] ]
+         ],
+         [
+             [ &quot;td_body&quot;, [ &quot;body&quot; ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ]
+     ]
+ };
+ 
+ var hcltrffl = t14;</pre>
+
+<div id="page-t14">
+     <div id="header-t14"       > Header       </div>
+     <div id="left_margin-t14"  > Left Margin  </div>
+     <div id="body-t14"         > Body         </div>
+     <div id="right_margin-t14" > Right Margin </div>
+     <div id="footer-t14"       > Footer       </div>
+</div><script type="text/javascript">
+ var t14 = {
+     "divid" : "page-t14",
+     "rows"  : [
+         [
+             [ "td_left_margin",  [ "left_margin-t14"  ], [ "rowSpan", 2 ] ],
+             [ "td_header",       [ "header-t14"       ]                   ],
+             [ "td_right_margin", [ "right_margin-t14" ], [ "rowSpan", 3 ] ]
+         ],
+         [
+             [ "td_body", [ "body-t14" ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t14" ], [ "colSpan", 2 ] ]
+         ]
+     ]
+ };
+ div_table(t14);
+</script><p>
+</p>
+<h2><a name="t15__alias__hflbrb_"><code>t15</code> (alias: <code>hflbrb</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 15&quot;:
+ +---------------------------------------------+
+ |                                             |
+ |                   header                    |
+ |                                             |
+ +--------+---------------------------+--------+
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ |        |                           |        |
+ |        |                           |        |
+ |        |          footer           |        |
+ |        |                           |        |
+ +--------+---------------------------+--------+
+ */
+ 
+ var t15 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;, [ &quot;header&quot; ], [ &quot;colSpan&quot;, 3 ] ],
+         ],
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;  ]   ],
+             [ &quot;td_body&quot;,         [ &quot;body&quot;, &quot;footer&quot; ] ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ]   ]
+         ] 
+     ]
+ };
+ 
+ var hflbrb = t15;</pre>
+
+<div id="page-t15">
+     <div id="header-t15"       > Header       </div>
+     <div id="left_margin-t15"  > Left Margin  </div>
+     <div id="body-t15"         > Body         </div>
+     <div id="right_margin-t15" > Right Margin </div>
+     <div id="footer-t15"       > Footer       </div>
+</div><script type="text/javascript">
+ var t15 = {
+     "divid" : "page-t15",
+     "rows"  : [
+         [
+             [ "td_header", [ "header-t15" ], [ "colSpan", 3 ] ],
+         ],
+         [
+             [ "td_left_margin",  [ "left_margin-t15"  ]   ],
+             [ "td_body",         [ "body-t15", "footer-t15" ] ],
+             [ "td_right_margin", [ "right_margin-t15" ]   ]
+         ] 
+     ]
+ };
+ div_table(t15);
+</script><p>
+</p>
+<h2><a name="t16__alias__hrlfrb_"><code>t16</code> (alias: <code>hrlfrb</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 16&quot;:
+ +--------+------------------------------------+
+ |        |                                    |
+ |        |          header                    |
+ |        |                                    |
+ |        +---------------------------+--------+
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ |        |                           |        |
+ |        |                           |        |
+ |        |          footer           |        |
+ |        |                           |        |
+ +--------+---------------------------+--------+
+ */
+ 
+ var t16 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;, [ &quot;left_margin&quot;  ], [ &quot;rowSpan&quot;, 2 ] ],
+             [ &quot;td_header&quot;,      [ &quot;header&quot;       ], [ &quot;colSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_body&quot;,         [ &quot;body&quot;, &quot;footer&quot; ] ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot;   ] ]
+         ] 
+     ]
+ };
+ 
+ var hrlfrb = t16;</pre>
+
+<div id="page-t16">
+     <div id="header-t16"       > Header       </div>
+     <div id="left_margin-t16"  > Left Margin  </div>
+     <div id="body-t16"         > Body         </div>
+     <div id="right_margin-t16" > Right Margin </div>
+     <div id="footer-t16"       > Footer       </div>
+</div><script type="text/javascript">
+ var t16 = {
+     "divid" : "page-t16",
+     "rows"  : [
+         [
+             [ "td_left_margin", [ "left_margin-t16"  ], [ "rowSpan", 2 ] ],
+             [ "td_header",      [ "header-t16"       ], [ "colSpan", 2 ] ]
+         ],
+         [
+             [ "td_body",         [ "body-t16", "footer-t16" ] ],
+             [ "td_right_margin", [ "right_margin-t16"   ] ]
+         ] 
+     ]
+ };
+ div_table(t16);
+</script><p>
+</p>
+<h2><a name="t17__alias__hllbrf_"><code>t17</code> (alias: <code>hllbrf</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 17&quot;:
+ +------------------------------------+--------+
+ |                                    |        |
+ |                   header           |        |
+ |                                    |        |
+ +--------+---------------------------+        |
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ |        |                           |        |
+ |        |                           |        |
+ |        |          footer           |        |
+ |        |                           |        |
+ +--------+---------------------------+--------+
+ */
+ 
+ var t17 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;,       [ &quot;header&quot;       ], [ &quot;colSpan&quot;, 2 ] ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ], [ &quot;rowSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_left_margin&quot;, [ &quot;left_margin&quot;    ] ],
+             [ &quot;td_body&quot;,        [ &quot;body&quot;, &quot;footer&quot; ] ]
+         ] 
+     ]
+ };
+ 
+ var hllbrf = t17;</pre>
+
+<div id="page-t17">
+     <div id="header-t17"       > Header       </div>
+     <div id="left_margin-t17"  > Left Margin  </div>
+     <div id="body-t17"         > Body         </div>
+     <div id="right_margin-t17" > Right Margin </div>
+     <div id="footer-t17"       > Footer       </div>
+</div><script type="text/javascript">
+ var t17 = {
+     "divid" : "page-t17",
+     "rows"  : [
+         [
+             [ "td_header",       [ "header-t17"       ], [ "colSpan", 2 ] ],
+             [ "td_right_margin", [ "right_margin-t17" ], [ "rowSpan", 2 ] ]
+         ],
+         [
+             [ "td_left_margin", [ "left_margin-t17"    ] ],
+             [ "td_body",        [ "body-t17", "footer-t17" ] ]
+         ] 
+     ]
+ };
+ div_table(t17);
+</script><p>
+</p>
+<h2><a name="t18__alias__hclfrf_"><code>t18</code> (alias: <code>hclfrf</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 18&quot;:
+ +--------+---------------------------+--------+
+ |        |                           |        |
+ |        |          header           |        |
+ |        |                           |        |
+ |        +---------------------------+        |
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ |        |                           |        |
+ |        |                           |        |
+ |        |          footer           |        |
+ |        |                           |        |
+ +--------+---------------------------+--------+
+ */
+ 
+ var t18 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;  ], [ &quot;rowSpan&quot;, 2 ] ],
+             [ &quot;td_header&quot;,       [ &quot;header&quot;       ]                   ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ], [ &quot;rowSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_body&quot;, [ &quot;body&quot;, &quot;footer&quot; ] ]
+         ] 
+     ]
+ };
+ 
+ var hclfrf = t18;</pre>
+
+<div id="page-t18">
+     <div id="header-t18"       > Header       </div>
+     <div id="left_margin-t18"  > Left Margin  </div>
+     <div id="body-t18"         > Body         </div>
+     <div id="right_margin-t18" > Right Margin </div>
+     <div id="footer-t18"       > Footer       </div>
+</div><script type="text/javascript">
+ var t18 = {
+     "divid" : "page-t18",
+     "rows"  : [
+         [
+             [ "td_left_margin",  [ "left_margin-t18"  ], [ "rowSpan", 2 ] ],
+             [ "td_header",       [ "header-t18"       ]                   ],
+             [ "td_right_margin", [ "right_margin-t18" ], [ "rowSpan", 2 ] ]
+         ],
+         [
+             [ "td_body", [ "body-t18", "footer-t18" ] ]
+         ] 
+     ]
+ };
+ div_table(t18);
+</script><p>
+</p>
+<h2><a name="t19__alias__ltrtff_"><code>t19</code> (alias: <code>ltrtff</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 19&quot;:
+ +--------+---------------------------+--------+
+ |        |                           |        |
+ |        |          header           |        |
+ |        |                           |        |
+ |        |                           |        |
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ +--------+---------------------------+--------+
+ |                                             |
+ |                   footer                    |
+ |                                             |
+ +---------------------------------------------+
+ */
+ 
+ var t19 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;    ] ],
+             [ &quot;td_body&quot;,         [ &quot;header&quot;, &quot;body&quot; ] ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot;   ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 3 ] ]
+         ] 
+     ]
+ };
+ 
+ var ltrtff = t19;</pre>
+
+<div id="page-t19">
+     <div id="header-t19"       > Header       </div>
+     <div id="left_margin-t19"  > Left Margin  </div>
+     <div id="body-t19"         > Body         </div>
+     <div id="right_margin-t19" > Right Margin </div>
+     <div id="footer-t19"       > Footer       </div>
+</div><script type="text/javascript">
+ var t19 = {
+     "divid" : "page-t19",
+     "rows"  : [
+         [
+             [ "td_left_margin",  [ "left_margin-t19"    ] ],
+             [ "td_body",         [ "header-t19", "body-t19" ] ],
+             [ "td_right_margin", [ "right_margin-t19"   ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t19" ], [ "colSpan", 3 ] ]
+         ] 
+     ]
+ };
+ div_table(t19);
+</script><p>
+</p>
+<h2><a name="t20__alias__lfrtfr_"><code>t20</code> (alias: <code>lfrtfr</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 20&quot;:
+ +--------+---------------------------+--------+
+ |        |                           |        |
+ |        |          header           |        |
+ |        |                           |        |
+ |        |                           |        |
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ |        +---------------------------+--------+
+ |        |                                    |
+ |        |          footer                    |
+ |        |                                    |
+ +--------+------------------------------------+
+ */
+ 
+ var t20 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;  ],  [ &quot;rowSpan&quot;, 2 ] ],
+             [ &quot;td_body&quot;,         [ &quot;header&quot;, &quot;body&quot; ]                  ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ]                    ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ] 
+     ]
+ };
+ 
+ var lfrtfr = t20;</pre>
+
+<div id="page-t20">
+     <div id="header-t20"       > Header       </div>
+     <div id="left_margin-t20"  > Left Margin  </div>
+     <div id="body-t20"         > Body         </div>
+     <div id="right_margin-t20" > Right Margin </div>
+     <div id="footer-t20"       > Footer       </div>
+</div><script type="text/javascript">
+ var t20 = {
+     "divid" : "page-t20",
+     "rows"  : [
+         [
+             [ "td_left_margin",  [ "left_margin-t20"  ],  [ "rowSpan", 2 ] ],
+             [ "td_body",         [ "header-t20", "body-t20" ]                  ],
+             [ "td_right_margin", [ "right_margin-t20" ]                    ]
+         ],
+         [
+             [ "td_footer", [ "footer-t20" ], [ "colSpan", 2 ] ]
+         ] 
+     ]
+ };
+ div_table(t20);
+</script><p>
+</p>
+<h2><a name="t21__alias__ltrffl_"><code>t21</code> (alias: <code>ltrffl</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 21&quot;:
+ +--------+---------------------------+--------+
+ |        |                           |        |
+ |        |          header           |        |
+ |        |                           |        |
+ |        |                           |        |
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ +--------+---------------------------+        |
+ |                                    |        |
+ |                   footer           |        |
+ |                                    |        |
+ +------------------------------------+--------+
+ */
+ 
+ var t21 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;    ]                   ],
+             [ &quot;td_body&quot;,         [ &quot;header&quot;, &quot;body&quot; ]                   ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot;   ], [ &quot;rowSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ] 
+     ]
+ };
+ 
+ var ltrffl = t21;</pre>
+
+<div id="page-t21">
+     <div id="header-t21"       > Header       </div>
+     <div id="left_margin-t21"  > Left Margin  </div>
+     <div id="body-t21"         > Body         </div>
+     <div id="right_margin-t21" > Right Margin </div>
+     <div id="footer-t21"       > Footer       </div>
+</div><script type="text/javascript">
+ var t21 = {
+     "divid" : "page-t21",
+     "rows"  : [
+         [
+             [ "td_left_margin",  [ "left_margin-t21"    ]                   ],
+             [ "td_body",         [ "header-t21", "body-t21" ]                   ],
+             [ "td_right_margin", [ "right_margin-t21"   ], [ "rowSpan", 2 ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t21" ], [ "colSpan", 2 ] ]
+         ] 
+     ]
+ };
+ div_table(t21);
+</script><p>
+</p>
+<h2><a name="t22__alias__lfrffc_"><code>t22</code> (alias: <code>lfrffc</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 22&quot;:
+ +--------+---------------------------+--------+
+ |        |                           |        |
+ |        |          header           |        |
+ |        |                           |        |
+ |        |                           |        |
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ |        +---------------------------+        |
+ |        |                           |        |
+ |        |          footer           |        |
+ |        |                           |        |
+ +--------+---------------------------+--------+
+ */
+ 
+ var t22 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;    ], [ &quot;rowSpan&quot;, 2 ] ],
+             [ &quot;td_body&quot;,         [ &quot;header&quot;, &quot;body&quot; ]                   ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot;   ], [ &quot;rowSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ] ]
+         ] 
+     ]
+ };
+ 
+ var lfrffc = t22;</pre>
+
+<div id="page-t22">
+     <div id="header-t22"       > Header       </div>
+     <div id="left_margin-t22"  > Left Margin  </div>
+     <div id="body-t22"         > Body         </div>
+     <div id="right_margin-t22" > Right Margin </div>
+     <div id="footer-t22"       > Footer       </div>
+</div><script type="text/javascript">
+ var t22 = {
+     "divid" : "page-t22",
+     "rows"  : [
+         [
+             [ "td_left_margin",  [ "left_margin-t22"    ], [ "rowSpan", 2 ] ],
+             [ "td_body",         [ "header-t22", "body-t22" ]                   ],
+             [ "td_right_margin", [ "right_margin-t22"   ], [ "rowSpan", 2 ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t22" ] ]
+         ] 
+     ]
+ };
+ div_table(t22);
+</script><p>
+</p>
+<h2><a name="t23__alias__hrlffr_"><code>t23</code> (alias: <code>hrlffr</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 23&quot;:
+ +--------+------------------------------------+
+ |        |                                    |
+ |        |          header                    |
+ |        |                                    |
+ |        +------------------------------------+
+ |        |                                    |
+ |        |                                    |
+ | left   |           body              right  |
+ | margin |                             margin |
+ |        |                                    |
+ |        +------------------------------------+
+ |        |                                    |
+ |        |          footer                    |
+ |        |                                    |
+ +--------+------------------------------------+
+ 
+ (but right margin not necessarily float right)
+ 
+ */
+ 
+ var t23 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;, [ &quot;left_margin&quot; ], [ &quot;rowSpan&quot;, 3 ] ],
+             [ &quot;td_header&quot;,      [ &quot;header&quot;      ]                   ]
+         ],
+         [
+             [ &quot;td_body&quot;, [ &quot;body&quot;, &quot;right_margin&quot; ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ] ]
+         ] 
+     ]
+ };
+ 
+ var hrlffr = t23;</pre>
+
+<div id="page-t23">
+     <div id="header-t23"       > Header       </div>
+     <div id="left_margin-t23"  > Left Margin  </div>
+     <div id="body-t23"         > Body         </div>
+     <div id="right_margin-t23" > Right Margin </div>
+     <div id="footer-t23"       > Footer       </div>
+</div><script type="text/javascript">
+ var t23 = {
+     "divid" : "page-t23",
+     "rows"  : [
+         [
+             [ "td_left_margin", [ "left_margin-t23" ], [ "rowSpan", 3 ] ],
+             [ "td_header",      [ "header-t23"      ]                   ]
+         ],
+         [
+             [ "td_body", [ "body-t23", "right_margin" ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t23" ] ]
+         ] 
+     ]
+ };
+ div_table(t23);
+</script><p>
+</p>
+<h2><a name="t24__alias__hrltff_"><code>t24</code> (alias: <code>hrltff</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 24&quot;:
+ +--------+------------------------------------+
+ |        |                                    |
+ |        |          header                    |
+ |        |                                    |
+ |        +------------------------------------+
+ |        |                                    |
+ |        |                                    |
+ | left   |           body              right  |
+ | margin |                             margin |
+ |        |                                    |
+ +--------+------------------------------------+
+ |                                             |
+ |                   footer                    |
+ |                                             |
+ +---------------------------------------------+
+ 
+ (but right margin not necessarily float right)
+ 
+ */
+ 
+ var t24 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;, [ &quot;left_margin&quot; ], [ &quot;rowSpan&quot;, 2 ] ],
+             [ &quot;td_header&quot;,      [ &quot;header&quot;      ]                   ]
+         ],
+         [
+             [ &quot;td_body&quot;, [ &quot;body&quot;, &quot;right_margin&quot; ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ] 
+     ]
+ };
+ 
+ var hrltff = t24;</pre>
+
+<div id="page-t24">
+     <div id="header-t24"       > Header       </div>
+     <div id="left_margin-t24"  > Left Margin  </div>
+     <div id="body-t24"         > Body         </div>
+     <div id="right_margin-t24" > Right Margin </div>
+     <div id="footer-t24"       > Footer       </div>
+</div><script type="text/javascript">
+ var t24 = {
+     "divid" : "page-t24",
+     "rows"  : [
+         [
+             [ "td_left_margin", [ "left_margin-t24" ], [ "rowSpan", 2 ] ],
+             [ "td_header",      [ "header-t24"      ]                   ]
+         ],
+         [
+             [ "td_body", [ "body-t24", "right_margin" ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t24" ], [ "colSpan", 2 ] ]
+         ] 
+     ]
+ };
+ div_table(t24);
+</script><p>
+</p>
+<h2><a name="t25__alias__hflbfr_"><code>t25</code> (alias: <code>hflbfr</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 25&quot;:
+ +---------------------------------------------+
+ |                                             |
+ |                   header                    |
+ |                                             |
+ +--------+------------------------------------+
+ |        |                                    |
+ |        |                                    |
+ | left   |           body              right  |
+ | margin |                             margin |
+ |        |                                    |
+ |        +------------------------------------+
+ |        |                                    |
+ |        |          footer                    |
+ |        |                                    |
+ +--------+------------------------------------+
+ 
+ (but right margin not necessarily float right)
+ 
+ */
+ 
+ var t25 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;, [ &quot;header&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_left_margin&quot;, [ &quot;left_margin&quot;          ], [ &quot;rowSpan&quot;, 2 ] ],
+             [ &quot;td_body&quot;,        [ &quot;body&quot;, &quot;right_margin&quot; ]                   ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ] ]
+         ] 
+     ]
+ };
+ 
+ var hflbfr = t25;</pre>
+
+<div id="page-t25">
+     <div id="header-t25"       > Header       </div>
+     <div id="left_margin-t25"  > Left Margin  </div>
+     <div id="body-t25"         > Body         </div>
+     <div id="right_margin-t25" > Right Margin </div>
+     <div id="footer-t25"       > Footer       </div>
+</div><script type="text/javascript">
+ var t25 = {
+     "divid" : "page-t25",
+     "rows"  : [
+         [
+             [ "td_header", [ "header-t25" ], [ "colSpan", 2 ] ]
+         ],
+         [
+             [ "td_left_margin", [ "left_margin-t25"          ], [ "rowSpan", 2 ] ],
+             [ "td_body",        [ "body-t25", "right_margin-t25" ]                   ]
+         ],
+         [
+             [ "td_footer", [ "footer-t25" ] ]
+         ] 
+     ]
+ };
+ div_table(t25);
+</script><p>
+</p>
+<h2><a name="t26__alias__hflmff_"><code>t26</code> (alias: <code>hflmff</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 26&quot;:
+ +---------------------------------------------+
+ |                                             |
+ |                   header                    |
+ |                                             |
+ +--------+------------------------------------+
+ |        |                                    |
+ |        |                                    |
+ | left   |           body              right  |
+ | margin |                             margin |
+ |        |                                    |
+ +--------+------------------------------------+
+ |                                             |
+ |                   footer                    |
+ |                                             |
+ +---------------------------------------------+
+ 
+ (but right margin not necessarily float right)
+ 
+ */
+ 
+ var t26 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;, [ &quot;header&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_left_margin&quot;, [ &quot;left_margin&quot;          ] ],
+             [ &quot;td_body&quot;,        [ &quot;body&quot;, &quot;right_margin&quot; ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ] 
+     ]
+ };
+ 
+ var hflmff = t26;</pre>
+
+<div id="page-t26">
+     <div id="header-t26"       > Header       </div>
+     <div id="left_margin-t26"  > Left Margin  </div>
+     <div id="body-t26"         > Body         </div>
+     <div id="right_margin-t26" > Right Margin </div>
+     <div id="footer-t26"       > Footer       </div>
+</div><script type="text/javascript">
+ var t26 = {
+     "divid" : "page-t26",
+     "rows"  : [
+         [
+             [ "td_header", [ "header-t26" ], [ "colSpan", 2 ] ]
+         ],
+         [
+             [ "td_left_margin", [ "left_margin-t26"          ] ],
+             [ "td_body",        [ "body-t26", "right_margin-t26" ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t26" ], [ "colSpan", 2 ] ]
+         ] 
+     ]
+ };
+ div_table(t26);
+</script><p>
+</p>
+<h2><a name="t27__alias__hlrffl_"><code>t27</code> (alias: <code>hlrffl</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 27&quot;:
+ +------------------------------------+--------+
+ |                                    |        |
+ |                   header           |        |
+ |                                    |        |
+ +------------------------------------+        |
+ |                                    |        |
+ |                                    |        |
+ | left               body            | right  |
+ | margin                             | margin |
+ |                                    |        |
+ +------------------------------------+        |
+ |                                    |        |
+ |                   footer           |        |
+ |                                    |        |
+ +------------------------------------+--------+
+ 
+ (but left margin not necessarily float left)
+ 
+ */
+ 
+ var t27 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;,       [ &quot;header&quot; ]                         ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ], [ &quot;rowSpan&quot;, 3 ] ]
+         ],
+         [
+             [ &quot;td_body&quot;, [ &quot;left_margin&quot;, &quot;body&quot; ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ] ]
+         ] 
+     ]
+ };
+ 
+ var hlrffl = t27;</pre>
+
+<div id="page-t27">
+     <div id="header-t27"       > Header       </div>
+     <div id="left_margin-t27"  > Left Margin  </div>
+     <div id="body-t27"         > Body         </div>
+     <div id="right_margin-t27" > Right Margin </div>
+     <div id="footer-t27"       > Footer       </div>
+</div><script type="text/javascript">
+ var t27 = {
+     "divid" : "page-t27",
+     "rows"  : [
+         [
+             [ "td_header",       [ "header-t27" ]                         ],
+             [ "td_right_margin", [ "right_margin-t27" ], [ "rowSpan", 3 ] ]
+         ],
+         [
+             [ "td_body", [ "left_margin-t27", "body" ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t27" ] ]
+         ] 
+     ]
+ };
+ div_table(t27);
+</script><p>
+</p>
+<h2><a name="t28__alias__hlrtff_"><code>t28</code> (alias: <code>hlrtff</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 28&quot;:
+ +------------------------------------+--------+
+ |                                    |        |
+ |                   header           |        |
+ |                                    |        |
+ +------------------------------------+        |
+ |                                    |        |
+ |                                    |        |
+ | left               body            | right  |
+ | margin                             | margin |
+ |                                    |        |
+ +------------------------------------+--------+
+ |                                             |
+ |                   footer                    |
+ |                                             |
+ +---------------------------------------------+
+ 
+ (but left margin not necessarily float left)
+ 
+ */
+ 
+ var t28 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;,       [ &quot;header&quot;       ]                   ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ], [ &quot;rowSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_body&quot;, [ &quot;left_margin&quot;, &quot;body&quot; ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ] 
+     ]
+ };
+ 
+ var hlrtff = t28;</pre>
+
+<div id="page-t28">
+     <div id="header-t28"       > Header       </div>
+     <div id="left_margin-t28"  > Left Margin  </div>
+     <div id="body-t28"         > Body         </div>
+     <div id="right_margin-t28" > Right Margin </div>
+     <div id="footer-t28"       > Footer       </div>
+</div><script type="text/javascript">
+ var t28 = {
+     "divid" : "page-t28",
+     "rows"  : [
+         [
+             [ "td_header",       [ "header-t28"       ]                   ],
+             [ "td_right_margin", [ "right_margin-t28" ], [ "rowSpan", 2 ] ]
+         ],
+         [
+             [ "td_body", [ "left_margin-t28", "body" ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t28" ], [ "colSpan", 2 ] ]
+         ] 
+     ]
+ };
+ div_table(t28);
+</script><p>
+</p>
+<h2><a name="t29__alias__hfrbfl_"><code>t29</code> (alias: <code>hfrbfl</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 29&quot;:
+ +---------------------------------------------+
+ |                                             |
+ |                   header                    |
+ |                                             |
+ +------------------------------------+--------+
+ |                                    |        |
+ |                                    |        |
+ | left               body            | right  |
+ | margin                             | margin |
+ |                                    |        |
+ +------------------------------------+        |
+ |                                    |        |
+ |                   footer           |        |
+ |                                    |        |
+ +------------------------------------+--------+
+ 
+ (but left margin not necessarily float left)
+ 
+ */
+ 
+ var t29 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;, [ &quot;header&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_body&quot;,         [ &quot;left_margin&quot;, &quot;body&quot; ]                   ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot;        ], [ &quot;rowSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ] ]
+         ] 
+     ]
+ };
+ 
+ var hfrbfl = t29;</pre>
+
+<div id="page-t29">
+     <div id="header-t29"       > Header       </div>
+     <div id="left_margin-t29"  > Left Margin  </div>
+     <div id="body-t29"         > Body         </div>
+     <div id="right_margin-t29" > Right Margin </div>
+     <div id="footer-t29"       > Footer       </div>
+</div><script type="text/javascript">
+ var t29 = {
+     "divid" : "page-t29",
+     "rows"  : [
+         [
+             [ "td_header", [ "header-t29" ], [ "colSpan", 2 ] ]
+         ],
+         [
+             [ "td_body",         [ "left_margin-t29", "body-t29" ]                   ],
+             [ "td_right_margin", [ "right_margin-t29"        ], [ "rowSpan", 2 ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t29" ] ]
+         ] 
+     ]
+ };
+ div_table(t29);
+</script><p>
+</p>
+<h2><a name="t30__alias__hfrmff_"><code>t30</code> (alias: <code>hfrmff</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 30&quot;:
+ +---------------------------------------------+
+ |                                             |
+ |                   header                    |
+ |                                             |
+ +------------------------------------+--------+
+ |                                    |        |
+ |                                    |        |
+ | left               body            | right  |
+ | margin                             | margin |
+ |                                    |        |
+ +------------------------------------+--------+
+ |                                             |
+ |                   footer                    |
+ |                                             |
+ +---------------------------------------------+
+ 
+ (but left margin not necessarily float left)
+ 
+ */
+ 
+ var t30 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;, [ &quot;header&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_body&quot;,         [ &quot;left_margin&quot;, &quot;body&quot; ] ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot;        ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ] 
+     ]
+ };
+ 
+ var hfrmff = t30;</pre>
+
+<div id="page-t30">
+     <div id="header-t30"       > Header       </div>
+     <div id="left_margin-t30"  > Left Margin  </div>
+     <div id="body-t30"         > Body         </div>
+     <div id="right_margin-t30" > Right Margin </div>
+     <div id="footer-t30"       > Footer       </div>
+</div><script type="text/javascript">
+ var t30 = {
+     "divid" : "page-t30",
+     "rows"  : [
+         [
+             [ "td_header", [ "header-t30" ], [ "colSpan", 2 ] ]
+         ],
+         [
+             [ "td_body",         [ "left_margin-t30", "body-t30" ] ],
+             [ "td_right_margin", [ "right_margin-t30"        ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t30" ], [ "colSpan", 2 ] ]
+         ] 
+     ]
+ };
+ div_table(t30);
+</script><p>
+</p>
+<h2><a name="t31__alias__hflb_"><code>t31</code> (alias: <code>hflb</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 31&quot;:  (&quot;gun&quot;)
+ +---------------------------------------------+
+ |                                             |
+ |                   header                    |
+ |                                             |
+ +--------+------------------------------------+
+ |        |                                    |
+ |        |                                    |
+ | left   |           body              right  |
+ | margin |                             margin |
+ |        |                                    |
+ |        |                                    |
+ |        |                                    |
+ |        |          footer                    |
+ |        |                                    |
+ +--------+------------------------------------+
+ 
+ (but right margin not necessarily float right)
+ 
+ */
+ 
+ var t31 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;, [ &quot;header&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_left_margin&quot;, [ &quot;left_margin&quot;                    ] ],
+             [ &quot;td_body&quot;,        [ &quot;body&quot;, &quot;right_margin&quot;, &quot;footer&quot; ] ]
+         ]
+     ]
+ };
+ 
+ var hflb = t31;</pre>
+
+<div id="page-t31">
+     <div id="header-t31"       > Header       </div>
+     <div id="left_margin-t31"  > Left Margin  </div>
+     <div id="body-t31"         > Body         </div>
+     <div id="right_margin-t31" > Right Margin </div>
+     <div id="footer-t31"       > Footer       </div>
+</div><script type="text/javascript">
+ var t31 = {
+     "divid" : "page-t31",
+     "rows"  : [
+         [
+             [ "td_header", [ "header-t31" ], [ "colSpan", 2 ] ]
+         ],
+         [
+             [ "td_left_margin", [ "left_margin-t31"                    ] ],
+             [ "td_body",        [ "body-t31", "right_margin-t31", "footer-t31" ] ]
+         ]
+     ]
+ };
+ div_table(t31);
+</script><p>
+</p>
+<h2><a name="t32__alias__hrlf_"><code>t32</code> (alias: <code>hrlf</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 32&quot;:
+ +--------+------------------------------------+
+ |        |                                    |
+ |        |          header                    |
+ |        |                                    |
+ |        +------------------------------------+
+ |        |                                    |
+ |        |                                    |
+ | left   |           body              right  |
+ | margin |                             margin |
+ |        |                                    |
+ |        |                                    |
+ |        |                                    |
+ |        |          footer                    |
+ |        |                                    |
+ +--------+------------------------------------+
+ 
+ (but right margin not necessarily float right)
+ 
+ */
+ 
+ var t32 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;, [ &quot;left_margin&quot; ], [ &quot;rowSpan&quot;, 2 ] ],
+             [ &quot;td_header&quot;,      [ &quot;header&quot;      ]                   ]
+         ],
+         [
+             [ &quot;td_body&quot;, [ &quot;body&quot;, &quot;right_margin&quot;, &quot;footer&quot; ] ]
+         ]
+     ]
+ };
+ 
+ var hrlf = t32;</pre>
+
+<div id="page-t32">
+     <div id="header-t32"       > Header       </div>
+     <div id="left_margin-t32"  > Left Margin  </div>
+     <div id="body-t32"         > Body         </div>
+     <div id="right_margin-t32" > Right Margin </div>
+     <div id="footer-t32"       > Footer       </div>
+</div><script type="text/javascript">
+ var t32 = {
+     "divid" : "page-t32",
+     "rows"  : [
+         [
+             [ "td_left_margin", [ "left_margin-t32" ], [ "rowSpan", 2 ] ],
+             [ "td_header",      [ "header-t32"      ]                   ]
+         ],
+         [
+             [ "td_body", [ "body-t32", "right_margin-t32", "footer-t32" ] ]
+         ]
+     ]
+ };
+ div_table(t32);
+</script><p>
+</p>
+<h2><a name="t33__alias__hfrb_"><code>t33</code> (alias: <code>hfrb</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 33&quot;:
+ +---------------------------------------------+
+ |                                             |
+ |                   header                    |
+ |                                             |
+ +------------------------------------+--------+
+ |                                    |        |
+ |                                    |        |
+ | left               body            | right  |
+ | margin                             | margin |
+ |                                    |        |
+ |                                    |        |
+ |                                    |        |
+ |                   footer           |        |
+ |                                    |        |
+ +------------------------------------+--------+
+ 
+ (but left margin not necessarily float left)
+ 
+ */
+ 
+ var t33 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;, [ &quot;header&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_body&quot;,         [ &quot;left_margin&quot;, &quot;body&quot;, &quot;footer&quot; ] ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot;                  ] ]
+         ]
+     ]
+ };
+ 
+ var hfrb = t33;</pre>
+
+<div id="page-t33">
+     <div id="header-t33"       > Header       </div>
+     <div id="left_margin-t33"  > Left Margin  </div>
+     <div id="body-t33"         > Body         </div>
+     <div id="right_margin-t33" > Right Margin </div>
+     <div id="footer-t33"       > Footer       </div>
+</div><script type="text/javascript">
+ var t33 = {
+     "divid" : "page-t33",
+     "rows"  : [
+         [
+             [ "td_header", [ "header-t33" ], [ "colSpan", 2 ] ]
+         ],
+         [
+             [ "td_body",         [ "left_margin-t33", "body-t33", "footer-t33" ] ],
+             [ "td_right_margin", [ "right_margin-t33"                  ] ]
+         ]
+     ]
+ };
+ div_table(t33);
+</script><p>
+</p>
+<h2><a name="t34__alias__hlrf_"><code>t34</code> (alias: <code>hlrf</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 34&quot;:
+ +------------------------------------+--------+
+ |                                    |        |
+ |                   header           |        |
+ |                                    |        |
+ +------------------------------------+        |
+ |                                    |        |
+ |                                    |        |
+ | left               body            | right  |
+ | margin                             | margin |
+ |                                    |        |
+ |                                    |        |
+ |                                    |        |
+ |                   footer           |        |
+ |                                    |        |
+ +------------------------------------+--------+
+ 
+ (but left margin not necessarily float left)
+ 
+ */
+ 
+ var t34 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;,       [ &quot;header&quot; ]                         ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ], [ &quot;rowSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_body&quot;, [ &quot;left_margin&quot;, &quot;body&quot;, &quot;footer&quot; ] ]
+         ]
+     ]
+ };
+ 
+ var hlrf = t34;</pre>
+
+<div id="page-t34">
+     <div id="header-t34"       > Header       </div>
+     <div id="left_margin-t34"  > Left Margin  </div>
+     <div id="body-t34"         > Body         </div>
+     <div id="right_margin-t34" > Right Margin </div>
+     <div id="footer-t34"       > Footer       </div>
+</div><script type="text/javascript">
+ var t34 = {
+     "divid" : "page-t34",
+     "rows"  : [
+         [
+             [ "td_header",       [ "header-t34" ]                         ],
+             [ "td_right_margin", [ "right_margin-t34" ], [ "rowSpan", 2 ] ]
+         ],
+         [
+             [ "td_body", [ "left_margin-t34", "body-t34", "footer-t34" ] ]
+         ]
+     ]
+ };
+ div_table(t34);
+</script><p>
+</p>
+<h2><a name="t35__alias__rtff_"><code>t35</code> (alias: <code>rtff</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 35&quot;:
+ +------------------------------------+--------+
+ |                                    |        |
+ |                   header           |        |
+ |                                    |        |
+ |                                    |        |
+ |                                    |        |
+ |                                    |        |
+ | left               body            | right  |
+ | margin                             | margin |
+ |                                    |        |
+ +------------------------------------+--------+
+ |                                             |
+ |                   footer                    |
+ |                                             |
+ +---------------------------------------------+
+ 
+ (but left margin not necessarily float left)
+ 
+ */
+ 
+ var t35 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_body&quot;,         [ &quot;header&quot;, &quot;left_margin&quot;, &quot;body&quot; ] ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot;                  ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ]
+     ]
+ };
+ 
+ var rtff = t35;</pre>
+
+<div id="page-t35">
+     <div id="header-t35"       > Header       </div>
+     <div id="left_margin-t35"  > Left Margin  </div>
+     <div id="body-t35"         > Body         </div>
+     <div id="right_margin-t35" > Right Margin </div>
+     <div id="footer-t35"       > Footer       </div>
+</div><script type="text/javascript">
+ var t35 = {
+     "divid" : "page-t35",
+     "rows"  : [
+         [
+             [ "td_body",         [ "header-t35", "left_margin-t35", "body-t35" ] ],
+             [ "td_right_margin", [ "right_margin-t35"                  ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t35" ], [ "colSpan", 2 ] ]
+         ]
+     ]
+ };
+ div_table(t35);
+</script><p>
+</p>
+<h2><a name="t36__alias__rffl_"><code>t36</code> (alias: <code>rffl</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 36&quot;:
+ +------------------------------------+--------+
+ |                                    |        |
+ |                   header           |        |
+ |                                    |        |
+ |                                    |        |
+ |                                    |        |
+ |                                    |        |
+ | left               body            | right  |
+ | margin                             | margin |
+ |                                    |        |
+ +------------------------------------+        |
+ |                                    |        |
+ |                   footer           |        |
+ |                                    |        |
+ +------------------------------------+--------+
+ 
+ (but left margin not necessarily float left)
+ 
+ */
+ 
+ var t36 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_body&quot;,         [ &quot;header&quot;, &quot;left_margin&quot;, &quot;body&quot; ]                   ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot;                  ], [ &quot;rowSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ] ]
+         ]
+     ]
+ };
+ 
+ var rffl = t36;</pre>
+
+<div id="page-t36">
+     <div id="header-t36"       > Header       </div>
+     <div id="left_margin-t36"  > Left Margin  </div>
+     <div id="body-t36"         > Body         </div>
+     <div id="right_margin-t36" > Right Margin </div>
+     <div id="footer-t36"       > Footer       </div>
+</div><script type="text/javascript">
+ var t36 = {
+     "divid" : "page-t36",
+     "rows"  : [
+         [
+             [ "td_body",         [ "header-t36", "left_margin-t36", "body-t36" ]                   ],
+             [ "td_right_margin", [ "right_margin-t36"                  ], [ "rowSpan", 2 ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t36" ] ]
+         ]
+     ]
+ };
+ div_table(t36);
+</script><p>
+</p>
+<h2><a name="t37__alias__ltff_"><code>t37</code> (alias: <code>ltff</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 37&quot;:
+ +--------+------------------------------------+
+ |        |                                    |
+ |        |          header                    |
+ |        |                                    |
+ |        |                                    |
+ |        |                                    |
+ |        |                                    |
+ | left   |           body              right  |
+ | margin |                             margin |
+ |        |                                    |
+ +--------+------------------------------------+
+ |                                             |
+ |                   footer                    |
+ |                                             |
+ +---------------------------------------------+
+ 
+ (but right margin not necessarily float right)
+ 
+ */
+ 
+ var t37 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;, [ &quot;left_margin&quot;                    ] ],
+             [ &quot;td_body&quot;,        [ &quot;header&quot;, &quot;body&quot;, &quot;right_margin&quot; ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ]
+     ]
+ };
+ 
+ var ltff = t37;</pre>
+
+<div id="page-t37">
+     <div id="header-t37"       > Header       </div>
+     <div id="left_margin-t37"  > Left Margin  </div>
+     <div id="body-t37"         > Body         </div>
+     <div id="right_margin-t37" > Right Margin </div>
+     <div id="footer-t37"       > Footer       </div>
+</div><script type="text/javascript">
+ var t37 = {
+     "divid" : "page-t37",
+     "rows"  : [
+         [
+             [ "td_left_margin", [ "left_margin-t37"                    ] ],
+             [ "td_body",        [ "header-t37", "body-t37", "right_margin-t37" ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t37" ], [ "colSpan", 2 ] ]
+         ]
+     ]
+ };
+ div_table(t37);
+</script><p>
+</p>
+<h2><a name="t38__alias__lffr_"><code>t38</code> (alias: <code>lffr</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 38&quot;:
+ +--------+------------------------------------+
+ |        |                                    |
+ |        |          header                    |
+ |        |                                    |
+ |        |                                    |
+ |        |                                    |
+ |        |                                    |
+ | left   |           body              right  |
+ | margin |                             margin |
+ |        |                                    |
+ |        +------------------------------------+
+ |        |                                    |
+ |        |          footer                    |
+ |        |                                    |
+ +--------+------------------------------------+
+ 
+ (but right margin not necessarily float right)
+ 
+ */
+ 
+ var t38 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;, [ &quot;left_margin&quot;                    ], [ &quot;rowSpan&quot;, 2 ] ],
+             [ &quot;td_body&quot;,        [ &quot;header&quot;, &quot;body&quot;, &quot;right_margin&quot; ]                   ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ] ]
+         ]
+     ]
+ };
+ 
+ var lffr = t38;</pre>
+
+<div id="page-t38">
+     <div id="header-t38"       > Header       </div>
+     <div id="left_margin-t38"  > Left Margin  </div>
+     <div id="body-t38"         > Body         </div>
+     <div id="right_margin-t38" > Right Margin </div>
+     <div id="footer-t38"       > Footer       </div>
+</div><script type="text/javascript">
+ var t38 = {
+     "divid" : "page-t38",
+     "rows"  : [
+         [
+             [ "td_left_margin", [ "left_margin-t38"                    ], [ "rowSpan", 2 ] ],
+             [ "td_body",        [ "header-t38", "body-t38", "right_margin-t38" ]                   ]
+         ],
+         [
+             [ "td_footer", [ "footer-t38" ] ]
+         ]
+     ]
+ };
+ div_table(t38);
+</script><p>
+</p>
+<h2><a name="t39__alias__hfff_"><code>t39</code> (alias: <code>hfff</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 39&quot;:
+ +---------------------------------------------+
+ |                                             |
+ |                   header                    |
+ |                                             |
+ +---------------------------------------------+
+ |                                             |
+ |                                             |
+ | left               body              right  |
+ | margin                               margin |
+ |                                             |
+ +---------------------------------------------+
+ |                                             |
+ |                   footer                    |
+ |                                             |
+ +---------------------------------------------+
+ 
+ (but left/right margins don't necessarily float)
+ 
+ */
+ 
+ var t39 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;, [ &quot;header&quot; ] ]
+         ],
+         [
+             [ &quot;td_body&quot;, [ &quot;left_margin&quot;, &quot;body&quot;, &quot;right_margin&quot; ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ] ]
+         ]
+     ]
+ };
+ 
+ var hfff = t39;</pre>
+<div id="page-t39">
+     <div id="header-t39"       > Header       </div>
+     <div id="left_margin-t39"  > Left Margin  </div>
+     <div id="body-t39"         > Body         </div>
+     <div id="right_margin-t39" > Right Margin </div>
+     <div id="footer-t39"       > Footer       </div>
+</div>
+
+<script type="text/javascript">
+ var t39 = {
+     "divid" : "page-t39",
+     "rows"  : [
+         [
+             [ "td_header", [ "header-t39" ] ]
+         ],
+         [
+             [ "td_body", [ "left_margin-t39", "body-t39", "right_margin-t39" ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t39" ] ]
+         ]
+     ]
+ };
+ div_table(t39);
+</script>
+
+<p>
+</p>
+<h2><a name="t40__alias__lfrf_"><code>t40</code> (alias: <code>lfrf</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 40&quot;:
+ +--------+---------------------------+--------+
+ |        |                           |        |
+ |        |          header           |        |
+ |        |                           |        |
+ |        |                           |        |
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ |        |                           |        |
+ |        |                           |        |
+ |        |          footer           |        |
+ |        |                           |        |
+ +--------+---------------------------+--------+
+ */
+ 
+ var t40 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;  ]             ],
+             [ &quot;td_body&quot;,         [ &quot;header&quot;, &quot;body&quot;, &quot;footer&quot; ] ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ]             ]
+         ]
+     ]
+ };
+ 
+ var lfrf = t40;
+
+</pre>
+<div id="page-t40">
+     <div id="header-t40"       > Header       </div>
+     <div id="left_margin-t40"  > Left Margin  </div>
+     <div id="body-t40"         > Body         </div>
+     <div id="right_margin-t40" > Right Margin </div>
+     <div id="footer-t40"       > Footer       </div>
+</div>
+
+<script type="text/javascript">
+ var t40 = {
+     "divid" : "page-t40",
+     "rows"  : [
+         [
+             [ "td_left_margin",  [ "left_margin-t40"  ]             ],
+             [ "td_body",         [ "header-t40", "body-t40", "footer-t40" ] ],
+             [ "td_right_margin", [ "right_margin-t40" ]             ]
+         ]
+     ]
+ };
+ div_table(t40);
+</script>
+
+<p>
+</p>
+<h2><a name="t41__alias__hf_"><code>t41</code> (alias: <code>hf</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 41&quot;:
+ +---------------------------------------------+
+ |                                             |
+ |                   header                    |
+ |                                             |
+ +---------------------------------------------+
+ |                                             |
+ |                                             |
+ | left               body              right  |
+ | margin                               margin |
+ |                                             |
+ |                                             |
+ |                                             |
+ |                   footer                    |
+ |                                             |
+ +---------------------------------------------+
+ 
+ (but left/right margins don't necessarily float)
+ 
+ */
+ 
+ var t41 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;, [ &quot;header&quot; ] ]
+         ],
+         [
+             [ &quot;td_body&quot;, [ &quot;left_margin&quot;, &quot;body&quot;, &quot;right_margin&quot;, &quot;footer&quot; ] ]
+         ]
+     ]
+ };
+ 
+ var hf = t41;
+
+</pre>
+<div id="page-t41">
+     <div id="header-t41"       > Header       </div>
+     <div id="left_margin-t41"  > Left Margin  </div>
+     <div id="body-t41"         > Body         </div>
+     <div id="right_margin-t41" > Right Margin </div>
+     <div id="footer-t41"       > Footer       </div>
+</div>
+
+<script type="text/javascript">
+ var t41 = {
+     "divid" : "page-t41",
+     "rows"  : [
+         [
+             [ "td_header", [ "header-t41" ] ]
+         ],
+         [
+             [ "td_body", [ "left_margin-t41", "body-t41", "right_margin-t41", "footer-t41" ] ]
+         ]
+     ]
+ };
+ div_table(t41);
+</script>
+
+<p>
+</p>
+<h2><a name="t42__alias__ff_"><code>t42</code> (alias: <code>ff</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 42&quot;:
+ +---------------------------------------------+
+ |                                             |
+ |                   header                    |
+ |                                             |
+ |                                             |
+ |                                             |
+ |                                             |
+ | left               body              right  |
+ | margin                               margin |
+ |                                             |
+ +---------------------------------------------+
+ |                                             |
+ |                   footer                    |
+ |                                             |
+ +---------------------------------------------+
+ 
+ (but left/right margins don't necessarily float)
+ 
+ */
+ 
+ var t42 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_body&quot;, [ &quot;header&quot;, &quot;left_margin&quot;, &quot;body&quot;, &quot;right_margin&quot; ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ] ]
+         ]
+     ]
+ };
+ 
+ var ff = t42;
+
+</pre>
+<div id="page-t42">
+     <div id="header-t42"       > Header       </div>
+     <div id="left_margin-t42"  > Left Margin  </div>
+     <div id="body-t42"         > Body         </div>
+     <div id="right_margin-t42" > Right Margin </div>
+     <div id="footer-t42"       > Footer       </div>
+</div>
+
+<script type="text/javascript">
+ var t42 = {
+     "divid" : "page-t42",
+     "rows"  : [
+         [
+             [ "td_body", [ "header-t42", "left_margin-t42", "body-t42", "right_margin-t42" ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t42" ] ]
+         ]
+     ]
+ };
+ div_table(t42);
+</script>
+
+<p>
+</p>
+<h2><a name="t43__alias__lf_"><code>t43</code> (alias: <code>lf</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 43&quot;:
+ +--------+------------------------------------+
+ |        |                                    |
+ |        |          header                    |
+ |        |                                    |
+ |        |                                    |
+ |        |                                    |
+ |        |                                    |
+ | left   |           body              right  |
+ | margin |                             margin |
+ |        |                                    |
+ |        |                                    |
+ |        |                                    |
+ |        |          footer                    |
+ |        |                                    |
+ +--------+------------------------------------+
+ 
+ (but right margin not necessarily float right)
+ 
+ */
+ 
+ var t43 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;, [ &quot;left_margin&quot;  ]                             ],
+             [ &quot;td_body&quot;,        [ &quot;header&quot;, &quot;body&quot;, &quot;right_margin&quot;, &quot;footer&quot; ] ]
+         ]
+     ]
+ };
+ 
+ var lf = t43;
+
+</pre>
+<div id="page-t43">
+     <div id="header-t43"       > Header       </div>
+     <div id="left_margin-t43"  > Left Margin  </div>
+     <div id="body-t43"         > Body         </div>
+     <div id="right_margin-t43" > Right Margin </div>
+     <div id="footer-t43"       > Footer       </div>
+</div>
+
+<script type="text/javascript">
+ var t43 = {
+     "divid" : "page-t43",
+     "rows"  : [
+         [
+             [ "td_left_margin", [ "left_margin-t43"  ]                             ],
+             [ "td_body",        [ "header-t43", "body-t43", "right_margin-t43", "footer-t43" ] ]
+         ]
+     ]
+ };
+ div_table(t43);
+</script>
+
+<p>
+</p>
+<h2><a name="t44__alias__rf_"><code>t44</code> (alias: <code>rf</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 44&quot;:
+ +------------------------------------+--------+
+ |                                    |        |
+ |                   header           |        |
+ |                                    |        |
+ |                                    |        |
+ |                                    |        |
+ |                                    |        |
+ | left               body            | right  |
+ | margin                             | margin |
+ |                                    |        |
+ |                                    |        |
+ |                                    |        |
+ |                   footer           |        |
+ |                                    |        |
+ +------------------------------------+--------+
+ 
+ (but left margin not necessarily float left)
+ 
+ */
+ 
+ var t44 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_body&quot;,         [ &quot;header&quot;, &quot;left_margin&quot;, &quot;body&quot;, &quot;footer&quot; ] ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ]                            ]
+         ]
+     ]
+ };
+ 
+ var rf = t44;
+
+</pre>
+<div id="page-t44">
+     <div id="header-t44"       > Header       </div>
+     <div id="left_margin-t44"  > Left Margin  </div>
+     <div id="body-t44"         > Body         </div>
+     <div id="right_margin-t44" > Right Margin </div>
+     <div id="footer-t44"       > Footer       </div>
+</div>
+
+<script type="text/javascript">
+ var t44 = {
+     "divid" : "page-t44",
+     "rows"  : [
+         [
+             [ "td_body",         [ "header-t44", "left_margin-t44", "body-t44", "footer-t44" ] ],
+             [ "td_right_margin", [ "right_margin-t44" ]                            ]
+         ]
+     ]
+ };
+ div_table(t44);
+</script>
+
+<p>
+</p>
+<h2><a name="t45__alias__hllbrtfr_"><code>t45</code> (alias: <code>hllbrtfr</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 45&quot;: (&quot;pinwheel&quot;)
+ +------------------------------------+--------+
+ |                                    |        |
+ |                   header           |        |
+ |                                    |        |
+ +--------+---------------------------+        |
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ |        +---------------------------+--------+
+ |        |                                    |
+ |        |          footer                    |
+ |        |                                    |
+ +--------+------------------------------------+
+ */
+ 
+ var t45 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_header&quot;,       [ &quot;header&quot; ],       [ &quot;colSpan&quot;, 2 ] ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ], [ &quot;rowSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;  ], [ &quot;rowSpan&quot;, 2 ] ],
+             [ &quot;td_body&quot;,         [ &quot;body&quot;         ]                   ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ]
+     ]
+ };
+ 
+ var hllbrtfr = t45;
+
+</pre>
+<div id="page-t45">
+     <div id="header-t45"       > Header       </div>
+     <div id="left_margin-t45"  > Left Margin  </div>
+     <div id="body-t45"         > Body         </div>
+     <div id="right_margin-t45" > Right Margin </div>
+     <div id="footer-t45"       > Footer       </div>
+</div>
+
+<script type="text/javascript">
+ var t45 = {
+     "divid" : "page-t45",
+     "rows"  : [
+         [
+             [ "td_header",       [ "header-t45" ],       [ "colSpan", 2 ] ],
+             [ "td_right_margin", [ "right_margin-t45" ], [ "rowSpan", 2 ] ]
+         ],
+         [
+             [ "td_left_margin",  [ "left_margin-t45"  ], [ "rowSpan", 2 ] ],
+             [ "td_body",         [ "body-t45"         ]                   ]
+         ],
+         [
+             [ "td_footer", [ "footer-t45" ], [ "colSpan", 2 ] ]
+         ]
+     ]
+ };
+ div_table(t45);
+</script>
+
+<p>
+</p>
+<h2><a name="t46__alias__hrltrbfl_"><code>t46</code> (alias: <code>hrltrbfl</code>)</a></h2>
+<pre>
+ /*
+ specs for &quot;table 46&quot;: (&quot;pinwheel&quot;)
+ +--------+------------------------------------+
+ |        |                                    |
+ |        |          header                    |
+ |        |                                    |
+ |        +---------------------------+--------+
+ |        |                           |        |
+ |        |                           |        |
+ | left   |           body            | right  |
+ | margin |                           | margin |
+ |        |                           |        |
+ +--------+---------------------------+        |
+ |                                    |        |
+ |                   footer           |        |
+ |                                    |        |
+ +------------------------------------+--------+
+ */
+ 
+ var t46 = {
+     &quot;divid&quot; : &quot;page&quot;,
+     &quot;rows&quot;  : [
+         [
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;  ], [ &quot;rowSpan&quot;, 2 ] ],
+             [ &quot;td_header&quot;,       [ &quot;header&quot; ],       [ &quot;colSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_body&quot;,         [ &quot;body&quot;         ]                   ],
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ], [ &quot;rowSpan&quot;, 2 ] ]
+         ],
+         [
+             [ &quot;td_footer&quot;, [ &quot;footer&quot; ], [ &quot;colSpan&quot;, 2 ] ]
+         ]
+     ]
+ };
+ 
+ var hrltrbfl = t46;
+
+</pre>
+<div id="page-t46">
+     <div id="header-t46"       > Header       </div>
+     <div id="left_margin-t46"  > Left Margin  </div>
+     <div id="body-t46"         > Body         </div>
+     <div id="right_margin-t46" > Right Margin </div>
+     <div id="footer-t46"       > Footer       </div>
+</div>
+
+<script type="text/javascript">
+ var t46 = {
+     "divid" : "page-t46",
+     "rows"  : [
+         [
+             [ "td_left_margin",  [ "left_margin-t46"  ], [ "rowSpan", 2 ] ],
+             [ "td_header",       [ "header-t46" ],       [ "colSpan", 2 ] ]
+         ],
+         [
+             [ "td_body",         [ "body-t46"         ]                   ],
+             [ "td_right_margin", [ "right_margin-t46" ], [ "rowSpan", 2 ] ]
+         ],
+         [
+             [ "td_footer", [ "footer-t46" ], [ "colSpan", 2 ] ]
+         ]
+     ]
+ };
+ div_table(t46);
+</script>
+
+
+</body>
+
+</html>

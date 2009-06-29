@@ -3,6 +3,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 
 <head>
+
+<title>Table Maker Test Page</title>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="/css/table_maker.css" />
 
@@ -19,9 +22,141 @@
 
 <!-- inspect the media type -->
 <!-- http://www.ibloomstudios.com/articles/css_media_targeted_javascript/ -->
+<link rel="stylesheet" type="text/css" href="/css/media_inspector.css" />
 <script type="text/javascript" src="/javascript/media_inspector.js"></script>
 
-<title>Table Maker Test Page</title>
+<!-- mediaType is examined in tablesOkay() -->
+<script type="text/javascript">
+    var mediaType;
+    addOnload ( function(){ mediaType = getMediaType(); } );
+    function tablesOkay() {
+        switch ( mediaType ) {
+        case 'screen':     return true;
+        case 'print':      return true;
+        case 'handheld':   return true;
+        case 'projection': return true;
+        case 'tty':        return true;
+        case 'tv':         return true;
+        case 'aural':      return false;
+        case 'braille':    return true;  // not sure
+        case 'embossed':   return true;  // not sure
+        }
+        return true; // tables okay if inspection fails
+    }
+</script>
+
+<!-- show the mediaType in the mediaInspector div -->
+<script type="text/javascript">
+    addOnload ( function(){
+        var mI = document.getElementById('mediaInspector');
+        mI.innerHTML = "Media type: " + mediaType;
+        mI.style.display = 'block';
+        mI.style.width = 'auto';
+    } );
+</script>
+
+<!-- testing div_table (page) -->
+<script type="text/javascript">
+    var page      = new page_query( window.location.search );
+    var sTableVal = page.getValue( "t" );
+    var sAlphaVal = page.getValue( "a" );
+    var specs     = hflmrmff;  // t4
+    if(      sTableVal ) specs = eval( sTableVal );
+    else if( sAlphaVal ) specs = eval( sAlphaVal );
+    addOnload ( function(){ if( tablesOkay() ) div_table( specs ); } );
+</script>
+
+<!-- testing div_table (columns) -->
+<script type="text/javascript">
+    var cols = {
+        "divid" : "columns",
+        "rows"  : [
+            [
+                 [ "col1", ["column1"] ], [ "col2", ["column2"] ], [ "col3", ["column3"] ]
+            ]
+        ]
+    };
+    addOnload ( function(){ if( tablesOkay() ) div_table( cols ); } );
+</script>
+
+<!-- testing ul_table -->
+<script type="text/javascript">
+    var ul1 = {
+        "ulid"    : "ul1"    ,
+        "grid"    : 2        ,
+        "orien"   : "h"      ,
+        "bullet"  : "&bull;" ,
+        "usebull" : 0        ,
+        "prefix"  : "brad"
+    };
+    addOnload ( function(){ if( tablesOkay() ) ul_table( ul1 ); } );
+</script>
+
+<!-- testing ol_table -->
+<script type="text/javascript">
+    // featuring vertical grid and bullets
+    var ol1 = {
+        "olid"    : "ol1"    ,
+        "grid"    : 2        ,
+        "orien"   : "v"      ,
+        "bullet"  : "&bull;" ,
+        "usebull" : 0        ,
+        "prefix"  : "brad"
+    };
+    addOnload ( function(){ if( tablesOkay() ) ol_table( ol1 ); } );
+
+    // featuring nested and numbered
+    var ol2 = {
+        "olid"   : "ol2",
+        "number" : "upper-roman"
+    };
+    addOnload ( function(){ if( tablesOkay() ) ol_table( ol2 ); } );
+    var ol3 = {
+        "olid"   : "ol3",
+        "number" : "upper-alpha"
+    };
+    addOnload ( function(){ if( tablesOkay() ) ol_table( ol3 ); } );
+    var ol4 = {
+        "olid"   : "ol4",
+        "number" : "upper-alpha"
+    };
+    addOnload ( function(){ if( tablesOkay() ) ol_table( ol4 ); } );
+    var ol5 = {
+        "olid"   : "ol5",
+        "number" : "upper-alpha"
+    };
+    addOnload ( function(){ if( tablesOkay() ) ol_table( ol5 ); } );
+</script>
+
+<!-- testing dl_table -->
+<script type="text/javascript">
+    var dl1 = {
+        "dlid"    : "dl1"    ,
+        "bullet"  : "&bull;" ,
+        "usebull" : 0        ,
+        "number"  : "arabic" ,
+        "prefix"  : "brad"
+    };
+    addOnload ( function(){ if( tablesOkay() ) dl_table( dl1 ); } );
+</script>
+
+<!-- testing dl_table -->
+<script type="text/javascript">
+    var tm = [
+        { "divid" : "tmdiv",
+          "rows"  : [[["tdtmc1",["tmc1"]],["tdtmc2",["tmc2"]],["tdtmc3",["tmc3"]]]]
+        },
+        { "ulid" : "tmul" },
+        { "olid" : "tmol" },
+        { "dlid" : "tmdl" }
+    ];
+    addOnload ( function(){ if( tablesOkay() ) table_maker( tm ); } );
+</script>
+
+<!-- show_dom -->
+<script type="text/javascript">
+    //addOnload( function(){ show("testing") } );
+</script>
 
 </head>
 
@@ -157,131 +292,6 @@
 
     </div>
 </div> <!-- page -->
-
-<script type="text/javascript">
-    var mediaType = getMediaType(); // undefined in chrome?
-    var mI = document.getElementById('mediaInspector');
-    mI.innerHTML = "Media type: " + mediaType;
-    mI.style.display = 'block';
-    mI.style.width = 'auto';
-    function tablesOkay() {
-        switch ( mediaType ) {
-        case 'aural':      return false;
-        case 'braille':    return true;
-        case 'embossed':   return true;
-        case 'handheld':   return true;
-        case 'print':      return true;
-        case 'projection': return true;
-        case 'screen':     return true;
-        case 'tty':        return true;
-        case 'tv':         return true;
-        }
-        return true;
-    }
-</script>
-
-<!-- testing div_table (page) -->
-<script type="text/javascript">
-    var page      = new page_query( window.location.search );
-    var sTableVal = page.getValue( "t" );
-    var sAlphaVal = page.getValue( "a" );
-    var specs     = hflmrmff;  // t4
-    if(      sTableVal ) specs = eval( sTableVal );
-    else if( sAlphaVal ) specs = eval( sAlphaVal );
-    if( tablesOkay() ) div_table( specs );
-</script>
-
-<!-- testing div_table (columns) -->
-<script type="text/javascript">
-    var cols = {
-        "divid" : "columns",
-        "rows"  : [
-            [
-                 [ "col1", ["column1"] ], [ "col2", ["column2"] ], [ "col3", ["column3"] ]
-            ]
-        ]
-    };
-    if( tablesOkay() ) div_table( cols );
-</script>
-
-<!-- testing ul_table -->
-<script type="text/javascript">
-    var ul1 = {
-        "ulid"    : "ul1"    ,
-        "grid"    : 2        ,
-        "orien"   : "h"      ,
-        "bullet"  : "&bull;" ,
-        "usebull" : 0        ,
-        "prefix"  : "brad"
-    };
-    if( tablesOkay() ) ul_table( ul1 );
-</script>
-
-<!-- testing ol_table -->
-<script type="text/javascript">
-    // featuring vertical grid and bullets
-    var ol1 = {
-        "olid"    : "ol1"    ,
-        "grid"    : 2        ,
-        "orien"   : "v"      ,
-        "bullet"  : "&bull;" ,
-        "usebull" : 0        ,
-        "prefix"  : "brad"
-    };
-    if( tablesOkay() ) ol_table( ol1 );
-
-    // featuring nested and numbered
-    var ol2 = {
-        "olid"   : "ol2",
-        "number" : "upper-roman"
-    };
-    if( tablesOkay() ) ol_table( ol2 );
-    var ol3 = {
-        "olid"   : "ol3",
-        "number" : "upper-alpha"
-    };
-    if( tablesOkay() ) ol_table( ol3 );
-    var ol4 = {
-        "olid"   : "ol4",
-        "number" : "upper-alpha"
-    };
-    if( tablesOkay() ) ol_table( ol4 );
-    var ol5 = {
-        "olid"   : "ol5",
-        "number" : "upper-alpha"
-    };
-    if( tablesOkay() ) ol_table( ol5 );
-</script>
-
-<!-- testing dl_table -->
-<script type="text/javascript">
-    var dl1 = {
-        "dlid"    : "dl1"    ,
-        "bullet"  : "&bull;" ,
-        "usebull" : 0        ,
-        "number"  : "arabic" ,
-        "prefix"  : "brad"
-    };
-    if( tablesOkay() ) dl_table( dl1 );
-</script>
-
-<!-- testing dl_table -->
-<script type="text/javascript">
-    var tm = [
-        { "divid" : "tmdiv",
-          "rows"  : [[["tdtmc1",["tmc1"]],["tdtmc2",["tmc2"]],["tdtmc3",["tmc3"]]]]
-        },
-        { "ulid" : "tmul" },
-        { "olid" : "tmol" },
-        { "dlid" : "tmdl" }
-    ];
-    if( tablesOkay() ) table_maker( tm );
-</script>
-
-<!-- show_dom -->
-<script type="text/javascript">
-    //addOnload( function(){ show("testing") } );
-</script>
 
 </body>
 

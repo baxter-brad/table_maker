@@ -5,6 +5,63 @@
     // =============== WARNING! WARNING! WARNING! ===============
 
 //--------------------------------------------------------------------
+// from is_buggy_ie.include
+
+//--------------------------------------------------------------------
+// valCheck( sValue, isBuggyIE );
+
+function valCheck( sValue, isBuggyIE ) {
+    var ret = false;
+    if( isBuggyIE ) {
+        if( sValue.match( /^.+$/ ) &&
+            sValue != 'null'       &&
+            sValue != 'false'      &&
+            sValue != '0'          &&
+            sValue != 'inherit'    )
+            ret = true;
+    }
+    else {
+        if( sValue )
+            ret = true;
+    }
+    return ret;
+}
+
+//--------------------------------------------------------------------
+// mySetAttribute( eElem, sName, sValue, isBuggyIE );
+//
+// per http://webbugtrack.blogspot.com/2007/08/bug-242-setattribute-doesnt-always-work.html
+// valign:       Use "vAlign"
+// class:        Use "className"
+// style:        Use myObj.style.setAttribute('cssText', styleData);
+// cellpadding:  Use "cellPadding"
+// cellspacing:  Use "cellSpacing"
+// bgcolor:      Use "bgColor"
+// colspan:      Use "colSpan"
+// rowspan:      Use "rowSpan"
+// ... others not accounted for here (add them if you need them)
+
+function mySetAttribute( eElem, sName, sValue, isBuggyIE ) {
+    if( isBuggyIE ) {
+        switch( sName.toLowerCase() ) {
+            case 'id'          : eElem.setAttribute( "id",            sValue ); break;
+            case 'valign'      : eElem.setAttribute( "vAlign",        sValue ); break;
+            case 'class'       : eElem.setAttribute( "className",     sValue ); break;
+            case 'style'       : eElem.style.setAttribute( "cssText", sValue ); break;
+            case 'cellpadding' : eElem.setAttribute( "cellPadding",   sValue ); break;
+            case 'cellspacing' : eElem.setAttribute( "cellSpacing",   sValue ); break;
+            case 'bgcolor'     : eElem.setAttribute( "bgColor",       sValue ); break;
+            case 'colspan'     : eElem.setAttribute( "colSpan",       sValue ); break;
+            case 'rowspan'     : eElem.setAttribute( "rowSpan",       sValue ); break;
+        }
+    }
+    else {
+       eElem.setAttribute( sName, sValue ); 
+    }
+}
+
+
+//--------------------------------------------------------------------
 // numbering functions
 
 var numberAs = {
@@ -69,13 +126,13 @@ String.prototype.repeat = function ( iNumber ) {
 //     prefix ... id prefix to assign to cells; ignored if <dt> or <dd> has an id already
 //         value: any characters acceptable as an html id attribute
 
-function dl_table( oSpecs ) {
+function dl_table( oSpecs, isBuggyIE ) {
 
     var sID      = oSpecs.dlid;
-    var sNumber  = oSpecs.number;
     var sBullet  = oSpecs.bullet;
     var iUseBull = oSpecs.usebull;
     var sPrefix  = oSpecs.prefix;
+    var sNumber  = oSpecs.number; if( !sNumber ) sNumber = 'arabic';
     var fNum     = numberAs[sNumber];
     var iDelta   = 0;
 
@@ -90,46 +147,49 @@ function dl_table( oSpecs ) {
         var eRow     = aRow[ 0 ];
         var iDdCount = aDds.length;
         var eCell = document.createElement( "TD" );
-        if( iDdCount > 1 ) eCell.setAttribute( "rowSpan", iDdCount );
+        if( iDdCount > 1 ) mySetAttribute( eCell, "rowspan", iDdCount, isBuggyIE );
         var sCellID;
         var sClass;
         var iValue;
         var aAttributes = aDdts[ iChild ].attributes;
         if( aAttributes ) {
             for( var iAttr = 0; iAttr < aAttributes.length; iAttr++ ) {
-                eCell.setAttribute( aAttributes[iAttr].name, aAttributes[iAttr].value );
-                if(      aAttributes[iAttr].name == "id"    ) sCellID =  aAttributes[iAttr].value;
-                else if( aAttributes[iAttr].name == "class" ) sClass  =  aAttributes[iAttr].value;
-                else if( aAttributes[iAttr].name == "value" ) iValue  = +aAttributes[iAttr].value;
+                var sName  = aAttributes[ iAttr ].name;
+                var sValue = aAttributes[ iAttr ].value;
+                if( valCheck( sValue, isBuggyIE ) )
+                    mySetAttribute( eCell, sName, sValue, isBuggyIE );
+                if(      sName == "id"    ) sCellID =  sValue;
+                else if( sName == "class" ) sClass  =  sValue;
+                else if( sName == "value" ) iValue  = +sValue;
             }
         }
         if( !sCellID && sPrefix ) {
             sCellID = sPrefix+(iNumber);
-            eCell.setAttribute( "id", sCellID );
+            mySetAttribute( eCell, "id", sCellID, isBuggyIE );
         }
         if( typeof( iUseBull ) == 'number' ) {
             var eUseBulletCell = document.createElement( "TD" );
-            if( iDdCount > 1 ) eUseBulletCell.setAttribute( "rowSpan", iDdCount );
+            if( iDdCount > 1 ) mySetAttribute( eUseBulletCell, "rowspan", iDdCount, isBuggyIE );
             eUseBulletCell.appendChild( aDdts[ iChild ].childNodes[ iUseBull ] );
-            if( sCellID ) eUseBulletCell.setAttribute( "id",    sCellID + "-usebull" );
-            if( sClass  ) eUseBulletCell.setAttribute( "class", sClass  + "-usebull" );
+            if( sCellID ) mySetAttribute( eUseBulletCell, "id",    sCellID + "-usebull", isBuggyIE );
+            if( sClass  ) mySetAttribute( eUseBulletCell, "class", sClass  + "-usebull", isBuggyIE );
             eRow.appendChild( eUseBulletCell );
         }
         if( sBullet ) {
             var eBulletCell = document.createElement( "TD" );
-            if( iDdCount > 1 ) eBulletCell.setAttribute( "rowSpan", iDdCount );
+            if( iDdCount > 1 ) mySetAttribute( eBulletCell, "rowspan", iDdCount, isBuggyIE );
             eBulletCell.innerHTML = sBullet;
-            if( sCellID ) eBulletCell.setAttribute( "id",    sCellID + "-bullet" );
-            if( sClass  ) eBulletCell.setAttribute( "class", sClass  + "-bullet" );
+            if( sCellID ) mySetAttribute( eBulletCell, "id",    sCellID + "-bullet", isBuggyIE );
+            if( sClass  ) mySetAttribute( eBulletCell, "class", sClass  + "-bullet", isBuggyIE );
             eRow.appendChild( eBulletCell );
         }
         if( fNum ) {
-            if( typeof( iValue ) == "number" ) iDelta = iValue - iNumber; 
+            if( iValue && typeof( iValue ) == "number" ) iDelta = iValue - iNumber; 
             var eNumberCell = document.createElement( "TD" );
-            if( iDdCount > 1 ) eNumberCell.setAttribute( "rowSpan", iDdCount );
+            if( iDdCount > 1 ) mySetAttribute( eNumberCell, "rowspan", iDdCount, isBuggyIE );
             eNumberCell.innerHTML = fNum( iNumber + iDelta )+".";
-            if( sCellID ) eNumberCell.setAttribute( "id",    sCellID + "-number" );
-            if( sClass  ) eNumberCell.setAttribute( "class", sClass  + "-number" );
+            if( sCellID ) mySetAttribute( eNumberCell, "id",    sCellID + "-number", isBuggyIE );
+            if( sClass  ) mySetAttribute( eNumberCell, "class", sClass  + "-number", isBuggyIE );
             eRow.appendChild( eNumberCell );
         }
         var iLen = aDdts[ iChild ].childNodes.length;
@@ -137,7 +197,6 @@ function dl_table( oSpecs ) {
             eCell.appendChild( aDdts[ iChild ].childNodes[ 0 ] ); // nodes are shifted off
         }
         eRow.appendChild( eCell );
-
         if( iDdCount ) {
 
             // first dd goes on current row
@@ -150,15 +209,18 @@ function dl_table( oSpecs ) {
             var aAttributes = aDdts[ iChild ].attributes;
             if( aAttributes ) {
                 for( var iAttr = 0; iAttr < aAttributes.length; iAttr++ ) {
-                    eCell.setAttribute( aAttributes[iAttr].name, aAttributes[iAttr].value );
-                    if(      aAttributes[iAttr].name == "id"    ) sCellID =  aAttributes[iAttr].value;
-                    else if( aAttributes[iAttr].name == "class" ) sClass  =  aAttributes[iAttr].value;
-                    else if( aAttributes[iAttr].name == "value" ) iValue  = +aAttributes[iAttr].value;
+                    var sName  = aAttributes[ iAttr ].name;
+                    var sValue = aAttributes[ iAttr ].value;
+                    if( valCheck( sValue, isBuggyIE ) )
+                        mySetAttribute( eCell, sName, sValue, isBuggyIE );
+                    if(      sName == "id"    ) sCellID =  sValue;
+                    else if( sName == "class" ) sClass  =  sValue;
+                    else if( sName == "value" ) iValue  = +sValue;
                 }
             }
             if( !sCellID && sPrefix ) {
                 sCellID = sPrefix+iNumber+"-"+( iDd + 1 );
-                eCell.setAttribute( "id", sCellID );
+                mySetAttribute( eCell, "id", sCellID, isBuggyIE );
             }
             var iLen = aDdts[ iChild ].childNodes.length;
             for( var iDdtChild = 0; iDdtChild < iLen; iDdtChild++ ) {
@@ -170,7 +232,7 @@ function dl_table( oSpecs ) {
             for( var iDd = 1; iDd < iDdCount; iDd++ ) {
                 var eCell = document.createElement( "TD" );
                 aRows[ iDd ] = document.createElement( "TR" );
-                aRows[ iDd ].setAttribute( "valign", "top" );  // for everybody
+                mySetAttribute( aRows[ iDd ], "valign", "top", isBuggyIE );
                 var sCellID;
                 var sClass;
                 var iValue;
@@ -178,15 +240,18 @@ function dl_table( oSpecs ) {
                 var aAttributes = aDdts[ iChild ].attributes;
                 if( aAttributes ) {
                     for( var iAttr = 0; iAttr < aAttributes.length; iAttr++ ) {
-                        eCell.setAttribute( aAttributes[iAttr].name, aAttributes[iAttr].value );
-                        if(      aAttributes[iAttr].name == "id"    ) sCellID =  aAttributes[iAttr].value;
-                        else if( aAttributes[iAttr].name == "class" ) sClass  =  aAttributes[iAttr].value;
-                        else if( aAttributes[iAttr].name == "value" ) iValue  = +aAttributes[iAttr].value;
+                        var sName  = aAttributes[ iAttr ].name;
+                        var sValue = aAttributes[ iAttr ].value;
+                        if( valCheck( sValue, isBuggyIE ) )
+                            mySetAttribute( eCell, sName, sValue, isBuggyIE );
+                        if(      sName == "id"    ) sCellID =  sValue;
+                        else if( sName == "class" ) sClass  =  sValue;
+                        else if( sName == "value" ) iValue  = +sValue;
                     }
                 }
                 if( !sCellID && sPrefix ) {
                     sCellID = sPrefix+iNumber+"-"+( iDd + 1 );
-                    eCell.setAttribute( "id", sCellID );
+                    mySetAttribute( eCell, "id", sCellID, isBuggyIE );
                 }
                 var iLen = aDdts[ iChild ].childNodes.length;
                 for( var iDdtChild = 0; iDdtChild < iLen; iDdtChild++ ) {
@@ -240,7 +305,7 @@ function dl_table( oSpecs ) {
         */
         var aRows = new Array;
         aRows[ 0 ] = document.createElement( "TR" );
-        aRows[ 0 ].setAttribute( "valign", "top" );  // for everybody
+        mySetAttribute( aRows[ 0 ], "valign", "top", isBuggyIE );
 
         for( var iDts = 0; iDts < aDts.length; ) {
             var iChild  = aDts[ iDts++ ];
@@ -252,7 +317,7 @@ function dl_table( oSpecs ) {
             }
             aRows = new Array;
             aRows[ 0 ] = document.createElement( "TR" );
-            aRows[ 0 ].setAttribute( "valign", "top" );  // for everybody
+            mySetAttribute( aRows[ 0 ], "valign", "top", isBuggyIE );
         } 
 
         // replace dl with table and add attributes to the table
@@ -261,16 +326,11 @@ function dl_table( oSpecs ) {
             for( var iAttr = 0; iAttr < aAttributes.length; iAttr++ ) {
                 var sName  = aAttributes[ iAttr ].name;
                 var sValue = aAttributes[ iAttr ].value;
-                // bizarre checks are for IE6 wierdness
-                if( sValue.match( /^.+$/ ) &&
-                    sValue != 'null'       &&
-                    sValue != 'false'      &&
-                    sValue != '0'          &&
-                    sValue != 'inherit'    ){
-                    eTable.setAttribute( sName, sValue );
-                }
+                if( valCheck( sValue, isBuggyIE ) )
+                    mySetAttribute( eTable, sName, sValue, isBuggyIE );
             }
         }
         eDl.parentNode.replaceChild( eTable, eDl );
     }
 }
+

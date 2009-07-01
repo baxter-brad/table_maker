@@ -28,7 +28,6 @@
 <!-- mediaType is examined in tablesOkay() -->
 <script type="text/javascript">
     var mediaType;
-    addOnload ( function(){ mediaType = getMediaType(); } );
     function tablesOkay() {
         switch ( mediaType ) {
         case 'screen':     return true;
@@ -55,6 +54,15 @@
     } );
 </script>
 
+<script type="text/javascript"> var isBuggyIE = false; </script>
+<!--[if IE 6]>
+<script type="text/javascript">     isBuggyIE = true;  </script>
+<![endif]-->
+<!--[if IE 7]>
+<script type="text/javascript">     isBuggyIE = true;  </script>
+<![endif]-->
+<script type="text/javascript">//alert( "isBuggyIE: "+isBuggyIE );</script>
+
 <!-- testing div_table (page) -->
 <script type="text/javascript">
     var page      = new page_query( window.location.search );
@@ -63,7 +71,7 @@
     var specs     = hflmrmff;  // t4
     if(      sTableVal ) specs = eval( sTableVal );
     else if( sAlphaVal ) specs = eval( sAlphaVal );
-    addOnload ( function(){ if( tablesOkay() ) div_table( specs ); } );
+    addOnload ( function(){ if( tablesOkay() ) div_table( specs, isBuggyIE ); } );
 </script>
 
 <!-- testing div_table (columns) -->
@@ -76,7 +84,7 @@
             ]
         ]
     };
-    addOnload ( function(){ if( tablesOkay() ) div_table( cols ); } );
+    addOnload ( function(){ if( tablesOkay() ) div_table( cols, isBuggyIE ); } );
 </script>
 
 <!-- testing ul_table -->
@@ -89,7 +97,7 @@
         "usebull" : 0        ,
         "prefix"  : "brad"
     };
-    addOnload ( function(){ if( tablesOkay() ) ul_table( ul1 ); } );
+    addOnload ( function(){ if( tablesOkay() ) ul_table( ul1, isBuggyIE ); } );
 </script>
 
 <!-- testing ol_table -->
@@ -103,29 +111,29 @@
         "usebull" : 0        ,
         "prefix"  : "brad"
     };
-    addOnload ( function(){ if( tablesOkay() ) ol_table( ol1 ); } );
+    addOnload ( function(){ if( tablesOkay() ) ol_table( ol1, isBuggyIE ); } );
 
     // featuring nested and numbered
     var ol2 = {
         "olid"   : "ol2",
         "number" : "upper-roman"
     };
-    addOnload ( function(){ if( tablesOkay() ) ol_table( ol2 ); } );
+    addOnload ( function(){ if( tablesOkay() ) ol_table( ol2, isBuggyIE ); } );
     var ol3 = {
         "olid"   : "ol3",
         "number" : "upper-alpha"
     };
-    addOnload ( function(){ if( tablesOkay() ) ol_table( ol3 ); } );
+    addOnload ( function(){ if( tablesOkay() ) ol_table( ol3, isBuggyIE ); } );
     var ol4 = {
         "olid"   : "ol4",
         "number" : "upper-alpha"
     };
-    addOnload ( function(){ if( tablesOkay() ) ol_table( ol4 ); } );
+    addOnload ( function(){ if( tablesOkay() ) ol_table( ol4, isBuggyIE ); } );
     var ol5 = {
         "olid"   : "ol5",
         "number" : "upper-alpha"
     };
-    addOnload ( function(){ if( tablesOkay() ) ol_table( ol5 ); } );
+    addOnload ( function(){ if( tablesOkay() ) ol_table( ol5, isBuggyIE ); } );
 </script>
 
 <!-- testing dl_table -->
@@ -137,7 +145,7 @@
         "number"  : "arabic" ,
         "prefix"  : "brad"
     };
-    addOnload ( function(){ if( tablesOkay() ) dl_table( dl1 ); } );
+    addOnload ( function(){ if( tablesOkay() ) dl_table( dl1, isBuggyIE ); } );
 </script>
 
 <!-- testing dl_table -->
@@ -150,7 +158,7 @@
         { "olid" : "tmol" },
         { "dlid" : "tmdl" }
     ];
-    addOnload ( function(){ if( tablesOkay() ) table_maker( tm ); } );
+    addOnload ( function(){ if( tablesOkay() ) table_maker( tm, isBuggyIE ); } );
 </script>
 
 <!-- show_dom -->
@@ -292,6 +300,11 @@
 
     </div>
 </div> <!-- page -->
+
+<!-- doesn't work as onload function in IE -->
+<script type="text/javascript">
+    mediaType = getMediaType();
+</script>
 
 </body>
 

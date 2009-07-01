@@ -70,7 +70,16 @@ function div_table( oSpecs ) {
     // give new table tag all the attributes of old div (do this first)
     var aAttributes = eTableDiv.attributes;
     for( var iAttr = 0; iAttr < aAttributes.length; iAttr++ ) {
-        eTable.setAttribute( aAttributes[iAttr].name, aAttributes[iAttr].value );
+        var sName  = aAttributes[ iAttr ].name;
+        var sValue = aAttributes[ iAttr ].value;
+        // bizarre checks are for IE6 wierdness
+        if( sValue.match( /^.+$/ ) &&
+            sValue != 'null'       &&
+            sValue != 'false'      &&
+            sValue != '0'          &&
+            sValue != 'inherit'    ){
+            eTable.setAttribute( sName, sValue );
+        }
     }
 
     // replace div with table

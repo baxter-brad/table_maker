@@ -41,8 +41,7 @@
 </p>
 <h1><a name="name">NAME</a></h1>
 <p><strong>Table Maker</strong>, a collection of javascript functions that modify the
-HTML DOM to make &lt;div&gt;'s, &lt;ul&gt;'s, &lt;ol&gt;'s, and &lt;dl&gt;'s into tables for
-special formatting.</p>
+HTML DOM to make &lt;div&gt;s, &lt;ul&gt;s, &lt;ol&gt;s, and &lt;dl&gt;s into tables.</p>
 <p>
 </p>
 <hr />
@@ -51,6 +50,7 @@ special formatting.</p>
 <pre>
  &lt;html&gt;
  &lt;head&gt;
+ &lt;title&gt;table_maker test&lt;/title&gt;
  &lt;script type=&quot;text/javascript&quot; src=&quot;/javascript/table_maker/table_numbers.js&quot;&gt;&lt;/script&gt;
  &lt;script type=&quot;text/javascript&quot; src=&quot;/javascript/table_maker/table_maker.js&quot;&gt;&lt;/script&gt;
  &lt;/head&gt;
@@ -64,7 +64,11 @@ special formatting.</p>
  &lt;/div&gt;
  &lt;/body&gt;
  &lt;/html&gt;</pre>
-<p>... should format into a table like the following:</p>
+<p>... should format into a table like the following.  (Note that the
+above values, like 'hflmrmff', 'page', 'header', 'left_margin', etc.
+have been predefined in the table_numbers.js file, but the table_maker
+functions are not limited to these values--most everything is
+configurable.)</p>
 <style type="text/css">
 @import "http://dbs.galileo.usg.edu/sitegen/css/sitegen.css";
 </style><style type="text/css">
@@ -101,13 +105,13 @@ td    { border: 1px solid grey; text-align: center; }
 </p>
 <hr />
 <h1><a name="description">DESCRIPTION</a></h1>
-<p>The Table Maker collection of functions includes the following:</p>
+<p>The <strong>Table Maker</strong> collection of functions includes the following:</p>
 <pre>
  table_maker()   dispatch table for the following functions:
- div_table()     make a set of &lt;div&gt;'s into a table
- ul_table()      make a &lt;ul&gt; tag (and its &lt;li&gt;'s) into a table
- ol_table()      make a &lt;ol&gt; tag (and its &lt;li&gt;'s) into a table
- dl_table()      make a &lt;dl&gt; tag (and its &lt;dt&gt;'s and &lt;dd&gt;'s) into a table</pre>
+ div_table()     make a set of &lt;div&gt;s into a table
+ ul_table()      make a &lt;ul&gt; tag (and its &lt;li&gt;s) into a table
+ ol_table()      make a &lt;ol&gt; tag (and its &lt;li&gt;s) into a table
+ dl_table()      make a &lt;dl&gt; tag (and its &lt;dt&gt;s and &lt;dd&gt;s) into a table</pre>
 <p>See <a href="http://dev.galileo.usg.edu/table_maker.html">http://dev.galileo.usg.edu/table_maker.html</a> for a demonstration
 of the various functions.</p>
 <p>
@@ -121,6 +125,9 @@ of the various functions.</p>
 <code>div_table()</code>, <code>ul_table()</code>, <code>ol_table()</code>, and <code>dl_table()</code>.  You
 can call <code>table_maker()</code> with an array of table specs objects to
 create multiple tables with one function call.</p>
+<p>(Side note: the 'a' in 'aSpecs' above is intended to indicate that the
+parameter is typically an array (though as noted below, it will also
+accept a single object (aka, a hash)).)</p>
 <p>For example:</p>
 <pre>
  table_maker( [
@@ -157,31 +164,33 @@ to process it.</p>
 <p>
 </p>
 <h2><a name="div_table_ospecs_"><code>div_table(oSpecs)</code></a></h2>
-<p>This function turns a &lt;div&gt; tag into a &lt;table&gt; tag.  Specify the id of
-the &lt;div&gt; tag using the <a href="#item_divid"><code>divid</code></a> attribute.  Use the <a href="#item_rows"><code>rows</code></a> attribute
-to specify which child &lt;div&gt;'s to place into table cells and how to
-layout those table cells.  In addition, give id values for each table
-cell and any additional table cell attributes you need.</p>
+<p>This function converts a &lt;div&gt; tag into a &lt;table&gt; tag.  Use the
+<a href="#item_divid"><code>divid</code></a> attribute to specify the id of the &lt;div&gt; tag that is to become
+the table.</p>
+<p>Use the <a href="#item_rows"><code>rows</code></a> attribute to specify which child &lt;div&gt;s to place into
+table cells and how to layout those table cells.  In addition, you can
+give id values for each table cell and any additional table cell
+attributes you may need.</p>
 <p>Note that only the &lt;div&gt; tag whose id matches the <a href="#item_divid"><code>divid</code></a> value is
 changed from a &lt;div&gt; tag to something else (a &lt;table&gt; tag), and as a
 result, the original &lt;div&gt; tag will not exist in the DOM.  All of the
 other &lt;div&gt; tags identified in the table specs are <em>moved</em> into table
 cells.  So those &lt;div&gt; tags do still exist in the DOM.  (Note also that
-any children of the <a href="#item_divid"><code>divid</code></a> &lt;div&gt; tag that are not <em>moved</em> into the
-table will be lost when the &lt;div&gt; tag is removed in favor of the new
-&lt;table&gt; tag.)</p>
+any children of the <a href="#item_divid"><code>divid</code></a> &lt;div&gt; tag that are <em>not</em> moved into the
+table will be <em>lost</em> (will not exist in the DOM) when the <a href="#item_divid"><code>divid</code></a>
+&lt;div&gt; tag is removed in favor of the new &lt;table&gt; tag.)</p>
 <p>Contrast this with how <code>ul_table()</code>, <code>ol_table()</code>, and <code>dl_table()</code>
-work.  The <code>ul_table()</code> function turns the &lt;ul&gt; tag into a &lt;table&gt; tag
-and the &lt;li&gt; tags into &lt;td&gt; tags.  As a result, neither the &lt;ul&gt; or any
-of its child &lt;li&gt; tags will exist in the DOM.  The same is true for the
-&lt;ol&gt; and &lt;li&gt; tags after running <code>ol_table()</code>, and for the &lt;dl&gt;, &lt;dt&gt;,
-and &lt;dd&gt; tags after running <code>dl_table()</code>.  In the DOM all of these
-tags are changed to &lt;table&gt; and &lt;td&gt; tags (with &lt;tbody&gt; and &lt;tr&gt; tags
-inserted as needed).</p>
+work (see below).  The <code>ul_table()</code> function turns the &lt;ul&gt; tag into a
+&lt;table&gt; tag and the &lt;li&gt; tags into &lt;td&gt; tags.  As a result, neither the
+&lt;ul&gt; or any of its child &lt;li&gt; tags will exist in the DOM.  The same is
+true for the &lt;ol&gt; and &lt;li&gt; tags after running <code>ol_table()</code>, and for
+the &lt;dl&gt;, &lt;dt&gt;, and &lt;dd&gt; tags after running <code>dl_table()</code>.  In the DOM
+all of these tags are changed to &lt;table&gt; and &lt;td&gt; tags (with &lt;tbody&gt;
+and &lt;tr&gt; tags inserted as needed).</p>
 <p>All of this is pertinent when you author the CSS properties for the
 page.</p>
-<p>The <code>div_table()</code> function expects a table specs object with these
-required attributes:</p>
+<p>The <code>div_table()</code> function expects a table specs object (hence the 'o'
+in 'oSpecs' above) with these required attributes:</p>
 <dl>
 <dt><strong><a name="item_divid">divid</a></strong>
 
@@ -193,14 +202,22 @@ required attributes:</p>
 
 <dd>
 <p>An n-element array of specs for the table rows.  Each row element is
-itself an array of cell specs.  Each element in the cell specs array is
+itself an array of cell specs.  Each element in this cell specs array is
 an array with the following elements:</p>
 </dd>
 <dd>
 <pre>
  [0] id value to assign to the cell
- [1] ids of &lt;div&gt;'s to move into the cell (an n-element array)
+ [1] ids of &lt;div&gt;s to move into the cell (an n-element array)
  [2] pairs of attribute names and values (an even numbered n-element array)</pre>
+</dd>
+<dd>
+<p>(Note, it bears studying the above description: there are a lot of
+arrays in the mix, and having an understanding of what role each set of
+arrays plays is important.  I'll be trying to come up with better
+diagrams, but it's easy to overdo it and make things even less clear.
+So study each array in the example below to make sure you follow what's
+happening.)</p>
 </dd>
 </li>
 </dl>
@@ -225,12 +242,12 @@ this diagram):</p>
      &quot;divid&quot; : &quot;page&quot;,
      &quot;rows&quot;  : [
          [
-             [ &quot;td_header&quot;, [ &quot;header&quot; ], [ &quot;colSpan&quot;, 3 ] ]
+             [ &quot;td_header&quot;, [ &quot;header&quot; ], [ &quot;colspan&quot;, 3 ] ]
          ],
          [
-             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;  ], [ &quot;rowSpan&quot;, 2 ] ],
+             [ &quot;td_left_margin&quot;,  [ &quot;left_margin&quot;  ], [ &quot;rowspan&quot;, 2 ] ],
              [ &quot;td_body&quot;,         [ &quot;body&quot;         ]                   ],
-             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ], [ &quot;rowSpan&quot;, 2 ] ]
+             [ &quot;td_right_margin&quot;, [ &quot;right_margin&quot; ], [ &quot;rowspan&quot;, 2 ] ]
          ],
          [ [ &quot;td_footer&quot;, [ &quot;footer&quot; ] ] ]
      ]
@@ -240,13 +257,13 @@ description of all the available predefined table layout variables (like <code>t
 <p>
 </p>
 <h2><a name="ul_table_ospecs_"><code>ul_table(oSpecs)</code></a></h2>
-<p>This function turns a &lt;ul&gt; tag (or an &lt;ol&gt; tag) into a table.  Each
-&lt;li&gt; child tag becomes a table cell.  The attributes of the &lt;ul&gt; tag
-become those of the &lt;table&gt; tag.  The attributes of each &lt;li&gt; tag
+<p>This function converts a &lt;ul&gt; tag (or an &lt;ol&gt; tag, too) into a table.
+Each &lt;li&gt; child tag becomes a table cell.  The attributes of the &lt;ul&gt;
+tag become those of the &lt;table&gt; tag.  The attributes of each &lt;li&gt; tag
 become those of each &lt;td&gt; tag.</p>
-<p>Depending on the value of the <a href="#item_grid"><code>grid</code></a> attribute, there may be one or
-more cells per row.  If <a href="#item_grid"><code>grid</code></a> specifies multiple columns, the
-<a href="#item_orien"><code>orien</code></a> (orientation) attribute may be <code>&quot;v&quot;</code> to orient the cells
+<p>Depending on the value of the <a href="#item_grid"><code>grid</code></a> attribute (see below), there may
+be one or more cells per row.  If <a href="#item_grid"><code>grid</code></a> specifies multiple columns,
+the <a href="#item_orien"><code>orien</code></a> (orientation) attribute may be <code>&quot;v&quot;</code> to orient the cells
 vertically.  That is, instead of the following horizontal layout (the
 default):</p>
 <pre>
@@ -258,8 +275,9 @@ default):</p>
  2 4 6 8</pre>
 <p>The <a href="#item_bullet"><code>bullet</code></a> attribute will cause a <em>bullet cell</em> to be added.  The
 <a href="#item_usebull"><code>usebull</code></a> attribute will cause a <em>usebull cell</em> to be added.  The
-<a href="#item_prefix"><code>prefix</code></a> attribute gives an id prefix which will add id values to
-cells whose corresponding &lt;li&gt; tag did not already have an id value.</p>
+<a href="#item_prefix"><code>prefix</code></a> attribute can give an id prefix which will cause id values to
+be added to cells whose corresponding &lt;li&gt; tags do not already have an
+id.</p>
 <p>For example:</p>
 <pre>
  &lt;ul id=&quot;ul11&quot; class=&quot;ul-table&quot; &gt;
@@ -272,7 +290,7 @@ cells whose corresponding &lt;li&gt; tag did not already have an id value.</p>
  
  &lt;script type=&quot;text/javascript&quot;&gt;
     ul_table( {
-        &quot;ulid&quot;    : &quot;ul11&quot; ,  // id's the &lt;ul&gt; tag
+        &quot;ulid&quot;    : &quot;ul11&quot; ,  // ids the &lt;ul&gt; tag
         &quot;grid&quot;    : 2      ,  // two columns
         &quot;orien&quot;   : &quot;h&quot;    ,  // horizontal orientation
         &quot;bullet&quot;  : &quot;o&quot;    ,  // simple one-character bullet
@@ -325,7 +343,8 @@ respectively.  So in the above example, the usebull cells will all have
 <dd>
 <p>The id value of the &lt;ul&gt; tag (or &lt;ol&gt; tag) to make into a table.  If
 the id is for an &lt;ol&gt; tag, the resulting table will not have number
-cells.  Also see <code>ol_table()</code> below.</p>
+cells.  If you want numbering, use <code>ol_table()</code>, which incidentally
+will also accept a &lt;ul&gt; tag and provide numbering for it (see below).</p>
 </dd>
 </li>
 <dt><strong><a name="item_grid">grid</a></strong>
@@ -338,9 +357,9 @@ The <a href="#item_grid"><code>grid</code></a> value should be an integer greate
 <dt><strong><a name="item_orien">orien</a></strong>
 
 <dd>
-<p>The orientation of the grid layout (default is <code>&quot;h&quot;</code> for horizontal).
-The <a href="#item_orien"><code>orien</code></a> value should be <code>&quot;h&quot;</code> (the default) or <code>&quot;v&quot;</code> for
-vertical.</p>
+<p>The orientation of the grid layout (default is <code>&quot;h&quot;</code>).  The <a href="#item_orien"><code>orien</code></a>
+value should be <code>&quot;h&quot;</code> for horizontal or <code>&quot;v&quot;</code> for vertical.  (See
+discussion of <a href="#item_orien"><code>orien</code></a> above.)</p>
 </dd>
 </li>
 <dt><strong><a name="item_bullet">bullet</a></strong>
@@ -349,16 +368,23 @@ vertical.</p>
 <p>Character or characters to use as a bullet for each item.  These
 characters will be placed in a separate cell, a <em>bullet cell</em>.  The
 <a href="#item_bullet"><code>bullet</code></a> value can be any displayable characters or html tags,
-including entities like <code>&quot;&amp;bull;&quot;</code>.</p>
+or entities like <code>&quot;&amp;bull;&quot;</code>.</p>
 </dd>
 </li>
 <dt><strong><a name="item_usebull">usebull</a></strong>
 
 <dd>
 <p>Index of the &lt;li&gt; tag's child element to use as a bullet.  This element
-will be moved from the &lt;li&gt; tag cell to it's own separate cell, a
+will be moved from the &lt;li&gt; tag cell to its own separate cell, a
 <em>usebull cell</em>.  The <a href="#item_usebull"><code>usebull</code></a> value should be an integer equal to or
 greater than 0.</p>
+</dd>
+<dd>
+<p>Note that this index value is an integer that refers to a child of the
+&lt;li&gt; tag.  If you want the <a href="#item_usebull"><code>usebull</code></a> cell to contain multiple elements
+from the &lt;li&gt;, simply wrap those elements with an appropriate tag,
+e.g., &lt;span&gt; or &lt;div&gt;.  The <a href="#item_usebull"><code>usebull</code></a> value should then refer to the
+position of this (&lt;span&gt; or &lt;div&gt;) child tag.</p>
 </dd>
 </li>
 <dt><strong><a name="item_prefix">prefix</a></strong>
@@ -366,18 +392,23 @@ greater than 0.</p>
 <dd>
 <p>A prefix to use to assign id values to cells.  The <a href="#item_prefix"><code>prefix</code></a> value will
 be ignored if the &lt;li&gt; tag has an id already.  If used, a sequence number
-will be added to <a href="#item_prefix"><code>prefix</code></a> to form the id of the cell.  In addition,
-<em>bullet cells</em> will be given this id suffixed with <code>&quot;-bullet&quot;</code>, and
-<em>usebull cells</em> will be given this id suffixed with <code>&quot;-usebull&quot;</code>.  If
-the &lt;li&gt; tag has an id already, this id--suffixed with <code>&quot;-bullet&quot;</code> or
-<code>&quot;-usebull&quot;</code>--will be used for bullet and usebull cells.</p>
+will be added to <a href="#item_prefix"><code>prefix</code></a> to form the id of the cell.</p>
+</dd>
+<dd>
+<p>In addition, <em>bullet cells</em> will be given this id suffixed with
+<code>&quot;-bullet&quot;</code>, and <em>usebull cells</em> will be given this id suffixed with
+<code>&quot;-usebull&quot;</code>.</p>
+</dd>
+<dd>
+<p>If the &lt;li&gt; tag has an id already, this id--suffixed with <code>&quot;-bullet&quot;</code>
+or <code>&quot;-usebull&quot;</code>--will be used for bullet and usebull cells.</p>
 </dd>
 </li>
 </dl>
 <p>
 </p>
 <h2><a name="ol_table_ospecs_"><code>ol_table(oSpecs)</code></a></h2>
-<p>This function turns an &lt;ol&gt; tag (or a &lt;ul&gt; tag) into a table.  Each
+<p>This function converts an &lt;ol&gt; tag (or a &lt;ul&gt; tag) into a table.  Each
 &lt;li&gt; child tag becomes a table cell.  The attributes of the &lt;ol&gt; tag
 become those of the &lt;table&gt; tag.  The attributes of each &lt;li&gt; tag
 become those of each &lt;td&gt; tag.</p>
@@ -395,8 +426,9 @@ default):</p>
  2 4 6 8</pre>
 <p>The <a href="#item_bullet"><code>bullet</code></a> attribute will cause a <em>bullet cell</em> to be added.  The
 <a href="#item_usebull"><code>usebull</code></a> attribute will cause a <em>usebull cell</em> to be added.  The
-<a href="#item_prefix"><code>prefix</code></a> attribute gives an id prefix which will add id values to
-cells whose corresponding &lt;li&gt; tag did not already have an id value.</p>
+<a href="#item_prefix"><code>prefix</code></a> attribute can give an id prefix which will cause id values to
+be added to cells whose corresponding &lt;li&gt; tags do not already have an
+id.</p>
 <p>The <a href="#item_number"><code>number</code></a> attribute will cause a <em>number cell</em> to be added.
 Numbering is on by default.</p>
 <p>For example:</p>
@@ -411,7 +443,7 @@ Numbering is on by default.</p>
  
  &lt;script type=&quot;text/javascript&quot;&gt;
     ol_table( {
-        &quot;olid&quot;    : &quot;ol11&quot;   ,  // id's the &lt;ol&gt; tag
+        &quot;olid&quot;    : &quot;ol11&quot;   ,  // ids the &lt;ol&gt; tag
         &quot;grid&quot;    : 2        ,  // two columns
         &quot;orien&quot;   : &quot;v&quot;      ,  // vertical orientation
         &quot;bullet&quot;  : &quot;o&quot;      ,  // simple one-character bullet
@@ -482,9 +514,8 @@ The <a href="#item_grid"><code>grid</code></a> value should be an integer greate
 <dt><strong>orien</strong>
 
 <dd>
-<p>The orientation of the grid layout (default is <code>&quot;h&quot;</code> for horizontal).
-The <a href="#item_orien"><code>orien</code></a> value should be <code>&quot;h&quot;</code> (the default) or <code>&quot;v&quot;</code> for
-vertical.</p>
+<p>The orientation of the grid layout (default is <code>&quot;h&quot;</code>).  The <a href="#item_orien"><code>orien</code></a>
+value should be <code>&quot;h&quot;</code> for horizontal or <code>&quot;v&quot;</code> for vertical.</p>
 </dd>
 </li>
 <dt><strong>bullet</strong>
@@ -493,16 +524,23 @@ vertical.</p>
 <p>Character or characters to use as a bullet for each item.  These
 characters will be placed in a separate cell, a <em>bullet cell</em>.  The
 <a href="#item_bullet"><code>bullet</code></a> value can be any displayable characters or html tags,
-including entities like <code>&quot;&amp;bull;&quot;</code>.</p>
+or entities like <code>&quot;&amp;bull;&quot;</code>.</p>
 </dd>
 </li>
 <dt><strong>usebull</strong>
 
 <dd>
 <p>Index of the &lt;li&gt; tag's child element to use as a bullet.  This element
-will be moved from the &lt;li&gt; tag cell to it's own separate cell, a
+will be moved from the &lt;li&gt; tag cell to its own separate cell, a
 <em>usebull cell</em>.  The <a href="#item_usebull"><code>usebull</code></a> value should be an integer equal to or
 greater than 0.</p>
+</dd>
+<dd>
+<p>Note that this index value is an integer that refers to a child of the
+&lt;li&gt; tag.  If you want the <a href="#item_usebull"><code>usebull</code></a> cell to contain multiple elements
+from the &lt;li&gt;, simply wrap those elements with an appropriate tag,
+e.g., &lt;span&gt; or &lt;div&gt;.  The <a href="#item_usebull"><code>usebull</code></a> value should then refer to the
+position of this (&lt;span&gt; or &lt;div&gt;) child tag.</p>
 </dd>
 </li>
 <dt><strong>prefix</strong>
@@ -510,11 +548,16 @@ greater than 0.</p>
 <dd>
 <p>A prefix to use to assign id values to cells.  The <a href="#item_prefix"><code>prefix</code></a> value will
 be ignored if the &lt;li&gt; has an id already.  If used, a sequence number
-will be added to <a href="#item_prefix"><code>prefix</code></a> to form the id of the cell.  In addition,
-<em>bullet cells</em> will be given this id suffixed with <code>&quot;-bullet&quot;</code>,
-<em>usebull cells</em> will be given this id suffixed with <code>&quot;-usebull&quot;</code>, and
-<em>number cells</em> will be given this id suffixed with <code>&quot;-number&quot;</code>.  If
-the &lt;li&gt; tag has an id already, this id--suffixed with <code>&quot;-bullet&quot;</code>,
+will be added to <a href="#item_prefix"><code>prefix</code></a> to form the id of the cell.</p>
+</dd>
+<dd>
+<p>In addition, <em>bullet cells</em> will be given this id suffixed with
+<code>&quot;-bullet&quot;</code>, <em>usebull cells</em> will be given this id suffixed with
+<code>&quot;-usebull&quot;</code>, and <em>number cells</em> will be given this id suffixed with
+<code>&quot;-number&quot;</code>.</p>
+</dd>
+<dd>
+<p>If the &lt;li&gt; tag has an id already, this id--suffixed with <code>&quot;-bullet&quot;</code>,
 <code>&quot;-usebull&quot;</code>, or <code>&quot;-number&quot;</code>--will be used for bullet and usebull
 cells.</p>
 </dd>
@@ -525,23 +568,27 @@ cells.</p>
 <p>Type of numbering to use (default is <code>'arabic'</code>).  The <a href="#item_number"><code>number</code></a> value
 should be one of the following <code>'arabic'</code>, <code>'upper-roman'</code>,
 <code>'upper-alpha'</code>, <code>'lower-roman'</code>, <code>'lower-alpha'</code>, or <code>'none'</code> (to
-disable numbering).</p>
+disable numbering).  See the <code>'NUMBERING'</code> section below for a
+discussion of the different types of numbering.</p>
 </dd>
 </li>
 </dl>
 <p>
 </p>
 <h2><a name="dl_table_ospecs_"><code>dl_table(oSpecs)</code></a></h2>
-<p>This function turns a &lt;dl&gt; tag into a table.  Each &lt;dt&gt; and &lt;dd&gt; child
-tag becomes a table cell.  The attributes of the &lt;dl&gt; tag become those
-of the &lt;table&gt; tag.  The attributes of each &lt;dt&gt; and &lt;dd&gt; tag become
-those of each &lt;td&gt; tag.</p>
+<p>This function converts a &lt;dl&gt; tag into a table.  Each &lt;dt&gt; and &lt;dd&gt;
+child tag becomes a table cell.  The attributes of the &lt;dl&gt; tag become
+those of the &lt;table&gt; tag.  The attributes of each &lt;dt&gt; and &lt;dd&gt; tag
+become those of each corresponding &lt;td&gt; tag.</p>
 <p>The <a href="#item_bullet"><code>bullet</code></a> attribute will cause a <em>bullet cell</em> to be added.  The
 <a href="#item_usebull"><code>usebull</code></a> attribute will cause a <em>usebull cell</em> to be added.  The
-<a href="#item_prefix"><code>prefix</code></a> attribute gives an id prefix which will add id values to
-cells whose corresponding &lt;li&gt; tag did not already have an id value.</p>
+<a href="#item_prefix"><code>prefix</code></a> attribute can give an id prefix which will cause id values to
+be added to cells whose corresponding &lt;li&gt; tags do not already have an
+id.</p>
 <p>The <a href="#item_number"><code>number</code></a> attribute will cause a <em>number cell</em> to be added.
-Numbering is off by default.</p>
+Numbering is off by default.  Yes, this does imply that numbering can
+be added for &lt;dl&gt; lists, just as <code>ol_table</code> can supply numbering for
+&lt;ul&gt; lists.</p>
 <p>For example:</p>
 <pre>
  &lt;dl id=&quot;dl11&quot; class=&quot;dl-table&quot; &gt;
@@ -559,7 +606,7 @@ Numbering is off by default.</p>
  
  &lt;script type=&quot;text/javascript&quot;&gt;
      dl_table( {
-        &quot;dlid&quot;    : &quot;dl11&quot;   ,  // id of &lt;dl&gt; tag
+        &quot;dlid&quot;    : &quot;dl11&quot;   ,  // ids the &lt;dl&gt; tag
         &quot;bullet&quot;  : &quot;o&quot;      ,  // simple character bullet
         &quot;usebull&quot; : 0        ,  // use &lt;b&gt;*&lt;/b&gt;
         &quot;number&quot;  : &quot;arabic&quot;    // needed for numbering (off by default)
@@ -624,7 +671,7 @@ cells will all have <code>class=&quot;dl-dt-bullet&quot;</code>, and the number 
 all have <code>class=&quot;dl-dt-number&quot;</code>.</p>
 <p>Note finally that bullets and numbers are always associated with &lt;dt&gt;
 tags, never with &lt;dd&gt; tags.  If a &lt;dd&gt; tag does not have a &lt;dt&gt; tag
-above it, it is an error, and <code>dl_table()</code> will fail.</p>
+preceding it, it is an error, and <code>dl_table()</code> will fail.</p>
 <dl>
 <dt><strong><a name="item_dlid">dlid</a></strong>
 
@@ -638,16 +685,23 @@ above it, it is an error, and <code>dl_table()</code> will fail.</p>
 <p>Character or characters to use as a bullet for each item.  These
 characters will be placed in a separate cell, a <em>bullet cell</em>.  The
 <a href="#item_bullet"><code>bullet</code></a> value can be any displayable characters or html tags,
-including entities like <code>&quot;&amp;bull;&quot;</code>.</p>
+or entities like <code>&quot;&amp;bull;&quot;</code>.</p>
 </dd>
 </li>
 <dt><strong>usebull</strong>
 
 <dd>
 <p>Index of the &lt;dt&gt; (not &lt;dd&gt;) tag's child element to use as a bullet.
-This element will be moved from the &lt;dt&gt; tag cell to it's own separate
-cell, a <em>usebull cell</em>.  The <a href="#item_usebull"><code>usebull</code></a> value should be an integer
-equal to or greater than 0.</p>
+This element will be moved from the &lt;dt&gt; tag to its own separate cell,
+a <em>usebull cell</em>.  The <a href="#item_usebull"><code>usebull</code></a> value should be an integer equal to
+or greater than 0.</p>
+</dd>
+<dd>
+<p>Note that this index value is an integer that refers to a child of the
+&lt;dt&gt; tag.  If you want the <a href="#item_usebull"><code>usebull</code></a> cell to contain multiple elements
+from the &lt;dt&gt;, simply wrap those elements with an appropriate tag,
+e.g., &lt;span&gt; or &lt;div&gt;.  The <a href="#item_usebull"><code>usebull</code></a> value should then refer to the
+position of this (&lt;span&gt; or &lt;div&gt;) child tag.</p>
 </dd>
 </li>
 <dt><strong>prefix</strong>
@@ -659,9 +713,9 @@ number will be added to <a href="#item_prefix"><code>prefix</code></a> to form t
 addition, <em>bullet cells</em> will be given this id suffixed with
 <code>&quot;-bullet&quot;</code>, <em>usebull cells</em> will be given this id suffixed with
 <code>&quot;-usebull&quot;</code>, and <em>number cells</em> will be given this id suffixed with
-<code>&quot;-number&quot;</code>.  If the &lt;li&gt; tag has an id already, this id--suffixed
-with <code>&quot;-bullet&quot;</code>, <code>&quot;-usebull&quot;</code>, or <code>&quot;-number&quot;</code>--will be used for
-bullet and usebull cells.</p>
+<code>&quot;-number&quot;</code>.  If a &lt;dt&gt; tag has an id already, this id--suffixed with
+<code>&quot;-bullet&quot;</code>, <code>&quot;-usebull&quot;</code>, or <code>&quot;-number&quot;</code>--will be used for bullet
+and usebull cells.</p>
 </dd>
 </li>
 <dt><strong>number</strong>
@@ -670,7 +724,8 @@ bullet and usebull cells.</p>
 <p>Type of numbering to use (default is no numbering).  The <a href="#item_number"><code>number</code></a>
 value should be one of the following <code>'arabic'</code>, <code>'upper-roman'</code>,
 <code>'upper-alpha'</code>, <code>'lower-roman'</code>, <code>'lower-alpha'</code>, or <code>'none'</code> (for
-no numbering, the default).</p>
+no numbering, the default).  See the <code>'NUMBERING'</code> section below for a
+discussion of the different types of numbering.</p>
 </dd>
 </li>
 </dl>
@@ -745,7 +800,7 @@ suffixed with a period <code>&quot;.&quot;</code>):</p>
 <dt><strong><a name="item_lower_2dalpha">lower-alpha</a></strong>
 
 <dd>
-<p>Numbering uses upper-case alphabetic characters (a-z):</p>
+<p>Numbering uses lower-case alphabetic characters (a-z):</p>
 </dd>
 <dd>
 <pre>
@@ -774,8 +829,9 @@ suffixed with a period <code>&quot;.&quot;</code>):</p>
 </p>
 <h2><a name="the_value_attribute">The <code>value</code> attribute</a></h2>
 <p>Normally, &lt;li&gt; tags in &lt;ol&gt; lists may set a <code>value</code> attribute
-that assigns a number to that item.  Subsequent items
-that don't have <code>value</code> attributes will be numbered from there, e.g.,</p>
+that assigns a number to that item.</p>
+<p>Subsequent items that don't have <code>value</code> attributes will be numbered
+from there, e.g.,</p>
 <pre>
  &lt;ol&gt;
  &lt;li           &gt;Item&lt;/li&gt; &lt;!-- 1 --&gt;
@@ -795,7 +851,8 @@ ol { width: 9%; padding: 1em 1em 1em 4em; margin: 2em; border: 1px solid grey; b
 </ol><p>The <strong>Table Maker</strong> functions that offer a numbering option
 (<code>ol_table()</code> and <code>dl_table()</code>) will respond to a <code>value</code> attribute
 in an &lt;li&gt; or &lt;dt&gt; tag, and alter the numbering accordingly.  (This is
-true also for &lt;ul&gt; tags that are converted using <code>ol_table()</code>.)</p>
+recognized in &lt;li&gt; tags for either &lt;ol&gt; or &lt;ul&gt; tags that are converted
+using <code>ol_table()</code>.)</p>
 <p>For example:</p>
 <pre>
  &lt;ol id=&quot;ol12&quot;&gt;

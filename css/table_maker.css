@@ -3,9 +3,9 @@
 /* --- Styles reset - disable default browser styles -------------- */
 /* others: dl,dt,dd,ul,ol,li */
 body,div,h1,h2,h3,h4,h5,h6,p,pre,form,fieldset,input,textarea,blockquote,table,th,td { margin:0; padding:0; }
-table { /*border-collapse:collapse;*/ /*border-spacing:0;*/ }
+/* table { border-collapse:collapse; border-spacing:0; } */
 tr { vertical-align: top; }
-td { /*border:1px solid black;*/ }
+/* td { border:1px solid black; } */
 fieldset,img { border:0; }
 address,caption,cite,code,dfn,th,var { font-style:normal; font-weight:normal; }
 
@@ -102,7 +102,7 @@ html, body {
 
 #col1,#col2,#col3,#tdtmc1,#tdtmc2,#tdtmc3 {
     width: 33%;
-    padding: .5em;
+    padding: 2px;
     border: 1px dotted #eee;
     -moz-border-radius:8px; /* firefox */
 }
